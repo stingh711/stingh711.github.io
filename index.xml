@@ -6,8 +6,56 @@
     <description>Recent content on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Apr 2017 15:34:25 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 08 Apr 2017 19:10:23 +0800</lastBuildDate>
     <atom:link href="https://stingh711.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Javascript library notes</title>
+      <link>https://stingh711.github.io/post/javascript-library-notes/</link>
+      <pubDate>Sat, 08 Apr 2017 19:10:23 +0800</pubDate>
+      
+      <guid>https://stingh711.github.io/post/javascript-library-notes/</guid>
+      <description>
+
+&lt;p&gt;Some notes on a few popular javascript libraries.&lt;/p&gt;
+
+&lt;h2 id=&#34;bootstrap-daterangepicker&#34;&gt;bootstrap-daterangepicker&lt;/h2&gt;
+
+&lt;h3 id=&#34;how-to-get-startdate-and-enddate&#34;&gt;How to get startDate and endDate?&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var range = $(&amp;quot;#range&amp;quot;).daterangepicker();
+var start = range.data(&amp;quot;daterangepicker&amp;quot;).startDate;
+var end = range.data(&amp;quot;daterangepicker&amp;quot;).endDate;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;lodash&#34;&gt;lodash&lt;/h2&gt;
+
+&lt;h3 id=&#34;map&#34;&gt;map&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var data = [{label: &#39;4/1&#39;, value: 10}, {label: &#39;4/2&#39;, value: 14}];
+var labels = _.map(data, function(item) { return item.label; });
+var values = _.map(data, function(item) { return item.value; });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It is especially useful when preparing data for some chart libraries.&lt;/p&gt;
+
+&lt;h2 id=&#34;jquery&#34;&gt;jquery&lt;/h2&gt;
+
+&lt;h3 id=&#34;how-to-pass-array-when-using-get&#34;&gt;How to pass array when using $.get&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;$.get(&amp;quot;/api&amp;quot;, {&amp;quot;name[]&amp;quot;: [&amp;quot;George&amp;quot;, &amp;quot;Jacky&amp;quot;]}, function(data) {});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you are using Spring MVC for the server side, here is the relative code to receive multiple parameters.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@GetMapping(&amp;quot;/api&amp;quot;)
+@ResponseBody
+public YourResponseEntity api(@RequestParam(&amp;quot;name&amp;quot;) String[] names) {
+  //deal with names
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>book reading record 2017</title>
@@ -29,13 +77,22 @@
 &lt;li&gt;四步创业法&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;to-be-read&#34;&gt;To be read&lt;/h2&gt;
+&lt;h2 id=&#34;reading&#34;&gt;Reading&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;To kill a mocking bird&lt;/li&gt;
 &lt;li&gt;Inspired, how to create products customers love&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;to-be-read&#34;&gt;To be read&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Redis In Action&lt;/li&gt;
 &lt;li&gt;Alice in wonder world&lt;/li&gt;
 &lt;li&gt;身份的焦虑&lt;/li&gt;
+&lt;li&gt;Then there were none&lt;/li&gt;
+&lt;li&gt;简单的哲学&lt;/li&gt;
+&lt;li&gt;Getting to YES&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
