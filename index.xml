@@ -6,8 +6,32 @@
     <description>Recent content on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Apr 2017 19:10:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 19 May 2017 13:13:00 +0800</lastBuildDate>
     <atom:link href="https://stingh711.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Pandas in jupyter</title>
+      <link>https://stingh711.github.io/post/pandas-in-jupyter/</link>
+      <pubDate>Fri, 19 May 2017 13:13:00 +0800</pubDate>
+      
+      <guid>https://stingh711.github.io/post/pandas-in-jupyter/</guid>
+      <description>&lt;p&gt;Read data from mysql and draw a chart.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
+import pymysql
+import pandas as pd
+import pandas.io.sql as sql
+
+conn = pymysql.connect(host=&#39;192.168.56.1&#39;, user=&#39;root&#39;, passwd=&#39;qwer-1235&#39;, db=&#39;pdss&#39;)
+
+
+s = &#39;select number_value from quality_data_item_record where item_id = 11&#39;
+df = sql.read_sql_query(s, conn)
+
+df.plot()
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Javascript library notes</title>
@@ -75,13 +99,18 @@ public YourResponseEntity api(@RequestParam(&amp;quot;name&amp;quot;) String[] n
 &lt;li&gt;猎豹&lt;/li&gt;
 &lt;li&gt;Great gatsby&lt;/li&gt;
 &lt;li&gt;四步创业法&lt;/li&gt;
+&lt;li&gt;To kill a mocking bird&lt;/li&gt;
+&lt;li&gt;Then there were none&lt;/li&gt;
+&lt;li&gt;你应该像喜欢苦一样喜欢甜&lt;/li&gt;
+&lt;li&gt;清醒思考的艺术&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;reading&#34;&gt;Reading&lt;/h2&gt;
 
 &lt;ol&gt;
-&lt;li&gt;To kill a mocking bird&lt;/li&gt;
+&lt;li&gt;Getting to YES&lt;/li&gt;
 &lt;li&gt;Inspired, how to create products customers love&lt;/li&gt;
+&lt;li&gt;On managing yourself&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;to-be-read&#34;&gt;To be read&lt;/h2&gt;
@@ -90,9 +119,9 @@ public YourResponseEntity api(@RequestParam(&amp;quot;name&amp;quot;) String[] n
 &lt;li&gt;Redis In Action&lt;/li&gt;
 &lt;li&gt;Alice in wonder world&lt;/li&gt;
 &lt;li&gt;身份的焦虑&lt;/li&gt;
-&lt;li&gt;Then there were none&lt;/li&gt;
 &lt;li&gt;简单的哲学&lt;/li&gt;
-&lt;li&gt;Getting to YES&lt;/li&gt;
+&lt;li&gt;深入浅出数据分析&lt;/li&gt;
+&lt;li&gt;演讲之禅&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
