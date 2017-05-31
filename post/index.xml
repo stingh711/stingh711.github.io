@@ -63,6 +63,13 @@ var values = _.map(data, function(item) { return item.value; });
 
 &lt;p&gt;It is especially useful when preparing data for some chart libraries.&lt;/p&gt;
 
+&lt;h3 id=&#34;convert-array-to-object&#34;&gt;convert array to object&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var data = [{value: 0, name: &#39;Working&#39;}, {value: 1, name: &#39;Idle&#39;}];
+var result = _.chain(data).keyBy(&#39;value&#39;).mapValues(&#39;name&#39;).value();
+//The result will be {0: &#39;Working&#39;, 1: &#39;Idle&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;h2 id=&#34;jquery&#34;&gt;jquery&lt;/h2&gt;
 
 &lt;h3 id=&#34;how-to-pass-array-when-using-get&#34;&gt;How to pass array when using $.get&lt;/h3&gt;
@@ -103,6 +110,10 @@ public YourResponseEntity api(@RequestParam(&amp;quot;name&amp;quot;) String[] n
 &lt;li&gt;Then there were none&lt;/li&gt;
 &lt;li&gt;你应该像喜欢苦一样喜欢甜&lt;/li&gt;
 &lt;li&gt;清醒思考的艺术&lt;/li&gt;
+&lt;li&gt;垂暮之战&lt;/li&gt;
+&lt;li&gt;幽灵旅&lt;/li&gt;
+&lt;li&gt;消失的殖民地&lt;/li&gt;
+&lt;li&gt;东方快车谋杀案&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;reading&#34;&gt;Reading&lt;/h2&gt;
@@ -111,6 +122,7 @@ public YourResponseEntity api(@RequestParam(&amp;quot;name&amp;quot;) String[] n
 &lt;li&gt;Getting to YES&lt;/li&gt;
 &lt;li&gt;Inspired, how to create products customers love&lt;/li&gt;
 &lt;li&gt;On managing yourself&lt;/li&gt;
+&lt;li&gt;Software architecture for developers&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;to-be-read&#34;&gt;To be read&lt;/h2&gt;

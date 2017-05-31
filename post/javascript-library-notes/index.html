@@ -86,6 +86,13 @@ var values = _.map(data, function(item) { return item.value; });
 
 <p>It is especially useful when preparing data for some chart libraries.</p>
 
+<h3 id="convert-array-to-object">convert array to object</h3>
+
+<pre><code class="language-javascript">var data = [{value: 0, name: 'Working'}, {value: 1, name: 'Idle'}];
+var result = _.chain(data).keyBy('value').mapValues('name').value();
+//The result will be {0: 'Working', 1: 'Idle'}
+</code></pre>
+
 <h2 id="jquery">jquery</h2>
 
 <h3 id="how-to-pass-array-when-using-get">How to pass array when using $.get</h3>
