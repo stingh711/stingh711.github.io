@@ -3,20 +3,19 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.19" />
+  <meta name="generator" content="Hugo 0.30.2" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  
   <title>Sting&#39;s Note</title>
-  
 
   
+  <link rel="stylesheet" href="https://stingh711.github.io/css/print.css" media="print">
   <link rel="stylesheet" href="https://stingh711.github.io/css/poole.css">
   <link rel="stylesheet" href="https://stingh711.github.io/css/syntax.css">
   <link rel="stylesheet" href="https://stingh711.github.io/css/hyde.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
   
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
@@ -24,21 +23,10 @@
 
   
   <link href="https://stingh711.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Sting&#39;s Note" />
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-10412053-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
 </head>
 
-<body class=" ">
-
-<div class="sidebar">
+  <body class=" ">
+  <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <a href="https://stingh711.github.io/"><h1>Sting&#39;s Note</h1></a>
@@ -48,272 +36,73 @@
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
-      
-        <li><a href="/post/pandas-in-jupyter/"> Pandas in jupyter </a></li>
-      
+      <li><a href="https://stingh711.github.io/">Home</a> </li>
+      <li><a href="/post/pandas-in-jupyter/"> Pandas in jupyter </a></li>
     </ul>
 
     <p>&copy; 2017. All rights reserved. </p>
   </div>
 </div>
 
-
     <div class="content container">
-<div class="posts">
-
-      
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://stingh711.github.io/post/pandas-in-jupyter/">
-        Pandas in jupyter
-      </a>
-    </h1>
-
-    <span class="post-date">Fri, May 19, 2017</span>
-
-    <p>Read data from mysql and draw a chart.</p>
-
-<pre><code class="language-python">%matplotlib inline
-import pymysql
-import pandas as pd
-import pandas.io.sql as sql
-
-conn = pymysql.connect(host='192.168.56.1', user='root', passwd='qwer-1235', db='pdss')
-
-
-s = 'select number_value from quality_data_item_record where item_id = 11'
-df = sql.read_sql_query(s, conn)
-
-df.plot()
-</code></pre>
-
+    <div class="posts">
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://stingh711.github.io/post/pandas-in-jupyter/">Pandas in jupyter</a>
+  </h1>
+  <span class="post-date">Fri, May 19, 2017</span>
+  Read data from mysql and draw a chart.
+%matplotlib inline import pymysql import pandas as pd import pandas.io.sql as sql conn = pymysql.connect(host='192.168.56.1', user='root', passwd='qwer-1235', db='pdss') s = 'select number_value from quality_data_item_record where item_id = 11' df = sql.read_sql_query(s, conn) df.plot()  
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="https://stingh711.github.io/post/javascript-library-notes/">Javascript library notes</a>
+  </h1>
+  <span class="post-date">Sat, Apr 8, 2017</span>
+  Some notes on a few popular javascript libraries.
+bootstrap-daterangepicker How to get startDate and endDate? var range = $(&quot;#range&quot;).daterangepicker(); var start = range.data(&quot;daterangepicker&quot;).startDate; var end = range.data(&quot;daterangepicker&quot;).endDate;  lodash map var data = [{label: '4/1', value: 10}, {label: '4/2', value: 14}]; var labels = _.map(data, function(item) { return item.label; }); var values = _.map(data, function(item) { return item.value; });  It is especially useful when preparing data for some chart libraries.
+  
+  <div class="read-more-link">
+    <a href="/post/javascript-library-notes/">Read More…</a>
   </div>
   
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://stingh711.github.io/post/javascript-library-notes/">
-        Javascript library notes
-      </a>
-    </h1>
-
-    <span class="post-date">Sat, Apr 8, 2017</span>
-
-    
-
-<p>Some notes on a few popular javascript libraries.</p>
-
-<h2 id="bootstrap-daterangepicker">bootstrap-daterangepicker</h2>
-
-<h3 id="how-to-get-startdate-and-enddate">How to get startDate and endDate?</h3>
-
-<pre><code class="language-javascript">var range = $(&quot;#range&quot;).daterangepicker();
-var start = range.data(&quot;daterangepicker&quot;).startDate;
-var end = range.data(&quot;daterangepicker&quot;).endDate;
-</code></pre>
-
-<h2 id="lodash">lodash</h2>
-
-<h3 id="map">map</h3>
-
-<pre><code class="language-javascript">var data = [{label: '4/1', value: 10}, {label: '4/2', value: 14}];
-var labels = _.map(data, function(item) { return item.label; });
-var values = _.map(data, function(item) { return item.value; });
-</code></pre>
-
-<p>It is especially useful when preparing data for some chart libraries.</p>
-
-<h3 id="convert-array-to-object">convert array to object</h3>
-
-<pre><code class="language-javascript">var data = [{value: 0, name: 'Working'}, {value: 1, name: 'Idle'}];
-var result = _.chain(data).keyBy('value').mapValues('name').value();
-//The result will be {0: 'Working', 1: 'Idle'}
-</code></pre>
-
-<h2 id="jquery">jquery</h2>
-
-<h3 id="how-to-pass-array-when-using-get">How to pass array when using $.get</h3>
-
-<pre><code class="language-javascript">$.get(&quot;/api&quot;, {&quot;name[]&quot;: [&quot;George&quot;, &quot;Jacky&quot;]}, function(data) {});
-</code></pre>
-
-<p>If you are using Spring MVC for the server side, here is the relative code to receive multiple parameters.</p>
-
-<pre><code class="language-java">@GetMapping(&quot;/api&quot;)
-@ResponseBody
-public YourResponseEntity api(@RequestParam(&quot;name&quot;) String[] names) {
-  //deal with names
-}
-</code></pre>
-
-  </div>
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="https://stingh711.github.io/post/book-reading-record-2017/">book reading record 2017</a>
+  </h1>
+  <span class="post-date">Wed, Apr 5, 2017</span>
+   Read  夜色人生 Software Prefactoring How to win friends and influence people Eat, pray, love 猎豹 Great gatsby 四步创业法 To kill a mocking bird Then there were none 你应该像喜欢苦一样喜欢甜 清醒思考的艺术 垂暮之战 幽灵旅 消失的殖民地 东方快车谋杀案  Reading  Getting to YES Inspired, how to create products customers love On managing yourself Software architecture for developers  To be read  Redis In Action Alice in wonder world 身份的焦虑 简单的哲学 深入浅出数据分析 演讲之禅  
   
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://stingh711.github.io/post/book-reading-record-2017/">
-        book reading record 2017
-      </a>
-    </h1>
-
-    <span class="post-date">Wed, Apr 5, 2017</span>
-
-    
-
-<h2 id="read">Read</h2>
-
-<ol>
-<li>夜色人生</li>
-<li>Software Prefactoring</li>
-<li>How to win friends and influence people</li>
-<li>Eat, pray, love</li>
-<li>猎豹</li>
-<li>Great gatsby</li>
-<li>四步创业法</li>
-<li>To kill a mocking bird</li>
-<li>Then there were none</li>
-<li>你应该像喜欢苦一样喜欢甜</li>
-<li>清醒思考的艺术</li>
-<li>垂暮之战</li>
-<li>幽灵旅</li>
-<li>消失的殖民地</li>
-<li>东方快车谋杀案</li>
-</ol>
-
-<h2 id="reading">Reading</h2>
-
-<ol>
-<li>Getting to YES</li>
-<li>Inspired, how to create products customers love</li>
-<li>On managing yourself</li>
-<li>Software architecture for developers</li>
-</ol>
-
-<h2 id="to-be-read">To be read</h2>
-
-<ol>
-<li>Redis In Action</li>
-<li>Alice in wonder world</li>
-<li>身份的焦虑</li>
-<li>简单的哲学</li>
-<li>深入浅出数据分析</li>
-<li>演讲之禅</li>
-</ol>
-
-  </div>
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="https://stingh711.github.io/post/introduction/">Introduction</a>
+  </h1>
+  <span class="post-date">Wed, Apr 5, 2017</span>
+  Try to use hugo to setup the blog again.
   
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://stingh711.github.io/post/introduction/">
-        Introduction
-      </a>
-    </h1>
-
-    <span class="post-date">Wed, Apr 5, 2017</span>
-
-    <p>Try to use hugo to setup the blog again.</p>
-
-  </div>
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="https://stingh711.github.io/post/dynamic-form-with-springmvc-and-thymeleaf/">dynamic form with springmvc and thymeleaf</a>
+  </h1>
+  <span class="post-date">Fri, Aug 1, 2014</span>
+  Requirements SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.
+Things I’ve learned.  When adding an option, don’t need to use javascript to handle the added html snippet. Just submit the add request to controller and handle the adding in the controller (Add a new options into the option list of subject group), then return to the add page. Spring mvc’s data binding and thyme leaf’s for loop will handle the html.
   
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://stingh711.github.io/post/dynamic-form-with-springmvc-and-thymeleaf/">
-        dynamic form with springmvc and thymeleaf
-      </a>
-    </h1>
-
-    <span class="post-date">Fri, Aug 1, 2014</span>
-
-    
-
-<h2 id="requirements">Requirements</h2>
-
-<p>SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.</p>
-
-<h2 id="things-i-ve-learned">Things I’ve learned.</h2>
-
-<ul>
-<li>When adding an option, don’t need to use javascript to handle the added html snippet. Just submit the add request to controller and handle the adding in the controller (Add a new options into the option list of subject group), then return to the add page. Spring mvc’s data binding and thyme leaf’s for loop will handle the html. (In EDC, I use javascript to append option html. It works. But there are some duplicate codes in JSP and javascript)</li>
-<li>Can use the same way to handle subject option removing.</li>
-<li>If there are multiple submit button in one form. We can use button’s name to separate them. In controller, use RequestMapping’s params to make the submit request to the right controller method.</li>
-</ul>
-
-<h2 id="code">Code</h2>
-
-<p>SubjectGroupController.java</p>
-
-<pre><code class="language-java">package edc.web;
-
-import edc.model.SubjectGroup;
-import edc.model.SubjectGroupOption;
-import edc.service.SubjectGroupService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-@Controller
-@RequestMapping(&quot;/sg&quot;)
-public class SubjectGroupController {
-    private SubjectGroupService subjectGroupService;
-
-    @Autowired
-    public void setSubjectGroupService(SubjectGroupService subjectGroupService) {
-        this.subjectGroupService = subjectGroupService;
-    }
-
-    @RequestMapping(value = &quot;add&quot;)
-    public String add(SubjectGroup subjectGroup) {
-        return &quot;subjectGroup/add&quot;;
-    }
-
-    @RequestMapping(value = &quot;add&quot;, params = {&quot;addOption&quot;})
-    public String addOption(SubjectGroup subjectGroup, BindingResult result) {
-        subjectGroup.getOptions().add(new SubjectGroupOption());
-        return &quot;subjectGroup/add&quot;;
-    }
-
-    @RequestMapping(value = &quot;add&quot;, method = RequestMethod.POST)
-    public String save(SubjectGroup subjectGroup, BindingResult result) {
-        this.subjectGroupService.save(subjectGroup);
-        return &quot;redirect:/sg/add&quot;;
-    }
-}
-
-</code></pre>
-
-<p>add.html</p>
-
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;/&gt;
-    &lt;title&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;section&gt;
-    &lt;h2&gt;Add Subject Group&lt;/h2&gt;
-    &lt;form action=&quot;#&quot; th:action=&quot;@{/sg/add}&quot; th:object=&quot;${subjectGroup}&quot; method=&quot;POST&quot;&gt;
-      &lt;p&gt;&lt;input type=&quot;text&quot; th:field=&quot;*{name}&quot; placeholder=&quot;Name...&quot;/&gt;&lt;/p&gt;
-        &lt;h3&gt;Options&lt;/h3&gt;
-        &lt;button type=&quot;submit&quot; name=&quot;addOption&quot;&gt;Add Option&lt;/button&gt;
-        &lt;table&gt;
-            &lt;tr th:each=&quot;option, rowStat : *{options}&quot;&gt;
-              &lt;td&gt;&lt;input type=&quot;text&quot; th:field=&quot;*{options[__${rowStat.index}__].label}&quot; placeholder=&quot;Option...&quot;/&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-        &lt;button type=&quot;submit&quot;&gt;Add&lt;/button&gt;
-    &lt;/form&gt;
-&lt;/section&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
+  <div class="read-more-link">
+    <a href="/post/dynamic-form-with-springmvc-and-thymeleaf/">Read More…</a>
   </div>
   
 </div>
 </div>
+    </div>
+
+    
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-10412053-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
 
   </body>
 </html>

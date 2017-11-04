@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sting&#39;s Note</title>
-    <link>https://stingh711.github.io/index.xml</link>
+    <link>https://stingh711.github.io/</link>
     <description>Recent content on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 19 May 2017 13:13:00 +0800</lastBuildDate>
-    <atom:link href="https://stingh711.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://stingh711.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Pandas in jupyter</title>
@@ -15,22 +17,8 @@
       <pubDate>Fri, 19 May 2017 13:13:00 +0800</pubDate>
       
       <guid>https://stingh711.github.io/post/pandas-in-jupyter/</guid>
-      <description>&lt;p&gt;Read data from mysql and draw a chart.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
-import pymysql
-import pandas as pd
-import pandas.io.sql as sql
-
-conn = pymysql.connect(host=&#39;192.168.56.1&#39;, user=&#39;root&#39;, passwd=&#39;qwer-1235&#39;, db=&#39;pdss&#39;)
-
-
-s = &#39;select number_value from quality_data_item_record where item_id = 11&#39;
-df = sql.read_sql_query(s, conn)
-
-df.plot()
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>Read data from mysql and draw a chart.
+%matplotlib inline import pymysql import pandas as pd import pandas.io.sql as sql conn = pymysql.connect(host=&#39;192.168.56.1&#39;, user=&#39;root&#39;, passwd=&#39;qwer-1235&#39;, db=&#39;pdss&#39;) s = &#39;select number_value from quality_data_item_record where item_id = 11&#39; df = sql.read_sql_query(s, conn) df.plot()  </description>
     </item>
     
     <item>
@@ -39,53 +27,8 @@ df.plot()
       <pubDate>Sat, 08 Apr 2017 19:10:23 +0800</pubDate>
       
       <guid>https://stingh711.github.io/post/javascript-library-notes/</guid>
-      <description>
-
-&lt;p&gt;Some notes on a few popular javascript libraries.&lt;/p&gt;
-
-&lt;h2 id=&#34;bootstrap-daterangepicker&#34;&gt;bootstrap-daterangepicker&lt;/h2&gt;
-
-&lt;h3 id=&#34;how-to-get-startdate-and-enddate&#34;&gt;How to get startDate and endDate?&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var range = $(&amp;quot;#range&amp;quot;).daterangepicker();
-var start = range.data(&amp;quot;daterangepicker&amp;quot;).startDate;
-var end = range.data(&amp;quot;daterangepicker&amp;quot;).endDate;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;lodash&#34;&gt;lodash&lt;/h2&gt;
-
-&lt;h3 id=&#34;map&#34;&gt;map&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var data = [{label: &#39;4/1&#39;, value: 10}, {label: &#39;4/2&#39;, value: 14}];
-var labels = _.map(data, function(item) { return item.label; });
-var values = _.map(data, function(item) { return item.value; });
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;It is especially useful when preparing data for some chart libraries.&lt;/p&gt;
-
-&lt;h3 id=&#34;convert-array-to-object&#34;&gt;convert array to object&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var data = [{value: 0, name: &#39;Working&#39;}, {value: 1, name: &#39;Idle&#39;}];
-var result = _.chain(data).keyBy(&#39;value&#39;).mapValues(&#39;name&#39;).value();
-//The result will be {0: &#39;Working&#39;, 1: &#39;Idle&#39;}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;jquery&#34;&gt;jquery&lt;/h2&gt;
-
-&lt;h3 id=&#34;how-to-pass-array-when-using-get&#34;&gt;How to pass array when using $.get&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;$.get(&amp;quot;/api&amp;quot;, {&amp;quot;name[]&amp;quot;: [&amp;quot;George&amp;quot;, &amp;quot;Jacky&amp;quot;]}, function(data) {});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you are using Spring MVC for the server side, here is the relative code to receive multiple parameters.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@GetMapping(&amp;quot;/api&amp;quot;)
-@ResponseBody
-public YourResponseEntity api(@RequestParam(&amp;quot;name&amp;quot;) String[] names) {
-  //deal with names
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>Some notes on a few popular javascript libraries.
+bootstrap-daterangepicker How to get startDate and endDate? var range = $(&amp;quot;#range&amp;quot;).daterangepicker(); var start = range.data(&amp;quot;daterangepicker&amp;quot;).startDate; var end = range.data(&amp;quot;daterangepicker&amp;quot;).endDate;  lodash map var data = [{label: &#39;4/1&#39;, value: 10}, {label: &#39;4/2&#39;, value: 14}]; var labels = _.map(data, function(item) { return item.label; }); var values = _.map(data, function(item) { return item.value; });  It is especially useful when preparing data for some chart libraries.</description>
     </item>
     
     <item>
@@ -94,48 +37,7 @@ public YourResponseEntity api(@RequestParam(&amp;quot;name&amp;quot;) String[] n
       <pubDate>Wed, 05 Apr 2017 15:34:25 +0800</pubDate>
       
       <guid>https://stingh711.github.io/post/book-reading-record-2017/</guid>
-      <description>
-
-&lt;h2 id=&#34;read&#34;&gt;Read&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;夜色人生&lt;/li&gt;
-&lt;li&gt;Software Prefactoring&lt;/li&gt;
-&lt;li&gt;How to win friends and influence people&lt;/li&gt;
-&lt;li&gt;Eat, pray, love&lt;/li&gt;
-&lt;li&gt;猎豹&lt;/li&gt;
-&lt;li&gt;Great gatsby&lt;/li&gt;
-&lt;li&gt;四步创业法&lt;/li&gt;
-&lt;li&gt;To kill a mocking bird&lt;/li&gt;
-&lt;li&gt;Then there were none&lt;/li&gt;
-&lt;li&gt;你应该像喜欢苦一样喜欢甜&lt;/li&gt;
-&lt;li&gt;清醒思考的艺术&lt;/li&gt;
-&lt;li&gt;垂暮之战&lt;/li&gt;
-&lt;li&gt;幽灵旅&lt;/li&gt;
-&lt;li&gt;消失的殖民地&lt;/li&gt;
-&lt;li&gt;东方快车谋杀案&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;reading&#34;&gt;Reading&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Getting to YES&lt;/li&gt;
-&lt;li&gt;Inspired, how to create products customers love&lt;/li&gt;
-&lt;li&gt;On managing yourself&lt;/li&gt;
-&lt;li&gt;Software architecture for developers&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;to-be-read&#34;&gt;To be read&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Redis In Action&lt;/li&gt;
-&lt;li&gt;Alice in wonder world&lt;/li&gt;
-&lt;li&gt;身份的焦虑&lt;/li&gt;
-&lt;li&gt;简单的哲学&lt;/li&gt;
-&lt;li&gt;深入浅出数据分析&lt;/li&gt;
-&lt;li&gt;演讲之禅&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+      <description> Read  夜色人生 Software Prefactoring How to win friends and influence people Eat, pray, love 猎豹 Great gatsby 四步创业法 To kill a mocking bird Then there were none 你应该像喜欢苦一样喜欢甜 清醒思考的艺术 垂暮之战 幽灵旅 消失的殖民地 东方快车谋杀案  Reading  Getting to YES Inspired, how to create products customers love On managing yourself Software architecture for developers  To be read  Redis In Action Alice in wonder world 身份的焦虑 简单的哲学 深入浅出数据分析 演讲之禅  </description>
     </item>
     
     <item>
@@ -144,8 +46,7 @@ public YourResponseEntity api(@RequestParam(&amp;quot;name&amp;quot;) String[] n
       <pubDate>Wed, 05 Apr 2017 15:08:17 +0800</pubDate>
       
       <guid>https://stingh711.github.io/post/introduction/</guid>
-      <description>&lt;p&gt;Try to use hugo to setup the blog again.&lt;/p&gt;
-</description>
+      <description>Try to use hugo to setup the blog again.</description>
     </item>
     
     <item>
@@ -154,93 +55,8 @@ public YourResponseEntity api(@RequestParam(&amp;quot;name&amp;quot;) String[] n
       <pubDate>Fri, 01 Aug 2014 19:49:37 +0800</pubDate>
       
       <guid>https://stingh711.github.io/post/dynamic-form-with-springmvc-and-thymeleaf/</guid>
-      <description>
-
-&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
-
-&lt;p&gt;SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.&lt;/p&gt;
-
-&lt;h2 id=&#34;things-i-ve-learned&#34;&gt;Things I’ve learned.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;When adding an option, don’t need to use javascript to handle the added html snippet. Just submit the add request to controller and handle the adding in the controller (Add a new options into the option list of subject group), then return to the add page. Spring mvc’s data binding and thyme leaf’s for loop will handle the html. (In EDC, I use javascript to append option html. It works. But there are some duplicate codes in JSP and javascript)&lt;/li&gt;
-&lt;li&gt;Can use the same way to handle subject option removing.&lt;/li&gt;
-&lt;li&gt;If there are multiple submit button in one form. We can use button’s name to separate them. In controller, use RequestMapping’s params to make the submit request to the right controller method.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
-
-&lt;p&gt;SubjectGroupController.java&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package edc.web;
-
-import edc.model.SubjectGroup;
-import edc.model.SubjectGroupOption;
-import edc.service.SubjectGroupService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-@Controller
-@RequestMapping(&amp;quot;/sg&amp;quot;)
-public class SubjectGroupController {
-    private SubjectGroupService subjectGroupService;
-
-    @Autowired
-    public void setSubjectGroupService(SubjectGroupService subjectGroupService) {
-        this.subjectGroupService = subjectGroupService;
-    }
-
-    @RequestMapping(value = &amp;quot;add&amp;quot;)
-    public String add(SubjectGroup subjectGroup) {
-        return &amp;quot;subjectGroup/add&amp;quot;;
-    }
-
-    @RequestMapping(value = &amp;quot;add&amp;quot;, params = {&amp;quot;addOption&amp;quot;})
-    public String addOption(SubjectGroup subjectGroup, BindingResult result) {
-        subjectGroup.getOptions().add(new SubjectGroupOption());
-        return &amp;quot;subjectGroup/add&amp;quot;;
-    }
-
-    @RequestMapping(value = &amp;quot;add&amp;quot;, method = RequestMethod.POST)
-    public String save(SubjectGroup subjectGroup, BindingResult result) {
-        this.subjectGroupService.save(subjectGroup);
-        return &amp;quot;redirect:/sg/add&amp;quot;;
-    }
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;add.html&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html xmlns:th=&amp;quot;http://www.thymeleaf.org&amp;quot;&amp;gt;
-&amp;lt;head&amp;gt;
-    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;/&amp;gt;
-    &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-&amp;lt;section&amp;gt;
-    &amp;lt;h2&amp;gt;Add Subject Group&amp;lt;/h2&amp;gt;
-    &amp;lt;form action=&amp;quot;#&amp;quot; th:action=&amp;quot;@{/sg/add}&amp;quot; th:object=&amp;quot;${subjectGroup}&amp;quot; method=&amp;quot;POST&amp;quot;&amp;gt;
-      &amp;lt;p&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; th:field=&amp;quot;*{name}&amp;quot; placeholder=&amp;quot;Name...&amp;quot;/&amp;gt;&amp;lt;/p&amp;gt;
-        &amp;lt;h3&amp;gt;Options&amp;lt;/h3&amp;gt;
-        &amp;lt;button type=&amp;quot;submit&amp;quot; name=&amp;quot;addOption&amp;quot;&amp;gt;Add Option&amp;lt;/button&amp;gt;
-        &amp;lt;table&amp;gt;
-            &amp;lt;tr th:each=&amp;quot;option, rowStat : *{options}&amp;quot;&amp;gt;
-              &amp;lt;td&amp;gt;&amp;lt;input type=&amp;quot;text&amp;quot; th:field=&amp;quot;*{options[__${rowStat.index}__].label}&amp;quot; placeholder=&amp;quot;Option...&amp;quot;/&amp;gt;&amp;lt;/td&amp;gt;
-            &amp;lt;/tr&amp;gt;
-        &amp;lt;/table&amp;gt;
-        &amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;Add&amp;lt;/button&amp;gt;
-    &amp;lt;/form&amp;gt;
-&amp;lt;/section&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>Requirements SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.
+Things I’ve learned.  When adding an option, don’t need to use javascript to handle the added html snippet. Just submit the add request to controller and handle the adding in the controller (Add a new options into the option list of subject group), then return to the add page. Spring mvc’s data binding and thyme leaf’s for loop will handle the html.</description>
     </item>
     
   </channel>
