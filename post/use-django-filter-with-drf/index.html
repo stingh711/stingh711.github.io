@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>Pandas in jupyter &middot; Sting&#39;s Note</title>
+  <title>Use django-filter to add filter for rest api &middot; Sting&#39;s Note</title>
 
   
   <link rel="stylesheet" href="https://stingh711.github.io/css/print.css" media="print">
@@ -46,23 +46,59 @@
 
     <div class="content container">
     <div class="post">
-  <h1>Pandas in jupyter</h1>
-  <span class="post-date">Fri, May 19, 2017</span>
-  <p>Read data from mysql and draw a chart.</p>
+  <h1>Use django-filter to add filter for rest api</h1>
+  <span class="post-date">Tue, May 1, 2018</span>
+  <p>对一个 list api 来说，查询和排序都是基本的需求，使用 django-filter 可以在 DRF 中用很少的代码满足我们的需求。</p>
 
-<pre><code class="language-python">%matplotlib inline
-import pymysql
-import pandas as pd
-import pandas.io.sql as sql
+<p>比如说如下的 model:</p>
 
-conn = pymysql.connect(host='192.168.56.1', user='root', passwd='qwer-1235', db='pdss')
-
-
-s = 'select number_value from quality_data_item_record where item_id = 11'
-df = sql.read_sql_query(s, conn)
-
-df.plot()
+<pre><code>class Product(models.Model):
+  name = models.CharField(max_length=100)
+  created_at = models.DatetimeField()
 </code></pre>
+
+<p>我们用 DRF 的 generic view 可以创建一个 list view：首先需要写一个 serializer:</p>
+
+<pre><code>class ProductSerializer(serializers.ModelSerializer):
+  class Meta:
+    fields = '__all__'
+</code></pre>
+
+<pre><code>class ProductListView(generics.ListView):
+  queryset = Product.objects.all()
+  serializer_class = ProductSerializer
+</code></pre>
+
+<p>如果不使用 django-filter，可以覆盖 ProductListView 的 get_queryset 来实现 filter 功能，比如说使用 name 做 filter：</p>
+
+<pre><code>def get_queryset(self):
+  queryset = Product.objects.all()
+
+  name = self.request.query_params.get('name', None)
+  if name is not None:
+    queryset = queryset.filter(name=name)
+  return queryset
+</code></pre>
+
+<p>使用 django-filter，可以使代码变得更简洁，而且还可以用配置性的代码实现更强大的搜索功能。首先需要安装：<code>pip install django-filter</code>，然后可以在 views 里添加一个 filter：</p>
+
+<pre><code>class ProductFilter(django_filters.FilterSet):
+  sort = django_filters.OrderingFilter(fields=('created_at',))
+
+  class Meta:
+    model = Product
+    fields = ['name',]
+</code></pre>
+
+<p>然后在 ProductListView 里面添加两行代码：</p>
+
+<pre><code>filter_backends = (DjangoFilterBackend,)
+filter_class = ProductFilter
+</code></pre>
+
+<p>添加对应的 urls 之后，按 name 搜索，按 created_at 都可以实现了。这个 ordering filter 的名字 sort 就是 url 里面排序字段的名字。如果原来 list 的 url 是<code>/products/</code>，那么按 name 搜索就是<code>/products/?name=iphone</code>，按 created_at 降序就是<code>/products/?sort=-created_at</code></p>
+
+<p>django-filter 还可以实现更复杂的功能，比如说按范围等，可以查看<a href="https://github.com/carltongibson/django-filter">官方文档</a></p>
 
 </div>
 

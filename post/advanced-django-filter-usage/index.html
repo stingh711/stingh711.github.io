@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>Pandas in jupyter &middot; Sting&#39;s Note</title>
+  <title>Use django-filter to add advanced filter for rest api &middot; Sting&#39;s Note</title>
 
   
   <link rel="stylesheet" href="https://stingh711.github.io/css/print.css" media="print">
@@ -46,23 +46,70 @@
 
     <div class="content container">
     <div class="post">
-  <h1>Pandas in jupyter</h1>
-  <span class="post-date">Fri, May 19, 2017</span>
-  <p>Read data from mysql and draw a chart.</p>
+  <h1>Use django-filter to add advanced filter for rest api</h1>
+  <span class="post-date">Wed, May 2, 2018</span>
+  <p>在上一篇文章中，我们介绍了 django-filter 的基本功能。实际上 django-filter 还可以实现更高级的搜索，比如说文本的模糊查询，日期的范围查询。</p>
 
-<pre><code class="language-python">%matplotlib inline
-import pymysql
-import pandas as pd
-import pandas.io.sql as sql
+<p>继续我们的例子：</p>
 
-conn = pymysql.connect(host='192.168.56.1', user='root', passwd='qwer-1235', db='pdss')
+<pre><code>class Product(models.Model):
+  name = models.CharField(max_length=100)
+  created_at = models.DatetimeField()
 
+class ProductSerializer(serializers.ModelSerializer):
+  class Meta:
+    fields = '__all__'
 
-s = 'select number_value from quality_data_item_record where item_id = 11'
-df = sql.read_sql_query(s, conn)
+class ProductFilter(django_filters.FilterSet):
+  sort = django_filters.OrderingFilter(fields=('created_at',))
 
-df.plot()
+  class Meta:
+    model = Product
+    fields = ['name',]
+
+class ProductListView(generics.ListView):
+  queryset = Product.objects.all()
+  serializer_class = ProductSerializer
+  filter_backends = (DjangoFilterBackend,)
+  filter_class = ProductFilter
 </code></pre>
+
+<p>首先要实现按 name 的模糊查询。上面 ProductFilter 里面的 fields，如果是 list，默认就是按=来匹配。它还支持 dict 的格式，可以选择更多的匹配方式。按 name 的模糊匹配，只需把 fields 改成如下即可：</p>
+
+<pre><code>fields = {
+  'name': ['icontains']
+}
+</code></pre>
+
+<p>使用 API 查询是原来的 url 是<code>/products/</code>, 模糊查询的 url 就变成<code>/products/?name__icontains=xxx</code>。</p>
+
+<p>接下来实现按 created_at 按日期范围来搜索。一个方法是直接在 fields 里面配置：</p>
+
+<pre><code>fields = {
+  'name': ['icontains'],
+  'created_at': ['date__gte', 'date__lte']
+}
+</code></pre>
+
+<p>然后就可以用下面的 url 来进行日期范围搜索：<code>/products/?created_at__date__gte=2018-01-01&amp;created_at__date__lte=2018-04-01</code></p>
+
+<p>如果你觉得这个 param 名字太长，还可以自定义 filter 字段：</p>
+
+<pre><code>class ProductFilter(django_filters.FilterSet):
+  sort = django_filters.OrderingFilter(fields=('created_at',))
+  min_date = django_filters.DateFilter(name='created_at__date', lookup_expr='gte')
+  max_date = django_filters.DateFilter(name='created_at__date', lookup_expr='lte')
+
+  class Meta:
+    model = Product
+    fields = {
+      'name': ['icontains'],
+}
+</code></pre>
+
+<p>然后搜索的 url 变成这样：<code>/products/?min_date=2018-01-01&amp;max_date=2018-04-01</code></p>
+
+<p>想一想如果用 java 写需要多少代码吧&hellip;</p>
 
 </div>
 

@@ -6,10 +6,35 @@
     <description>Recent content on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 May 2017 13:13:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 02 May 2018 13:13:00 +0800</lastBuildDate>
     
 	<atom:link href="https://stingh711.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Use django-filter to add advanced filter for rest api</title>
+      <link>https://stingh711.github.io/post/advanced-django-filter-usage/</link>
+      <pubDate>Wed, 02 May 2018 13:13:00 +0800</pubDate>
+      
+      <guid>https://stingh711.github.io/post/advanced-django-filter-usage/</guid>
+      <description>在上一篇文章中，我们介绍了 django-filter 的基本功能。实际上 django-filter 还可以实现更高级的搜索，比如说文本的模糊查询，日期的范围查询。
+继续我们的例子：
+class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField() class ProductSerializer(serializers.ModelSerializer): class Meta: fields = &#39;__all__&#39; class ProductFilter(django_filters.FilterSet): sort = django_filters.OrderingFilter(fields=(&#39;created_at&#39;,)) class Meta: model = Product fields = [&#39;name&#39;,] class ProductListView(generics.ListView): queryset = Product.objects.all() serializer_class = ProductSerializer filter_backends = (DjangoFilterBackend,) filter_class = ProductFilter  首先要实现按 name 的模糊查询。上面 ProductFilter 里面的 fields，如果是 list，默认就是按=来匹配。它还支持 dict 的格式，可以选择更多的匹配方式。按 name 的模糊匹配，只需把 fields 改成如下即可：
+fields = { &#39;name&#39;: [&#39;icontains&#39;] }  使用 API 查询是原来的 url 是/products/, 模糊查询的 url 就变成/products/?</description>
+    </item>
+    
+    <item>
+      <title>Use django-filter to add filter for rest api</title>
+      <link>https://stingh711.github.io/post/use-django-filter-with-drf/</link>
+      <pubDate>Tue, 01 May 2018 13:13:00 +0800</pubDate>
+      
+      <guid>https://stingh711.github.io/post/use-django-filter-with-drf/</guid>
+      <description>对一个 list api 来说，查询和排序都是基本的需求，使用 django-filter 可以在 DRF 中用很少的代码满足我们的需求。
+比如说如下的 model:
+class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField()  我们用 DRF 的 generic view 可以创建一个 list view：首先需要写一个 serializer:
+class ProductSerializer(serializers.ModelSerializer): class Meta: fields = &#39;__all__&#39;  class ProductListView(generics.ListView): queryset = Product.objects.all() serializer_class = ProductSerializer  如果不使用 django-filter，可以覆盖 ProductListView 的 get_queryset 来实现 filter 功能，比如说使用 name 做 filter：
+def get_queryset(self): queryset = Product.objects.all() name = self.request.query_params.get(&#39;name&#39;, None) if name is not None: queryset = queryset.</description>
+    </item>
     
     <item>
       <title>Pandas in jupyter</title>
@@ -32,7 +57,7 @@ bootstrap-daterangepicker How to get startDate and endDate? var range = $(&amp;q
     </item>
     
     <item>
-      <title>book reading record 2017</title>
+      <title>Book reading record 2017</title>
       <link>https://stingh711.github.io/post/book-reading-record-2017/</link>
       <pubDate>Wed, 05 Apr 2017 15:34:25 +0800</pubDate>
       
@@ -50,7 +75,7 @@ bootstrap-daterangepicker How to get startDate and endDate? var range = $(&amp;q
     </item>
     
     <item>
-      <title>dynamic form with springmvc and thymeleaf</title>
+      <title>Dynamic form with springmvc and thymeleaf</title>
       <link>https://stingh711.github.io/post/dynamic-form-with-springmvc-and-thymeleaf/</link>
       <pubDate>Fri, 01 Aug 2014 19:49:37 +0800</pubDate>
       

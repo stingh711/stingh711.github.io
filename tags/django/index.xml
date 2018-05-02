@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Sting&#39;s Note</title>
-    <link>https://stingh711.github.io/categories/python/</link>
-    <description>Recent content in Python on Sting&#39;s Note</description>
+    <title>Django on Sting&#39;s Note</title>
+    <link>https://stingh711.github.io/tags/django/</link>
+    <description>Recent content in Django on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 02 May 2018 13:13:00 +0800</lastBuildDate>
     
-	<atom:link href="https://stingh711.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stingh711.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -34,16 +34,6 @@ fields = { &#39;name&#39;: [&#39;icontains&#39;] }  使用 API 查询是原来�
 class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField()  我们用 DRF 的 generic view 可以创建一个 list view：首先需要写一个 serializer:
 class ProductSerializer(serializers.ModelSerializer): class Meta: fields = &#39;__all__&#39;  class ProductListView(generics.ListView): queryset = Product.objects.all() serializer_class = ProductSerializer  如果不使用 django-filter，可以覆盖 ProductListView 的 get_queryset 来实现 filter 功能，比如说使用 name 做 filter：
 def get_queryset(self): queryset = Product.objects.all() name = self.request.query_params.get(&#39;name&#39;, None) if name is not None: queryset = queryset.</description>
-    </item>
-    
-    <item>
-      <title>Pandas in jupyter</title>
-      <link>https://stingh711.github.io/post/pandas-in-jupyter/</link>
-      <pubDate>Fri, 19 May 2017 13:13:00 +0800</pubDate>
-      
-      <guid>https://stingh711.github.io/post/pandas-in-jupyter/</guid>
-      <description>Read data from mysql and draw a chart.
-%matplotlib inline import pymysql import pandas as pd import pandas.io.sql as sql conn = pymysql.connect(host=&#39;192.168.56.1&#39;, user=&#39;root&#39;, passwd=&#39;qwer-1235&#39;, db=&#39;pdss&#39;) s = &#39;select number_value from quality_data_item_record where item_id = 11&#39; df = sql.read_sql_query(s, conn) df.plot()  </description>
     </item>
     
   </channel>

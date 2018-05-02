@@ -37,16 +37,45 @@
 
     <ul class="sidebar-nav">
       <li><a href="https://stingh711.github.io/">Home</a> </li>
-      <li><a href="/post/pandas-in-jupyter/"> Pandas in jupyter </a></li>
+      <li><a href="/post/pandas-in-jupyter/"> Pandas in jupyter </a></li><li><a href="/post/advanced-django-filter-usage/"> Use django-filter to add advanced filter for rest api </a></li><li><a href="/post/use-django-filter-with-drf/"> Use django-filter to add filter for rest api </a></li>
     </ul>
 
-    <p>&copy; 2017. All rights reserved. </p>
+    <p>&copy; 2018. All rights reserved. </p>
   </div>
 </div>
 
     <div class="content container">
     <div class="posts">
 <div class="post">
+  <h1 class="post-title">
+    <a href="https://stingh711.github.io/post/advanced-django-filter-usage/">Use django-filter to add advanced filter for rest api</a>
+  </h1>
+  <span class="post-date">Wed, May 2, 2018</span>
+  在上一篇文章中，我们介绍了 django-filter 的基本功能。实际上 django-filter 还可以实现更高级的搜索，比如说文本的模糊查询，日期的范围查询。
+继续我们的例子：
+class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField() class ProductSerializer(serializers.ModelSerializer): class Meta: fields = '__all__' class ProductFilter(django_filters.FilterSet): sort = django_filters.OrderingFilter(fields=('created_at',)) class Meta: model = Product fields = ['name',] class ProductListView(generics.ListView): queryset = Product.objects.all() serializer_class = ProductSerializer filter_backends = (DjangoFilterBackend,) filter_class = ProductFilter  首先要实现按 name 的模糊查询。上面 ProductFilter 里面的 fields，如果是 list，默认就是按=来匹配。它还支持 dict 的格式，可以选择更多的匹配方式。按 name 的模糊匹配，只需把 fields 改成如下即可：
+fields = { 'name': ['icontains'] }  使用 API 查询是原来的 url 是/products/, 模糊查询的 url 就变成/products/?
+  
+  <div class="read-more-link">
+    <a href="/post/advanced-django-filter-usage/">Read More…</a>
+  </div>
+  
+</div><div class="post">
+  <h1 class="post-title">
+    <a href="https://stingh711.github.io/post/use-django-filter-with-drf/">Use django-filter to add filter for rest api</a>
+  </h1>
+  <span class="post-date">Tue, May 1, 2018</span>
+  对一个 list api 来说，查询和排序都是基本的需求，使用 django-filter 可以在 DRF 中用很少的代码满足我们的需求。
+比如说如下的 model:
+class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField()  我们用 DRF 的 generic view 可以创建一个 list view：首先需要写一个 serializer:
+class ProductSerializer(serializers.ModelSerializer): class Meta: fields = '__all__'  class ProductListView(generics.ListView): queryset = Product.objects.all() serializer_class = ProductSerializer  如果不使用 django-filter，可以覆盖 ProductListView 的 get_queryset 来实现 filter 功能，比如说使用 name 做 filter：
+def get_queryset(self): queryset = Product.objects.all() name = self.request.query_params.get('name', None) if name is not None: queryset = queryset.
+  
+  <div class="read-more-link">
+    <a href="/post/use-django-filter-with-drf/">Read More…</a>
+  </div>
+  
+</div><div class="post">
   <h1 class="post-title">
     <a href="https://stingh711.github.io/post/pandas-in-jupyter/">Pandas in jupyter</a>
   </h1>
@@ -68,7 +97,7 @@ bootstrap-daterangepicker How to get startDate and endDate? var range = $(&quot;
   
 </div><div class="post">
   <h1 class="post-title">
-    <a href="https://stingh711.github.io/post/book-reading-record-2017/">book reading record 2017</a>
+    <a href="https://stingh711.github.io/post/book-reading-record-2017/">Book reading record 2017</a>
   </h1>
   <span class="post-date">Wed, Apr 5, 2017</span>
    Read  夜色人生 Software Prefactoring How to win friends and influence people Eat, pray, love 猎豹 Great gatsby 四步创业法 To kill a mocking bird Then there were none 你应该像喜欢苦一样喜欢甜 清醒思考的艺术 垂暮之战 幽灵旅 消失的殖民地 东方快车谋杀案  Reading  Getting to YES Inspired, how to create products customers love On managing yourself Software architecture for developers  To be read  Redis In Action Alice in wonder world 身份的焦虑 简单的哲学 深入浅出数据分析 演讲之禅  
@@ -82,7 +111,7 @@ bootstrap-daterangepicker How to get startDate and endDate? var range = $(&quot;
   
 </div><div class="post">
   <h1 class="post-title">
-    <a href="https://stingh711.github.io/post/dynamic-form-with-springmvc-and-thymeleaf/">dynamic form with springmvc and thymeleaf</a>
+    <a href="https://stingh711.github.io/post/dynamic-form-with-springmvc-and-thymeleaf/">Dynamic form with springmvc and thymeleaf</a>
   </h1>
   <span class="post-date">Fri, Aug 1, 2014</span>
   Requirements SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.
