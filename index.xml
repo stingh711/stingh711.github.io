@@ -6,10 +6,24 @@
     <description>Recent content on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 May 2018 13:13:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 08 May 2018 09:13:00 +0800</lastBuildDate>
     
 	<atom:link href="https://stingh711.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Postgresql Notes</title>
+      <link>https://stingh711.github.io/post/postgresql-note/</link>
+      <pubDate>Tue, 08 May 2018 09:13:00 +0800</pubDate>
+      
+      <guid>https://stingh711.github.io/post/postgresql-note/</guid>
+      <description>如何生成并插入测试数据？ 比如说我有个表，结构如 sql：create table test (time timestamp, value double precision, sensor integer)，想插入一些测试的数据，可以用 postgresql 的 generate_series 函数。
+下面这条 sql 会一次插入 5000 条。
+insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i)  如何查看数据占用磁盘大小？ 查看表的大小
+select pg_size_pretty(pg_relation_size(&#39;pressure_01&#39;))
+查看数据库的大小
+select pg_size_pretty(pg_database_size(&#39;pressure_01&#39;))</description>
+    </item>
     
     <item>
       <title>Use django-filter to add advanced filter for rest api</title>

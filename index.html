@@ -37,7 +37,7 @@
 
     <ul class="sidebar-nav">
       <li><a href="https://stingh711.github.io/">Home</a> </li>
-      <li><a href="/post/pandas-in-jupyter/"> Pandas in jupyter </a></li><li><a href="/post/advanced-django-filter-usage/"> Use django-filter to add advanced filter for rest api </a></li><li><a href="/post/use-django-filter-with-drf/"> Use django-filter to add filter for rest api </a></li>
+      <li><a href="/post/pandas-in-jupyter/"> Pandas in jupyter </a></li><li><a href="/post/postgresql-note/"> Postgresql Notes </a></li><li><a href="/post/advanced-django-filter-usage/"> Use django-filter to add advanced filter for rest api </a></li><li><a href="/post/use-django-filter-with-drf/"> Use django-filter to add filter for rest api </a></li>
     </ul>
 
     <p>&copy; 2018. All rights reserved. </p>
@@ -47,6 +47,18 @@
     <div class="content container">
     <div class="posts">
 <div class="post">
+  <h1 class="post-title">
+    <a href="https://stingh711.github.io/post/postgresql-note/">Postgresql Notes</a>
+  </h1>
+  <span class="post-date">Tue, May 8, 2018</span>
+  如何生成并插入测试数据？ 比如说我有个表，结构如 sql：create table test (time timestamp, value double precision, sensor integer)，想插入一些测试的数据，可以用 postgresql 的 generate_series 函数。
+下面这条 sql 会一次插入 5000 条。
+insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i)  如何查看数据占用磁盘大小？ 查看表的大小
+select pg_size_pretty(pg_relation_size('pressure_01'))
+查看数据库的大小
+select pg_size_pretty(pg_database_size('pressure_01'))
+  
+</div><div class="post">
   <h1 class="post-title">
     <a href="https://stingh711.github.io/post/advanced-django-filter-usage/">Use django-filter to add advanced filter for rest api</a>
   </h1>
