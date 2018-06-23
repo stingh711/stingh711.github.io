@@ -1,109 +1,72 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml-stylesheet type="text/xsl" href="http://localhost:1313/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://stingh711.github.io/post/postgresql-note/</loc>
-    <lastmod>2018-05-08T09:13:00+08:00</lastmod>
+    <loc>http://localhost:1313/post/how-to-remove-vscode-decorator-warning/</loc>
+    <lastmod>2018-06-19T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://stingh711.github.io/post/advanced-django-filter-usage/</loc>
-    <lastmod>2018-05-02T13:13:00+08:00</lastmod>
+    <loc>http://localhost:1313/post/pandas-in-jupyter/</loc>
+    <lastmod>2018-06-17T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://stingh711.github.io/post/use-django-filter-with-drf/</loc>
-    <lastmod>2018-05-01T13:13:00+08:00</lastmod>
+    <loc>http://localhost:1313/post/javascript-notes/</loc>
+    <lastmod>2018-06-16T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://stingh711.github.io/post/pandas-in-jupyter/</loc>
-    <lastmod>2017-05-19T13:13:00+08:00</lastmod>
+    <loc>http://localhost:1313/post/notes-about-postgresql/</loc>
+    <lastmod>2018-05-08T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://stingh711.github.io/post/javascript-library-notes/</loc>
-    <lastmod>2017-04-08T19:10:23+08:00</lastmod>
+    <loc>http://localhost:1313/post/try-ox-hugo/</loc>
+    <lastmod>2017-08-21T14:39:01+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://stingh711.github.io/post/book-reading-record-2017/</loc>
-    <lastmod>2017-04-05T15:34:25+08:00</lastmod>
+    <loc>http://localhost:1313/post/dynamic-form-with-springmvc-and-thymeleaf/</loc>
+    <lastmod>2014-08-01T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://stingh711.github.io/post/introduction/</loc>
-    <lastmod>2017-04-05T15:08:17+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stingh711.github.io/post/dynamic-form-with-springmvc-and-thymeleaf/</loc>
-    <lastmod>2014-08-01T19:49:37+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stingh711.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://stingh711.github.io/tags/django/</loc>
-    <lastmod>2018-05-02T13:13:00+08:00</lastmod>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2018-06-19T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://stingh711.github.io/tags/jupyter/</loc>
-    <lastmod>2017-05-19T13:13:00+08:00</lastmod>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2018-06-19T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://stingh711.github.io/tags/pandas/</loc>
-    <lastmod>2017-05-19T13:13:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://stingh711.github.io/tags/postgresql/</loc>
-    <lastmod>2018-05-08T09:13:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://stingh711.github.io/categories/postgresql/</loc>
-    <lastmod>2018-05-08T09:13:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://stingh711.github.io/post/</loc>
-    <lastmod>2018-05-08T09:13:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://stingh711.github.io/tags/python/</loc>
-    <lastmod>2018-05-02T13:13:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://stingh711.github.io/categories/python/</loc>
-    <lastmod>2018-05-02T13:13:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://stingh711.github.io/</loc>
-    <lastmod>2018-05-08T09:13:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://stingh711.github.io/tags/</loc>
-    <lastmod>2018-05-02T13:13:00+08:00</lastmod>
+    <loc>http://localhost:1313/tags/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
