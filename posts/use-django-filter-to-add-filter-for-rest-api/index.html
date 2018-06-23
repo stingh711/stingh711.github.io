@@ -4,15 +4,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta content='text/html; charset=utf-8' http-equiv='content-type' />
 
-  <title>Write a CustomPaginator for django rest framework - Sting&#39;s Note</title>
-  <meta content='Write a CustomPaginator for django rest framework - Sting&#39;s Note' property='title' />
-  <meta content='Write a CustomPaginator for django rest framework - Sting&#39;s Note' property='og:title' />
+  <title>Use django-filter to add filter for REST api - Sting&#39;s Note</title>
+  <meta content='Use django-filter to add filter for REST api - Sting&#39;s Note' property='title' />
+  <meta content='Use django-filter to add filter for REST api - Sting&#39;s Note' property='og:title' />
 
 
-<meta property="og:description" content="Pagination is essential part for a REST api. Django rest framework provides an easy to way to add pagination to current API and a lot of useful built-in implementations. However, in order to work with a specified frontend component, a customized version is needed.
-Customizing is easy in DRF, just extends a current one and override it get_paginated_response method. For example, the following one uses the page number pagination ,which means you can pass page=n in the URL to get the nth page." />
+<meta property="og:description" content="For a REST list api, filtering and sorting is the basic requirements. Using django-filter, we can add these functions with only a few lines of codes.
+For example, if we have a model as follows,
+class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField()  We will write relative serializer and view.
+class ProductSerializer(serializers.ModelSerializer): class Meta: fields = &#39;__all__&#39; class ProductListView(generics.ListView): queryset = Product.objects.all() serializer_class = ProductSerializer  If we don&rsquo;t use django-filter, we can override ProductListview&rsquo;s get_queryset to implement filter." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://stingh711.github.io/posts/custom-paginator-for-drf/" />
+<meta property="og:url" content="https://stingh711.github.io/posts/use-django-filter-to-add-filter-for-rest-api/" />
 
 
 <meta property="article:published_time" content="2018-06-23T00:00:00&#43;08:00"/>
@@ -70,7 +72,7 @@ if (!doNotTrack) {
 </nav>
   
 <main class="center mv4 content-width ph3">
-  <div class="f3 fw6 heading-color heading-font post-title">Write a CustomPaginator for django rest framework</div>
+  <div class="f3 fw6 heading-color heading-font post-title">Use django-filter to add filter for REST api</div>
   <p class="silver f6 mt1 mb4 post-meta">
     <time>23 Jun 2018</time> 
      | 
@@ -79,33 +81,57 @@ if (!doNotTrack) {
     tags: [ <a href='/tags/python' class="link silver">python</a> <a href='/tags/django' class="link silver">django</a>  ]
     
   </p>
-  <div class="lh-copy post-content"><p>Pagination is essential part for a REST api. Django rest framework provides an easy to way to add pagination to current API and a lot of useful built-in implementations. However, in order to work with a specified frontend component, a customized version is needed.</p>
+  <div class="lh-copy post-content"><p>For a REST list api, filtering and sorting is the basic requirements. Using django-filter, we can add these functions with only a few lines of codes.</p>
 
-<p>Customizing is easy in DRF, just extends a current one and override it get_paginated_response method. For example, the following one uses the page number pagination ,which means you can pass page=n in the URL to get the nth page. If pageSize is specified in request url, it will be used or the default page_size will be used</p>
+<p>For example, if we have a model as follows,</p>
 
-<pre><code class="language-python">class CustomPagination(pagination.PageNumberPagination):
-    page_size = 15
-    page_size_query_param = 'pageSize'
-
-    def get_paginated_response(self, data):
-        return Response({
-            'pagination': {
-                'total': self.page.paginator.count,
-                'pageSize': self.page.paginator.per_page,
-                'current': self.page.number,
-                },
-                'list': data
-            })
+<pre><code class="language-python">class Product(models.Model):
+    name = models.CharField(max_length=100)
+    created_at = models.DatetimeField()
 </code></pre>
 
-<p>The response format is customized for antd&rsquo;s table component.</p>
+<p>We will write relative serializer and view.</p>
 
-<p>There are two ways to tell your view to use it.</p>
+<pre><code class="language-python">class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
 
-<ul>
-<li>Specify <code>pagination_class=CustomPagination</code> in your views.</li>
-<li>Configure it in settings. Doc is <a href="http://www.django-rest-framework.org/api-guide/pagination/">here</a>.</li>
-</ul>
+class ProductListView(generics.ListView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+</code></pre>
+
+<p>If we don&rsquo;t use django-filter, we can override ProductListview&rsquo;s get_queryset to implement filter. For example, to filter by name:</p>
+
+<pre><code class="language-python">def get_queryset(self):
+    queryset = Product.objects.all()
+    name = self.request.query_params.get('name', None)
+    if name is not None:
+        queryset = queryset.filter(name=name)
+    return queryset
+</code></pre>
+
+<p>With django-filter, the code can be even simpler. We can just code like configuration to implement more advanced filters.
+First, we install it with <code>pip install django-filter</code>.
+Then, we add a filter class in our views.</p>
+
+<pre><code class="language-python">class ProductFilter(django_filters.FilterSet):
+    sort = django_filters.OrderingFilter(fields=('created_at',))
+
+    class Meta:
+        model = Product
+        fields = ['name',]
+</code></pre>
+
+<p>Then modify our ProductListView by adding following two lines</p>
+
+<pre><code class="language-python">filter_backends = (DjangoFilterBackend,)
+filter_class = ProductFilter
+</code></pre>
+
+<p>Now filter by name and sorting by created_at are both implemented. If the original list url is <code>/products/</code>, to search by name, the url is <code>/products/?name=iPhone</code>; to order by created_at desc, the url is <code>/products/?sort=-created_at</code>.</p>
+
+<p>Django-filter can implement more advanced features, e.g, filter by range, fuzzy search. Please refer to <a href="https://github.com/carltongibson/django-filter">Official doc</a>.</p>
 </div>
 </main>
  
@@ -122,8 +148,8 @@ if (!doNotTrack) {
 <a id="scroll-to-top" class="f6 o-0 link br2 ph2 pv1 mb1 bg-main-color pointer" onclick="topFunction()" style="color: #fff; visibility: hidden; display: none; transition: opacity .5s, visibility .5s;" title="back to top">back to top</a>
 <br>
   <p class="mb0 mt2">
-  <a href="https://stingh711.github.io/posts/how-to-remove-vscode-decorator-warning/">prev post</a>
-  <a href="https://stingh711.github.io/posts/use-org-journal/">next post</a>
+  <a href="https://stingh711.github.io/posts/use-org-journal/">prev post</a>
+  
   </p>
 </div>
 

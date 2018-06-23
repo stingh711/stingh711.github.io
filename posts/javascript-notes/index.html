@@ -87,51 +87,51 @@ if (!doNotTrack) {
 
 <h3 id="how-to-get-startdate-and-enddate">How to get startDate and endDate</h3>
 
-<pre><code class="language-javascript">var range = $(&quot;#range&quot;).daterangepicker();
-var start = range.data(&quot;daterangepicker&quot;).startDate;
-var end = range.data(&quot;daterangepicker&quot;).endDate;
+<pre><code class="language-javascript">     var range = $(&quot;#range&quot;).daterangepicker();
+     var start = range.data(&quot;daterangepicker&quot;).startDate;
+     var end = range.data(&quot;daterangepicker&quot;).endDate;
 </code></pre>
 
 <h2 id="lodash">lodash</h2>
 
 <h3 id="map">map</h3>
 
-<pre><code class="language-javascript">var data = [{label: '4/1', value: 10}, {label: '4/2', value: 14}];
-var labels = _.map(data, function(item) { return item.label; });
-var values = _.map(data, function(item) { return item.value; });
+<pre><code class="language-javascript">     var data = [{label: '4/1', value: 10}, {label: '4/2', value: 14}];
+     var labels = _.map(data, function(item) { return item.label; });
+     var values = _.map(data, function(item) { return item.value; });
 </code></pre>
 
 <p>It is especially useful when preparing data for some chart libraries.</p>
 
 <h3 id="convert-array-to-object">convert array to object</h3>
 
-<pre><code class="language-javascript">var data = [{value: 0, name: 'Working'}, {value: 1, name: 'Idle'}];
-var result = _.chain(data).keyBy('value').mapValues('name').value();
-//The result will be {0: 'Working', 1: 'Idle'}
+<pre><code class="language-javascript">     var data = [{value: 0, name: 'Working'}, {value: 1, name: 'Idle'}];
+     var result = _.chain(data).keyBy('value').mapValues('name').value();
+     //The result will be {0: 'Working', 1: 'Idle'}
 </code></pre>
 
 <h2 id="jquery">jquery</h2>
 
 <h3 id="how-to-pass-array-when-using-dot-get">How to pass array when using $.get</h3>
 
-<pre><code class="language-javascript">$.get(&quot;/api&quot;, {&quot;name[]&quot;: [&quot;George&quot;, &quot;Jacky&quot;]}, function(data) {});
+<pre><code class="language-javascript">     $.get(&quot;/api&quot;, {&quot;name[]&quot;: [&quot;George&quot;, &quot;Jacky&quot;]}, function(data) {});
 </code></pre>
 
 <p>If you are using Spring MVC for the server side, here is the relative code to receive multiple parameters.</p>
 
-<pre><code class="language-java">@GetMapping(&quot;/api&quot;)
-@ResponseBody
-public YourResponseEntity api(@RequestParam(&quot;name&quot;) String[] names) {
-//deal with names
-}
+<pre><code class="language-java">     @GetMapping(&quot;/api&quot;)
+     @ResponseBody
+     public YourResponseEntity api(@RequestParam(&quot;name&quot;) String[] names) {
+     //deal with names
+     }
 </code></pre>
 
 <h2 id="es6">es6</h2>
 
 <h3 id="how-to-get-keys-of-an-object-in-javascript">How to get keys of an object in javascript</h3>
 
-<pre><code class="language-javascript">const data = {name: &quot;sting&quot;, age: 10};
-Object.keys(data);
+<pre><code class="language-javascript">   const data = {name: &quot;sting&quot;, age: 10};
+   Object.keys(data);
 </code></pre>
 </div>
 </main>

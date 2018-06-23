@@ -86,19 +86,19 @@ if (!doNotTrack) {
 <p>For example, my table is like: <code>create table (time timestamp, value double precision, sensor integer)</code>. If I want to insert some test data, I can use function <code>generate_series</code>.
 Following sql will insert 5000 rows:</p>
 
-<pre><code class="language-sql">insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i)
+<pre><code class="language-sql">    insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i)
 </code></pre>
 
 <h2 id="how-to-view-disk-usage">How to view disk usage?</h2>
 
 <h3 id="view-table-size">View table size</h3>
 
-<pre><code class="language-sql">select pg_size_pretty(pg_relation_size('pressure_01'))
+<pre><code class="language-sql">     select pg_size_pretty(pg_relation_size('pressure_01'))
 </code></pre>
 
 <h3 id="view-database-size">View database size</h3>
 
-<pre><code class="language-sql">select pg_size_pretty(pg_database_size('pressure_01'))
+<pre><code class="language-sql">     select pg_size_pretty(pg_database_size('pressure_01'))
 </code></pre>
 </div>
 </main>

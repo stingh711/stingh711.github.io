@@ -142,26 +142,26 @@ public class SubjectGroupController {
 
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;
-&lt;head&gt;
+  &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;/&gt;
     &lt;title&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;section&gt;
-    &lt;h2&gt;Add Subject Group&lt;/h2&gt;
-    &lt;form action=&quot;#&quot; th:action=&quot;@{/sg/add}&quot; th:object=&quot;${subjectGroup}&quot; method=&quot;POST&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Add Subject Group&lt;/h2&gt;
+      &lt;form action=&quot;#&quot; th:action=&quot;@{/sg/add}&quot; th:object=&quot;${subjectGroup}&quot; method=&quot;POST&quot;&gt;
     &lt;p&gt;&lt;input type=&quot;text&quot; th:field=&quot;*{name}&quot; placeholder=&quot;Name...&quot;/&gt;&lt;/p&gt;
     &lt;h3&gt;Options&lt;/h3&gt;
     &lt;button type=&quot;submit&quot; name=&quot;addOption&quot;&gt;Add Option&lt;/button&gt;
     &lt;table&gt;
-        &lt;tr th:each=&quot;option, rowStat : *{options}&quot;&gt;
+      &lt;tr th:each=&quot;option, rowStat : *{options}&quot;&gt;
         &lt;td&gt;&lt;input type=&quot;text&quot; th:field=&quot;*{options[__${rowStat.index}__].label}&quot; placeholder=&quot;Option...&quot;/&gt;&lt;/td&gt;
-        &lt;/tr&gt;
+      &lt;/tr&gt;
     &lt;/table&gt;
     &lt;button type=&quot;submit&quot;&gt;Add&lt;/button&gt;
-    &lt;/form&gt;
-&lt;/section&gt;
-&lt;/body&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+  &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 </div>

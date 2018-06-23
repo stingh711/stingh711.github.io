@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://stingh711.github.io/posts/use-django-filter-to-add-filter-for-rest-api/</loc>
+    <lastmod>2018-06-23T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://stingh711.github.io/posts/use-org-journal/</loc>
     <lastmod>2018-06-23T00:00:00+08:00</lastmod>
   </url>
@@ -45,6 +50,12 @@
   <url>
     <loc>https://stingh711.github.io/tags/database/</loc>
     <lastmod>2018-05-08T00:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stingh711.github.io/tags/django/</loc>
+    <lastmod>2018-06-23T00:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -92,7 +103,7 @@
   
   <url>
     <loc>https://stingh711.github.io/tags/python/</loc>
-    <lastmod>2018-06-17T00:00:00+08:00</lastmod>
+    <lastmod>2018-06-23T00:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

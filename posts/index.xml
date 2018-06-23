@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>Use django-filter to add filter for REST api</title>
+      <link>https://stingh711.github.io/posts/use-django-filter-to-add-filter-for-rest-api/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://stingh711.github.io/posts/use-django-filter-to-add-filter-for-rest-api/</guid>
+      <description>For a REST list api, filtering and sorting is the basic requirements. Using django-filter, we can add these functions with only a few lines of codes.
+For example, if we have a model as follows,
+class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField()  We will write relative serializer and view.
+class ProductSerializer(serializers.ModelSerializer): class Meta: fields = &#39;__all__&#39; class ProductListView(generics.ListView): queryset = Product.objects.all() serializer_class = ProductSerializer  If we don&amp;rsquo;t use django-filter, we can override ProductListview&amp;rsquo;s get_queryset to implement filter.</description>
+    </item>
+    
+    <item>
       <title>Use org-journal to keep my daily notes</title>
       <link>https://stingh711.github.io/posts/use-org-journal/</link>
       <pubDate>Sat, 23 Jun 2018 00:00:00 +0800</pubDate>
