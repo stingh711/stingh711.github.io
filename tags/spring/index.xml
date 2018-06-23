@@ -2,21 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spring on Sting&#39;s Note</title>
-    <link>https://stingh711.github.io/tags/spring/</link>
+    <link>http://localhost:1313/tags/spring/</link>
     <description>Recent content in Spring on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <lastBuildDate>Fri, 01 Aug 2014 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://stingh711.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/spring/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title></title>
-      <link>https://stingh711.github.io/post/how-to-generate-a-downloadable-excel-in-spring-boot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Dynamic forms with springmvc and thymeleaf</title>
+      <link>http://localhost:1313/posts/dynamic-form-with-springmvc-and-thymeleaf/</link>
+      <pubDate>Fri, 01 Aug 2014 00:00:00 +0800</pubDate>
       
-      <guid>https://stingh711.github.io/post/how-to-generate-a-downloadable-excel-in-spring-boot/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/dynamic-form-with-springmvc-and-thymeleaf/</guid>
+      <description>Requirements SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.
+Things I’ve learned.  When adding an option, don’t need to use javascript to handle the added html snippet. Just submit the add request to controller and handle the adding in the controller (Add a new options into the option list of subject group), then return to the add page. Spring mvc’s data binding and thyme leaf’s for loop will handle the html.</description>
     </item>
     
   </channel>

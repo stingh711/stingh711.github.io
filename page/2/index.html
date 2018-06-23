@@ -57,7 +57,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-08-01T00:00:00&#43;08:00"/>
+<meta property="og:updated_time" content="2018-06-16T00:00:00&#43;08:00"/>
 
 
 
@@ -140,6 +140,94 @@
     
       <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/javascript-notes/">Javascript notes</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-06-16 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Just some notes on some popular javascript libraries.
+bootstrap-daterangepicker How to get startDate and endDate var range = $(&quot;#range&quot;).daterangepicker(); var start = range.data(&quot;daterangepicker&quot;).startDate; var end = range.data(&quot;daterangepicker&quot;).endDate;  lodash map var data = [{label: '4/1', value: 10}, {label: '4/2', value: 14}]; var labels = _.map(data, function(item) { return item.label; }); var values = _.map(data, function(item) { return item.value; });  It is especially useful when preparing data for some chart libraries.
+    </div>
+    <div class="read-more">
+      <a href="/post/javascript-notes/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/posts/javascript-notes/">Javascript notes</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-06-16 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Just some notes on some popular javascript libraries.
+bootstrap-daterangepicker How to get startDate and endDate var range = $(&quot;#range&quot;).daterangepicker(); var start = range.data(&quot;daterangepicker&quot;).startDate; var end = range.data(&quot;daterangepicker&quot;).endDate;  lodash map var data = [{label: '4/1', value: 10}, {label: '4/2', value: 14}]; var labels = _.map(data, function(item) { return item.label; }); var values = _.map(data, function(item) { return item.value; });  It is especially useful when preparing data for some chart libraries.
+    </div>
+    <div class="read-more">
+      <a href="/posts/javascript-notes/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/notes-about-postgresql/">Notes about postgresql</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-05-08 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+       How to generate and insert test data? For example, my table is like: create table (time timestamp, value double precision, sensor integer). If I want to insert some test data, I can use function generate_series. Following sql will insert 5000 rows:
+insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i)  How to view disk usage? View table size select pg_size_pretty(pg_relation_size('pressure_01'))  View database size select pg_size_pretty(pg_database_size('pressure_01'))  
+    </div>
+    <div class="read-more">
+      <a href="/post/notes-about-postgresql/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/posts/notes-about-postgresql/">Notes about postgresql</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-05-08 </span>
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+       How to generate and insert test data? For example, my table is like: create table (time timestamp, value double precision, sensor integer). If I want to insert some test data, I can use function generate_series. Following sql will insert 5000 rows:
+insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i)  How to view disk usage? View table size select pg_size_pretty(pg_relation_size('pressure_01'))  View database size select pg_size_pretty(pg_database_size('pressure_01'))  
+    </div>
+    <div class="read-more">
+      <a href="/posts/notes-about-postgresql/" class="read-more-link">Read more..</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/dynamic-form-with-springmvc-and-thymeleaf/">Dynamic forms with springmvc and thymeleaf</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2014-08-01 </span>
@@ -169,6 +257,10 @@ Things I’ve learned.  When adding an option, don’t need to use javascript to
         <span class="prev-text">Prev</span>
       </a>
     
+      <a class="next" href="/page/3/">
+        <span class="next-text">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
   </nav>
 
         </div>

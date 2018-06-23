@@ -51,15 +51,6 @@ insert into test (time, sensor, value) select now(), i, random() from generate_s
     </item>
     
     <item>
-      <title>Try ox-hugo</title>
-      <link>http://localhost:1313/post/try-ox-hugo/</link>
-      <pubDate>Mon, 21 Aug 2017 14:39:01 +0530</pubDate>
-      
-      <guid>http://localhost:1313/post/try-ox-hugo/</guid>
-      <description>I just want to have a try.</description>
-    </item>
-    
-    <item>
       <title>Dynamic forms with springmvc and thymeleaf</title>
       <link>http://localhost:1313/post/dynamic-form-with-springmvc-and-thymeleaf/</link>
       <pubDate>Fri, 01 Aug 2014 00:00:00 +0800</pubDate>
