@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Postgresql on Sting&#39;s Note</title>
+    <link>http://localhost:1313/tags/postgresql/</link>
+    <description>Recent content in Postgresql on Sting&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 08 May 2018 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Notes about postgresql</title>
+      <link>http://localhost:1313/posts/notes-about-postgresql/</link>
+      <pubDate>Tue, 08 May 2018 00:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/notes-about-postgresql/</guid>
+      <description> How to generate and insert test data? For example, my table is like: create table (time timestamp, value double precision, sensor integer). If I want to insert some test data, I can use function generate_series. Following sql will insert 5000 rows:
+insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i)  How to view disk usage? View table size select pg_size_pretty(pg_relation_size(&#39;pressure_01&#39;))  View database size select pg_size_pretty(pg_database_size(&#39;pressure_01&#39;))  </description>
+    </item>
+    
+  </channel>
+</rss>

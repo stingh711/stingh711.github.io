@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Sting&#39;s Note</title>
+  <title>Archive - Sting&#39;s Note</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -28,9 +28,9 @@
 <meta name="generator" content="Hugo 0.42.1" />
 
 
-<link rel="canonical" href="http://localhost:1313/" />
-<link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Sting&#39;s Note" />
-  <link href="http://localhost:1313/index.xml" rel="feed" type="application/rss+xml" title="Sting&#39;s Note" />
+<link rel="canonical" href="http://localhost:1313/posts/" />
+<link href="http://localhost:1313/posts/index.xml" rel="alternate" type="application/rss+xml" title="Sting&#39;s Note" />
+  <link href="http://localhost:1313/posts/index.xml" rel="feed" type="application/rss+xml" title="Sting&#39;s Note" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -50,10 +50,10 @@
 
 
 
-<meta property="og:title" content="Sting&#39;s Note" />
+<meta property="og:title" content="Posts" />
 <meta property="og:description" content="Hugo theme even example site." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/" />
+<meta property="og:url" content="http://localhost:1313/posts/" />
 
 
 
@@ -68,11 +68,11 @@
 
 
 
-<meta itemprop="name" content="Sting&#39;s Note">
+<meta itemprop="name" content="Posts">
 <meta itemprop="description" content="Hugo theme even example site.">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Sting&#39;s Note"/>
+<meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content="Hugo theme even example site."/>
 
 <!--[if lte IE 9]>
@@ -134,148 +134,90 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           
-  <section id="posts" class="posts">
+<section id="archive" class="archive">
     
-    
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/posts/use-org-journal/">Use org-journal to keep my daily notes</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-06-23 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      org-journal is small package to write your journal in org mode. Like diary mode, it will generate one file per day, but you can use org-mode instead of plain dairy mode.
-To create a journal, just press C-c c-j, an org-mode item will be created with curren time.
-It is also provided calendar binding, so you can view your journal from calendar view.
-    </div>
-    <div class="read-more">
-      <a href="/posts/use-org-journal/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
+      <div class="collection-title">
+        <h2 class="archive-year">2018</h2>
+      </div>
 
+    <div class="archive-post">
+      <span class="archive-post-time">
+        06-23
+      </span>
+      <span class="archive-post-title">
+        <a href="/posts/use-org-journal/" class="archive-post-link">
+          Use org-journal to keep my daily notes
+        </a>
+      </span>
+    </div>
     
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/posts/how-to-remove-vscode-decorator-warning/">How to remove vscode&#39;s decorator warning?</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-06-19 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-       Create a tsconfig.json under root directory. Add following code to tsconfig.json  { &quot;compilerOptions&quot;: { &quot;experimentalDecorators&quot;: true, &quot;allowJs&quot;: true } }   Restart vscode  
-    </div>
-    <div class="read-more">
-      <a href="/posts/how-to-remove-vscode-decorator-warning/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
 
+    <div class="archive-post">
+      <span class="archive-post-time">
+        06-19
+      </span>
+      <span class="archive-post-title">
+        <a href="/posts/how-to-remove-vscode-decorator-warning/" class="archive-post-link">
+          How to remove vscode&#39;s decorator warning?
+        </a>
+      </span>
+    </div>
     
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/posts/pandas-in-jupyter/">Pandas in jupyter</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-06-17 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Read data from mysql and draw a chart.
-%matplotlib inline import pymysql import pandas as pd import pandas.io.sql as sql conn = pymysql.connect(host='192.168.56.1', user='root', passwd='qwer-1235', db='pdss') s = 'select number_value from quality_data_item_record where item_id = 11' df = sql.read_sql_query(s, conn) df.plot()  
-    </div>
-    <div class="read-more">
-      <a href="/posts/pandas-in-jupyter/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
 
+    <div class="archive-post">
+      <span class="archive-post-time">
+        06-17
+      </span>
+      <span class="archive-post-title">
+        <a href="/posts/pandas-in-jupyter/" class="archive-post-link">
+          Pandas in jupyter
+        </a>
+      </span>
+    </div>
     
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/posts/javascript-notes/">Javascript notes</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-06-16 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Just some notes on some popular javascript libraries.
-bootstrap-daterangepicker How to get startDate and endDate var range = $(&quot;#range&quot;).daterangepicker(); var start = range.data(&quot;daterangepicker&quot;).startDate; var end = range.data(&quot;daterangepicker&quot;).endDate;  lodash map var data = [{label: '4/1', value: 10}, {label: '4/2', value: 14}]; var labels = _.map(data, function(item) { return item.label; }); var values = _.map(data, function(item) { return item.value; });  It is especially useful when preparing data for some chart libraries.
-    </div>
-    <div class="read-more">
-      <a href="/posts/javascript-notes/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
 
+    <div class="archive-post">
+      <span class="archive-post-time">
+        06-16
+      </span>
+      <span class="archive-post-title">
+        <a href="/posts/javascript-notes/" class="archive-post-link">
+          Javascript notes
+        </a>
+      </span>
+    </div>
     
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/posts/notes-about-postgresql/">Notes about postgresql</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-05-08 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-       How to generate and insert test data? For example, my table is like: create table (time timestamp, value double precision, sensor integer). If I want to insert some test data, I can use function generate_series. Following sql will insert 5000 rows:
-insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i)  How to view disk usage? View table size select pg_size_pretty(pg_relation_size('pressure_01'))  View database size select pg_size_pretty(pg_database_size('pressure_01'))  
-    </div>
-    <div class="read-more">
-      <a href="/posts/notes-about-postgresql/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
 
+    <div class="archive-post">
+      <span class="archive-post-time">
+        05-08
+      </span>
+      <span class="archive-post-title">
+        <a href="/posts/notes-about-postgresql/" class="archive-post-link">
+          Notes about postgresql
+        </a>
+      </span>
+    </div>
     
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/posts/dynamic-form-with-springmvc-and-thymeleaf/">Dynamic forms with springmvc and thymeleaf</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2014-08-01 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Requirements SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.
-Things I’ve learned.  When adding an option, don’t need to use javascript to handle the added html snippet. Just submit the add request to controller and handle the adding in the controller (Add a new options into the option list of subject group), then return to the add page. Spring mvc’s data binding and thyme leaf’s for loop will handle the html.
-    </div>
-    <div class="read-more">
-      <a href="/posts/dynamic-form-with-springmvc-and-thymeleaf/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
+      <div class="collection-title">
+        <h2 class="archive-year">2014</h2>
+      </div>
 
-    
-  </section>
+    <div class="archive-post">
+      <span class="archive-post-time">
+        08-01
+      </span>
+      <span class="archive-post-title">
+        <a href="/posts/dynamic-form-with-springmvc-and-thymeleaf/" class="archive-post-link">
+          Dynamic forms with springmvc and thymeleaf
+        </a>
+      </span>
+    </div></section>
+
+<nav class="pagination">
   
-  <nav class="pagination">
-    
-    
-  </nav>
+  
+</nav>
 
         </div>
         

@@ -3,35 +3,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/post/how-to-remove-vscode-decorator-warning/</loc>
+    <loc>http://localhost:1313/posts/use-org-journal/</loc>
+    <lastmod>2018-06-23T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/posts/how-to-remove-vscode-decorator-warning/</loc>
     <lastmod>2018-06-19T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/pandas-in-jupyter/</loc>
+    <loc>http://localhost:1313/posts/pandas-in-jupyter/</loc>
     <lastmod>2018-06-17T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/javascript-notes/</loc>
+    <loc>http://localhost:1313/posts/javascript-notes/</loc>
     <lastmod>2018-06-16T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/notes-about-postgresql/</loc>
+    <loc>http://localhost:1313/posts/notes-about-postgresql/</loc>
     <lastmod>2018-05-08T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/dynamic-form-with-springmvc-and-thymeleaf/</loc>
+    <loc>http://localhost:1313/posts/dynamic-form-with-springmvc-and-thymeleaf/</loc>
     <lastmod>2014-08-01T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -44,21 +51,92 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/</loc>
+    <loc>http://localhost:1313/tags/database/</loc>
+    <lastmod>2018-05-08T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/editor/</loc>
     <lastmod>2018-06-19T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/emacs/</loc>
+    <lastmod>2018-06-23T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/javascript/</loc>
+    <lastmod>2018-06-19T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/pandas/</loc>
+    <lastmod>2018-06-17T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/postgresql/</loc>
+    <lastmod>2018-05-08T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2018-06-23T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/programming/</loc>
+    <lastmod>2018-06-16T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2018-06-17T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/spring/</loc>
+    <lastmod>2014-08-01T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2018-06-19T00:00:00+08:00</lastmod>
+    <lastmod>2018-06-23T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2018-05-08T00:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/vscode/</loc>
+    <lastmod>2018-06-19T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
