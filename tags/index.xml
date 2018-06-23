@@ -2,102 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Sting&#39;s Note</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://stingh711.github.io/tags/</link>
     <description>Recent content in Tags on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 08 May 2018 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stingh711.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Database</title>
-      <link>http://localhost:1313/tags/database/</link>
+      <link>https://stingh711.github.io/tags/database/</link>
       <pubDate>Tue, 08 May 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/database/</guid>
+      <guid>https://stingh711.github.io/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Editor</title>
-      <link>http://localhost:1313/tags/editor/</link>
+      <link>https://stingh711.github.io/tags/editor/</link>
       <pubDate>Tue, 19 Jun 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/editor/</guid>
+      <guid>https://stingh711.github.io/tags/editor/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Emacs</title>
-      <link>http://localhost:1313/tags/emacs/</link>
+      <link>https://stingh711.github.io/tags/emacs/</link>
       <pubDate>Sat, 23 Jun 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/emacs/</guid>
+      <guid>https://stingh711.github.io/tags/emacs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>http://localhost:1313/tags/javascript/</link>
+      <link>https://stingh711.github.io/tags/javascript/</link>
       <pubDate>Tue, 19 Jun 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/javascript/</guid>
+      <guid>https://stingh711.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pandas</title>
-      <link>http://localhost:1313/tags/pandas/</link>
+      <link>https://stingh711.github.io/tags/pandas/</link>
       <pubDate>Sun, 17 Jun 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/pandas/</guid>
+      <guid>https://stingh711.github.io/tags/pandas/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Postgresql</title>
-      <link>http://localhost:1313/tags/postgresql/</link>
+      <link>https://stingh711.github.io/tags/postgresql/</link>
       <pubDate>Tue, 08 May 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/postgresql/</guid>
+      <guid>https://stingh711.github.io/tags/postgresql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Programming</title>
-      <link>http://localhost:1313/tags/programming/</link>
+      <link>https://stingh711.github.io/tags/programming/</link>
       <pubDate>Sat, 16 Jun 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/programming/</guid>
+      <guid>https://stingh711.github.io/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>https://stingh711.github.io/tags/python/</link>
       <pubDate>Sun, 17 Jun 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>https://stingh711.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spring</title>
-      <link>http://localhost:1313/tags/spring/</link>
+      <link>https://stingh711.github.io/tags/spring/</link>
       <pubDate>Fri, 01 Aug 2014 00:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/spring/</guid>
+      <guid>https://stingh711.github.io/tags/spring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vscode</title>
-      <link>http://localhost:1313/tags/vscode/</link>
+      <link>https://stingh711.github.io/tags/vscode/</link>
       <pubDate>Tue, 19 Jun 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/vscode/</guid>
+      <guid>https://stingh711.github.io/tags/vscode/</guid>
       <description></description>
     </item>
     
