@@ -23,6 +23,16 @@ It is also provided calendar binding, so you can view your journal from calendar
     </item>
     
     <item>
+      <title>Write a CustomPaginator for django rest framework</title>
+      <link>https://stingh711.github.io/posts/custom-paginator-for-drf/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://stingh711.github.io/posts/custom-paginator-for-drf/</guid>
+      <description>Pagination is essential part for a REST api. Django rest framework provides an easy to way to add pagination to current API and a lot of useful built-in implementations. However, in order to work with a specified frontend component, a customized version is needed.
+Customizing is easy in DRF, just extends a current one and override it get_paginated_response method. For example, the following one uses the page number pagination ,which means you can pass page=n in the URL to get the nth page.</description>
+    </item>
+    
+    <item>
       <title>How to remove vscode&#39;s decorator warning?</title>
       <link>https://stingh711.github.io/posts/how-to-remove-vscode-decorator-warning/</link>
       <pubDate>Tue, 19 Jun 2018 00:00:00 +0800</pubDate>
