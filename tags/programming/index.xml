@@ -6,20 +6,10 @@
     <description>Recent content in Programming on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Jun 2018 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 Jun 2018 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://stingh711.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Vscode&#39;s restclient is great</title>
-      <link>https://stingh711.github.io/posts/vscode-restclient-is-great/</link>
-      <pubDate>Tue, 26 Jun 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://stingh711.github.io/posts/vscode-restclient-is-great/</guid>
-      <description>Postman is an essential tool for the development of both frontend and backend. However, sometimes I hate its save function. I hate to find a right folder to save a request. What I need is just a very simple tool to test some API and it will be just there when I need it. Then I found REST Client extension for Vscode.
-With this extension, you can save your request in plain text.</description>
-    </item>
     
     <item>
       <title>Javascript notes</title>

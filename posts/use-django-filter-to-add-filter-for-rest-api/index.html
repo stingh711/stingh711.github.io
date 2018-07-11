@@ -94,7 +94,7 @@ if (!doNotTrack) {
 
 <pre><code class="language-python">class ProductSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = '__all__'
+    fields = '__all__'
 
 class ProductListView(generics.ListView):
     queryset = Product.objects.all()
@@ -107,7 +107,7 @@ class ProductListView(generics.ListView):
     queryset = Product.objects.all()
     name = self.request.query_params.get('name', None)
     if name is not None:
-        queryset = queryset.filter(name=name)
+    queryset = queryset.filter(name=name)
     return queryset
 </code></pre>
 
@@ -119,8 +119,8 @@ Then, we add a filter class in our views.</p>
     sort = django_filters.OrderingFilter(fields=('created_at',))
 
     class Meta:
-        model = Product
-        fields = ['name',]
+    model = Product
+    fields = ['name',]
 </code></pre>
 
 <p>Then modify our ProductListView by adding following two lines</p>

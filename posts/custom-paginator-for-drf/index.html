@@ -88,14 +88,14 @@ if (!doNotTrack) {
     page_size_query_param = 'pageSize'
 
     def get_paginated_response(self, data):
-        return Response({
-            'pagination': {
-                'total': self.page.paginator.count,
-                'pageSize': self.page.paginator.per_page,
-                'current': self.page.number,
-                },
-                'list': data
-            })
+    return Response({
+        'pagination': {
+        'total': self.page.paginator.count,
+        'pageSize': self.page.paginator.per_page,
+        'current': self.page.number,
+        },
+        'list': data
+        })
 </code></pre>
 
 <p>The response format is customized for antd&rsquo;s table component.</p>

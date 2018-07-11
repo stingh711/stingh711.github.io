@@ -4,21 +4,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta content='text/html; charset=utf-8' http-equiv='content-type' />
 
-  <title>Use org-journal to keep my daily notes - Sting&#39;s Note</title>
-  <meta content='Use org-journal to keep my daily notes - Sting&#39;s Note' property='title' />
-  <meta content='Use org-journal to keep my daily notes - Sting&#39;s Note' property='og:title' />
+  <title>To make file field&#39;s URL right in Django rest framework - Sting&#39;s Note</title>
+  <meta content='To make file field&#39;s URL right in Django rest framework - Sting&#39;s Note' property='title' />
+  <meta content='To make file field&#39;s URL right in Django rest framework - Sting&#39;s Note' property='og:title' />
 
 
-<meta property="og:description" content="org-journal is small package to write your journal in org mode. Like diary mode, it will generate one file per day, but you can use org-mode instead of plain dairy mode.
-To create a journal, just press C-c c-j, an org-mode item will be created with current time.
-It is also provided calendar binding, so you can view your journal from calendar view." />
+<meta property="og:description" content="I have a django model which has a fiel field and I try to use a ModelSerializer to serialize the model to return the file&rsquo;s access URL. However, the default behavior seems wrong, it will return an absolute URL base on the URL of current request. After some google work, I find the answer on stackoverflow. What I need is SerializerMethodField. It will generate a field&rsquo;s content with a method." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://stingh711.github.io/posts/use-org-journal/" />
+<meta property="og:url" content="https://stingh711.github.io/posts/django-rest-framework-file-field-url/" />
 
 
-<meta property="article:published_time" content="2018-06-23T00:00:00&#43;08:00"/>
+<meta property="article:published_time" content="2018-07-11T00:00:00&#43;08:00"/>
 
-<meta property="article:modified_time" content="2018-06-23T00:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2018-07-11T00:00:00&#43;08:00"/>
 
 
 
@@ -71,21 +69,30 @@ if (!doNotTrack) {
 </nav>
   
 <main class="center mv4 content-width ph3">
-  <div class="f3 fw6 heading-color heading-font post-title">Use org-journal to keep my daily notes</div>
+  <div class="f3 fw6 heading-color heading-font post-title">To make file field&#39;s URL right in Django rest framework</div>
   <p class="silver f6 mt1 mb4 post-meta">
-    <time>23 Jun 2018</time> 
-     | 
+    <time>11 Jul 2018</time> 
     
     
-    tags: [ <a href='/tags/emacs' class="link silver">emacs</a>  ]
     
   </p>
-  <div class="lh-copy post-content"><p><a href="https://github.com/bastibe/org-journal">org-journal</a> is small package to write your journal in org mode.
-Like diary mode, it will generate one file per day, but you can use org-mode instead of plain dairy mode.</p>
+  <div class="lh-copy post-content"><p>I have a django model which has a fiel field and I try to use a ModelSerializer to serialize the model to return the file&rsquo;s access URL.
+However, the default behavior seems wrong, it will return an absolute URL base on the URL of current request.
+After some google work, I find the answer on stackoverflow. What I need is SerializerMethodField. It will generate a field&rsquo;s content with a method.</p>
 
-<p>To create a journal, just press <code>C-c c-j</code>, an org-mode item will be created with current time.</p>
+<pre><code class="language-python">class FileSerializer(serializers.ModelSerializer):
+    file_url = serializers.SerializerMethodField('get_file_absolute_url')
 
-<p>It is also provided calendar binding, so you can view your journal from calendar view.</p>
+    def get_file_absolute_url(self, obj):
+    return obj.file.url
+
+    class Meta:
+    model = File
+    fields = ('file', 'id', 'name', 'file_url')
+    read_only_fields = ('id', 'name', 'file_url')
+</code></pre>
+
+<p>Now the file_url will return the right URL.</p>
 </div>
 </main>
  
@@ -102,8 +109,8 @@ Like diary mode, it will generate one file per day, but you can use org-mode ins
 <a id="scroll-to-top" class="f6 o-0 link br2 ph2 pv1 mb1 bg-main-color pointer" onclick="topFunction()" style="color: #fff; visibility: hidden; display: none; transition: opacity .5s, visibility .5s;" title="back to top">back to top</a>
 <br>
   <p class="mb0 mt2">
-  <a href="https://stingh711.github.io/posts/custom-paginator-for-drf/">prev post</a>
-  <a href="https://stingh711.github.io/posts/use-django-filter-to-add-filter-for-rest-api/">next post</a>
+  <a href="https://stingh711.github.io/posts/vscode-restclient-is-great/">prev post</a>
+  
   </p>
 </div>
 

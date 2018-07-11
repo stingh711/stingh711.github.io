@@ -18,7 +18,7 @@
       
       <guid>https://stingh711.github.io/posts/use-org-journal/</guid>
       <description>org-journal is small package to write your journal in org mode. Like diary mode, it will generate one file per day, but you can use org-mode instead of plain dairy mode.
-To create a journal, just press C-c c-j, an org-mode item will be created with curren time.
+To create a journal, just press C-c c-j, an org-mode item will be created with current time.
 It is also provided calendar binding, so you can view your journal from calendar view.</description>
     </item>
     
