@@ -6,19 +6,10 @@
     <description>Recent content in Posts on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Jul 2018 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jun 2018 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://stingh711.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>To make file field&#39;s URL right in Django rest framework</title>
-      <link>https://stingh711.github.io/posts/django-rest-framework-file-field-url/</link>
-      <pubDate>Wed, 11 Jul 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://stingh711.github.io/posts/django-rest-framework-file-field-url/</guid>
-      <description>I have a django model which has a fiel field and I try to use a ModelSerializer to serialize the model to return the file&amp;rsquo;s access URL. However, the default behavior seems wrong, it will return an absolute URL base on the URL of current request. After some google work, I find the answer on stackoverflow. What I need is SerializerMethodField. It will generate a field&amp;rsquo;s content with a method.</description>
-    </item>
     
     <item>
       <title>Vscode&#39;s restclient is great</title>
@@ -49,8 +40,9 @@ class ProductSerializer(serializers.ModelSerializer): class Meta: fields = &#39;
       
       <guid>https://stingh711.github.io/posts/use-org-journal/</guid>
       <description>org-journal is small package to write your journal in org mode. Like diary mode, it will generate one file per day, but you can use org-mode instead of plain dairy mode.
-To create a journal, just press C-c c-j, an org-mode item will be created with current time.
-It is also provided calendar binding, so you can view your journal from calendar view.</description>
+To create a journal, just press C-c c-j, an org-mode item will be created with curren time.
+It is also provided calendar binding, so you can view your journal from calendar view.
+Update: to search your notes, the best way is to add your notes to a git repository, then open one entry and use M-x counsel-rg.</description>
     </item>
     
     <item>
