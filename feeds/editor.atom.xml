@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>LiHong's Note - editor</title><link href="http://stingh711.github.io/" rel="alternate"></link><link href="http://stingh711.github.io/feeds/editor.atom.xml" rel="self"></link><id>http://stingh711.github.io/</id><updated>2018-06-26T00:00:00+08:00</updated><entry><title>Vscode's restclient is great</title><link href="http://stingh711.github.io/vscodes-restclient-is-great.html" rel="alternate"></link><published>2018-06-26T00:00:00+08:00</published><updated>2018-06-26T00:00:00+08:00</updated><author><name>HuLiHong</name></author><id>tag:stingh711.github.io,2018-06-26:/vscodes-restclient-is-great.html</id><summary type="html">&lt;p&gt;Postman is an essential tool for the development of both frontend and backend. However, sometimes I hate its save function. I hate to find a right folder to save a request. What I need is just a very simple tool to test some API and it will be just there …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Postman is an essential tool for the development of both frontend and backend. However, sometimes I hate its save function. I hate to find a right folder to save a request. What I need is just a very simple tool to test some API and it will be just there when I need it. Then I found REST Client extension for Vscode.&lt;/p&gt;
+&lt;p&gt;With this extension, you can save your request in plain text. You can use vscode to edit it (Syntax highlight and indent is well supported) and then just run it in vscode too. You don't need to think which folder should I put this request, just write it down in a text file.&lt;/p&gt;
+&lt;p&gt;Actually, there is a same extension for emacs, but it doesn't work on my windows and I don't know why.
+Update: now it works on my Mac&lt;/p&gt;</content><category term="programming"></category><category term="vscode"></category></entry><entry><title>Use org-journal to keep my daily notes</title><link href="http://stingh711.github.io/use-org-journal-to-keey-diary-notes.html" rel="alternate"></link><published>2018-06-23T00:00:00+08:00</published><updated>2018-06-23T00:00:00+08:00</updated><author><name>HuLiHong</name></author><id>tag:stingh711.github.io,2018-06-23:/use-org-journal-to-keey-diary-notes.html</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/bastibe/org-journal"&gt;org-journal&lt;/a&gt; is small package to write your journal in org mode.
+Like diary mode, it will generate one file per day, but you can use org-mode instead of plain dairy mode.&lt;/p&gt;
+&lt;p&gt;To create a journal, just press &lt;code&gt;C-c c-j&lt;/code&gt;, an org-mode item will be created with curren time.&lt;/p&gt;
+&lt;p&gt;It is …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://github.com/bastibe/org-journal"&gt;org-journal&lt;/a&gt; is small package to write your journal in org mode.
+Like diary mode, it will generate one file per day, but you can use org-mode instead of plain dairy mode.&lt;/p&gt;
+&lt;p&gt;To create a journal, just press &lt;code&gt;C-c c-j&lt;/code&gt;, an org-mode item will be created with curren time.&lt;/p&gt;
+&lt;p&gt;It is also provided calendar binding, so you can view your journal from calendar view.&lt;/p&gt;
+&lt;p&gt;Update: to search your notes, the best way is to add your notes to a git repository, then open one entry and use M-x counsel-rg.&lt;/p&gt;</content><category term="emacs"></category></entry><entry><title>How to remove vscode's decorator warning?</title><link href="http://stingh711.github.io/how-to-remove-vscodes-decorator-warning.html" rel="alternate"></link><published>2018-06-19T00:00:00+08:00</published><updated>2018-06-19T00:00:00+08:00</updated><author><name>HuLiHong</name></author><id>tag:stingh711.github.io,2018-06-19:/how-to-remove-vscodes-decorator-warning.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;Create a tsconfig.json under root directory.&lt;/li&gt;
+&lt;li&gt;Add following code to tsconfig.json&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;{&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;quot;compilerOptions&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+           &lt;span class="nt"&gt;&amp;quot;experimentalDecorators&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="nt"&gt;&amp;quot;allowJs&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+       &lt;span class="p"&gt;}&lt;/span&gt;
+   &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;Restart vscode&lt;/li&gt;
+&lt;/ol&gt;</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;Create a tsconfig.json under root directory.&lt;/li&gt;
+&lt;li&gt;Add following code to tsconfig.json&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="p"&gt;{&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;quot;compilerOptions&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+           &lt;span class="nt"&gt;&amp;quot;experimentalDecorators&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="nt"&gt;&amp;quot;allowJs&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+       &lt;span class="p"&gt;}&lt;/span&gt;
+   &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;Restart vscode&lt;/li&gt;
+&lt;/ol&gt;</content><category term="vscode"></category><category term="editor"></category><category term="javascript"></category></entry></feed>
