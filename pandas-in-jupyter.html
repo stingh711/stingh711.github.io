@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+
+
+
+
+
+<meta name="author" content="HuLiHong" />
+<meta name="description" content="Read data from mysql and draw a chart. %matplotlib inline import pymysql import pandas as pd import pandas.io.sql as sql conn = pymysql.connect(host=&#39;192.168.56.1&#39;, user=&#39;root&#39;, passwd=&#39;qwer-1235&#39;, db=&#39;pdss&#39;) s = &#39;select number_value from quality_data_item_record where item_id = 11&#39; df = sql.read_sql_query(s, conn) df …" />
+<meta name="keywords" content="pandas, python">
+
+<meta property="og:site_name" content="LiHong's Note"/>
+<meta property="og:title" content="Pandas in jupyter"/>
+<meta property="og:description" content="Read data from mysql and draw a chart. %matplotlib inline import pymysql import pandas as pd import pandas.io.sql as sql conn = pymysql.connect(host=&#39;192.168.56.1&#39;, user=&#39;root&#39;, passwd=&#39;qwer-1235&#39;, db=&#39;pdss&#39;) s = &#39;select number_value from quality_data_item_record where item_id = 11&#39; df = sql.read_sql_query(s, conn) df …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/pandas-in-jupyter.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-06-17 00:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/hulihong.html">
+<meta property="article:section" content="programming"/>
+<meta property="article:tag" content="pandas"/>
+<meta property="article:tag" content="python"/>
+<meta property="og:image" content="">
+
+  <title>LiHong's Note &ndash; Pandas in jupyter</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+
+
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+      
+    <h1 id="pandas-in-jupyter">Pandas in jupyter</h1>
+    <p>
+          Posted on Sun 17 June 2018 in <a href="/category/programming.html">programming</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Read data from mysql and draw a chart.</p>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">pymysql</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pandas.io.sql</span> <span class="kn">as</span> <span class="nn">sql</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;192.168.56.1&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> <span class="n">passwd</span><span class="o">=</span><span class="s1">&#39;qwer-1235&#39;</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s1">&#39;pdss&#39;</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;select number_value from quality_data_item_record where item_id = 11&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">sql</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/pandas.html">pandas</a>
+      <a href="/tag/python.html">python</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " LiHong's Note ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

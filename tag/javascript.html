@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+
+
+
+
+
+    <meta name="author" content="HuLiHong" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="LiHong's Note"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="LiHong's Note"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+  <title>LiHong's Note &ndash;     Tag javascript
+</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+
+
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+
+
+<article>
+  <header>
+    <h2><a href="/how-to-remove-vscodes-decorator-warning.html#how-to-remove-vscodes-decorator-warning">How to remove vscode's decorator warning?</a></h2>
+    <p>
+          Posted on Tue 19 June 2018 in <a href="/category/editor.html">editor</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/vscode.html">vscode</a>,              <a href="/tag/editor.html">editor</a>,              <a href="/tag/javascript.html">javascript</a>
+    </p>
+  </header>
+  <div>
+      <ol>
+<li>Create a tsconfig.json under root directory.</li>
+<li>Add following code to tsconfig.json</li>
+</ol>
+<div class="highlight"><pre><span></span>   <span class="p">{</span>
+       <span class="nt">&quot;compilerOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="nt">&quot;experimentalDecorators&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;allowJs&quot;</span><span class="p">:</span> <span class="kc">true</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+</pre></div>
+
+
+<ol>
+<li>Restart vscode</li>
+</ol>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/javascript-notes.html#javascript-notes">Javascript notes</a></h2>
+    <p>
+          Posted on Sat 16 June 2018 in <a href="/category/programming.html">programming</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/javascript.html">javascript</a>
+    </p>
+  </header>
+  <div>
+      <p>Just some notes on some popular javascript libraries.</p>
+<h2 id="bootstrap-daterangepicker">bootstrap-daterangepicker</h2>
+<h3 id="how-to-get-startdate-and-enddate">How to get startDate and endDate</h3>
+<div class="highlight"><pre><span></span>     <span class="kd">var</span> <span class="nx">range</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#range&quot;</span><span class="p">).</span><span class="nx">daterangepicker</span><span class="p">();</span>
+     <span class="kd">var</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">range</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s2">&quot;daterangepicker&quot;</span><span class="p">).</span><span class="nx">startDate</span><span class="p">;</span>
+     <span class="kd">var</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">range</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s2">&quot;daterangepicker&quot;</span><span class="p">).</span><span class="nx">endDate</span><span class="p">;</span>
+</pre></div>
+
+
+<h2 id="lodash">lodash</h2>
+<h3 id="map">map</h3>
+<div class="highlight"><pre><span></span>     <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[{</span><span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;4/1&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">10</span><span class="p">},</span> <span class="p">{</span><span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;4/2&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">14</span><span class="p">}];</span>
+     <span class="kd">var</span> <span class="nx">labels</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">data …</span></pre></div>
+        <br>
+        <a class="btn" href="/javascript-notes.html#javascript-notes">    Continue reading
+</a>
+  </div>
+</article>
+
+
+
+
+
+    <footer>
+<p>&copy;  </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " LiHong's Note ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

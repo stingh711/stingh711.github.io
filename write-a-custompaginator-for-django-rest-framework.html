@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+
+
+
+
+
+<meta name="author" content="HuLiHong" />
+<meta name="description" content="Pagination is essential part for a REST api. Django rest framework provides an easy to way to add pagination to current API and a lot of useful built-in implementations. However, in order to work with a specified frontend component, a customized version is needed. Customizing is easy in DRF, just …" />
+<meta name="keywords" content="python, django">
+
+<meta property="og:site_name" content="LiHong's Note"/>
+<meta property="og:title" content="Write a CustomPaginator for django rest framework"/>
+<meta property="og:description" content="Pagination is essential part for a REST api. Django rest framework provides an easy to way to add pagination to current API and a lot of useful built-in implementations. However, in order to work with a specified frontend component, a customized version is needed. Customizing is easy in DRF, just …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/write-a-custompaginator-for-django-rest-framework.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-06-23 00:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/hulihong.html">
+<meta property="article:section" content="programming"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="django"/>
+<meta property="og:image" content="">
+
+  <title>LiHong's Note &ndash; Write a CustomPaginator for django rest framework</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=""></a></h1>
+
+
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+      
+    <h1 id="write-a-custompaginator-for-django-rest-framework">Write a CustomPaginator for django rest framework</h1>
+    <p>
+          Posted on Sat 23 June 2018 in <a href="/category/programming.html">programming</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Pagination is essential part for a REST api. Django rest framework provides an easy to way to add pagination to current API and a lot of useful built-in implementations. However, in order to work with a specified frontend component, a customized version is needed.</p>
+<p>Customizing is easy in DRF, just extends a current one and override it get_paginated_response method. For example, the following one uses the page number pagination ,which means you can pass page=n in the URL to get the nth page. If pageSize is specified in request url, it will be used or the default page_size will be used</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomPagination</span><span class="p">(</span><span class="n">pagination</span><span class="o">.</span><span class="n">PageNumberPagination</span><span class="p">):</span>
+    <span class="n">page_size</span> <span class="o">=</span> <span class="mi">15</span>
+    <span class="n">page_size_query_param</span> <span class="o">=</span> <span class="s1">&#39;pageSize&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get_paginated_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">({</span>
+            <span class="s1">&#39;pagination&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;total&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">paginator</span><span class="o">.</span><span class="n">count</span><span class="p">,</span>
+                <span class="s1">&#39;pageSize&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">paginator</span><span class="o">.</span><span class="n">per_page</span><span class="p">,</span>
+                <span class="s1">&#39;current&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="n">data</span>
+            <span class="p">})</span>
+</pre></div>
+
+
+<p>The response format is customized for antd's table component.</p>
+<p>There are two ways to tell your view to use it.</p>
+<ul>
+<li>Specify <code>pagination_class=CustomPagination</code> in your views.</li>
+<li>Configure it in settings. Doc is <a href="http://www.django-rest-framework.org/api-guide/pagination/">here</a>.</li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/python.html">python</a>
+      <a href="/tag/django.html">django</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " LiHong's Note ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+</body>
+</html>
