@@ -34,23 +34,23 @@
 <!-- End Google Analytics -->
 
 <meta name="author" content="HuLiHong" />
-<meta name="description" content="I try to update this blog again." />
-<meta name="keywords" content="misc">
+<meta name="description" content="After using java and python for years, I decided to try golang." />
+<meta name="keywords" content="go">
 
 <meta property="og:site_name" content="LiHong's Note"/>
-<meta property="og:title" content="Update this blog again"/>
-<meta property="og:description" content="I try to update this blog again."/>
+<meta property="og:title" content="Give golang a try"/>
+<meta property="og:description" content="After using java and python for years, I decided to try golang."/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://stingh711.github.io/update-blog-again.html"/>
+<meta property="og:url" content="https://stingh711.github.io/give-golang-a-try.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2019-03-18 00:00:00+08:00"/>
+<meta property="article:published_time" content="2019-03-28 00:00:00+08:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="https://stingh711.github.io/author/hulihong.html">
-<meta property="article:section" content="misc"/>
-<meta property="article:tag" content="misc"/>
+<meta property="article:section" content="programming"/>
+<meta property="article:tag" content="go"/>
 <meta property="og:image" content="">
 
-  <title>LiHong's Note &ndash; Update this blog again</title>
+  <title>LiHong's Note &ndash; Give golang a try</title>
 
 </head>
 <body>
@@ -85,9 +85,9 @@
 <article class="single">
   <header>
       
-    <h1 id="update-blog-again">Update this blog again</h1>
+    <h1 id="give-golang-a-try">Give golang a try</h1>
     <p>
-          Posted on Mon 18 March 2019 in <a href="https://stingh711.github.io/category/misc.html">misc</a>
+          Posted on Thu 28 March 2019 in <a href="https://stingh711.github.io/category/programming.html">programming</a>
 
 
     </p>
@@ -95,14 +95,27 @@
 
 
   <div>
-    <p>以前曾经写了很久的博客，后来我的虚拟主机忘记续费了，然后也没有做备份，以前写的博客全部没有了。虽然又搭了一个github的，但是写的欲望基本上没有了。</p>
-<p>最主要的原因是，我觉得这些年没什么进步。看看现在公众号上面写的文章，再看看自己写的，完全拿不出手。作为一个从未在互联网公司任过职的程序员，我这样的已经太老了。虽然也有一直有学一些新的东西，但是离深度的应用很远，所以写出来大概也没有人看。</p>
-<p>那为什么最近又开始想写呢？其实我主要不是写给别人看，而是写给自己看了。其实过去的几年，每每都觉得应该要写一点记录一下，但是一直都是没怎么坚持。每当你觉得做一件事情太晚了的时候，它都是你接下来的时间里最早的。所以我们还是先把flag立一下，又开始写写吧。</p>
-<p>写的东西也是想起什么写什么了，只是一个记录。</p>
+    <p>I've bean using java and python for years. With spring boot, it is easy to start an application. However, I still don't like the database access part of java.</p>
+<p>Now JPA and mybatis are popular solutions for database access. When I need to write some queries with dynamic conditions, the code is still ugly.</p>
+<p>In my recent projects, because we have very limited resource (Only 1 developer for both API and frontend), I begin to use Django and Django rest framework to replace spring boot.</p>
+<p>Actually, most of our APIs are just simple CRUD. With Django rest framework and django-filter, I only need a few lines of codes to get the API done.</p>
+<p>One of our applications is to collect data from some machine tools, do some calculation and show some reports. It suppports uploading data through both some HTTP endpoints and MQTT. </p>
+<p>For MQTT, integrating MQTT with Django is difficult. So I use hbmqtt and another simple python file to receive the data from mosquitto. Because we only need to collect data from a few machine tools (&lt; 10), this file is enough.</p>
+<p>However, we just got a big project which has about 100 machine tools and more than 1000 data points (Some data points' sampling rate is 100Hz). Then I begin to worry about the performance of this python file. I decide to give golang a try because it is hot recently.</p>
+<p>I don't like golang's syntax. As a modern language, its syntax and function are ugly. Even java is more pleasant to work with and I always forget when to use pointers.</p>
+<p>However, there are still some things I like.</p>
+<ol>
+<li>Simple. The core of the language is simple enough just like C.</li>
+<li>Flexible. Don't have the limitation like "one public class in one file", so with only one or two files, you can get a fully workable application.</li>
+<li>Static typed. Feel more confident to change my code than python.</li>
+<li>Can build to a single executable file. It is so easy to deploy.</li>
+<li>Don't need a heavy IDE to write code. I can use my favorite emacs now.</li>
+</ol>
+<p>After some google works, I'm able to make my golang version MQTT receiver works. It just works.</p>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://stingh711.github.io/tag/misc.html">misc</a>
+      <a href="https://stingh711.github.io/tag/go.html">go</a>
     </p>
   </div>
 
