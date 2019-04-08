@@ -103,14 +103,9 @@
 <p>Now JPA and mybatis are popular solutions for database access. When I need to write some queries with dynamic conditions, the code is still ugly.</p>
 <p>In my recent projects, because we have very limited resource (Only 1 developer for both API and frontend), I begin to use Django and Django rest framework to replace spring boot.</p>
 <p>Actually, most of our APIs are just simple CRUD. With Django rest framework and django-filter, I only need a few lines of codes to get the API done.</p>
-<p>One of our applications is to collect data from some machine tools, do some calculation and show some reports. It suppports uploading data through both some HTTP endpoints and MQTT. </p>
+<p>One of our applications is to collect data from some machine tools, do some calculation and show some reports. It suppports uploading data through both some HTTP endpoints and MQTT.</p>
 <p>For MQTT, integrating MQTT with Django is difficult. So I use hbmqtt and another simple python file to receive the data from mosquitto. Because we only need to collect data from a few machine tools (&lt; 10), this file is enough.</p>
 <p>However, we just got a big project which has about 100 machine tools and more than 1000 data points (Some data points' sampling rate is 100Hz). Then I begin to worry about the performance of this python file. I decide to give golang a try because it is hot recently.</p>
-<h2>Things I don't like</h2>
-<ol>
-<li>Because I only use C during my college, the pointer is a little confusing for me</li>
-<li>For a modern language, golang is a little dull. No list comprehension, no pattern match, if err != nil is everywhere</li>
-</ol>
 <h2>Things I like</h2>
 <ol>
 <li>Simple. The core of the language is simple enough just like C.</li>
@@ -118,6 +113,14 @@
 <li>Static typed. Feel more confident to change my code than python.</li>
 <li>Can build to a single executable file. It is so easy to deploy.</li>
 <li>Don't need a heavy IDE to write code. I can use my favorite emacs now.</li>
+</ol>
+<h2>Things I don't like</h2>
+<ol>
+<li>Because I only use C during my college, the pointer is a little confusing for me</li>
+<li>For a modern language, golang is a little dull. No list comprehension, no pattern match, if err != nil is everywhere</li>
+<li>Don't understand how defer works. Java's finally block is more clear</li>
+<li>math.Round only works for float64. I have to change all float32 fields of my models to float64</li>
+<li>There is no time struct like python's time and java's LocalTime</li>
 </ol>
 <p>After some google works, I'm able to make my golang version MQTT receiver works. Just as the saying goes, it just works.</p>
   </div>
