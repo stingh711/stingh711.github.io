@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://stingh711.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://stingh711.github.io/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="https://stingh711.github.io/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://stingh711.github.io/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://stingh711.github.io/theme/font-awesome/css/solid.css">
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-10412053-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+<meta name="author" content="HuLiHong" />
+<meta name="description" content="When working on django projects, I need to switching among django’s model, view, url, admin and serializers files. I used to use fzf.vim to jump around until I found vim-projectionist. With this plugin, you can create a “map” of your source code, with this map, you can just …" />
+<meta name="keywords" content="vim">
+
+<meta property="og:site_name" content="We need to TALK!"/>
+<meta property="og:title" content="Use vim-projectionist to jump around in django projects"/>
+<meta property="og:description" content="When working on django projects, I need to switching among django’s model, view, url, admin and serializers files. I used to use fzf.vim to jump around until I found vim-projectionist. With this plugin, you can create a “map” of your source code, with this map, you can just …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://stingh711.github.io/use-vim-projectionist-to-jump-around-in-django-projects.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-04-16 00:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://stingh711.github.io/author/hulihong.html">
+<meta property="article:section" content="programming"/>
+<meta property="article:tag" content="vim"/>
+<meta property="og:image" content="">
+
+  <title>We need to TALK! &ndash; Use vim-projectionist to jump around in django projects</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://stingh711.github.io">
+        <img src="https://stingh711.github.io/theme/img/profile.png" alt="HuLiHong" title="HuLiHong">
+      </a>
+      <h1><a href="https://stingh711.github.io">HuLiHong</a></h1>
+
+
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://stingh711.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="use-vim-projectionist-to-jump-around-in-django-projects">Use vim-projectionist to jump around in django projects</h1>
+    <p>
+          Posted on 四 16 四月 2020 in <a href="https://stingh711.github.io/category/programming.html">programming</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>When working on django projects, I need to switching among django’s model, view, url, admin and serializers files. I used to use fzf.vim to jump around until I found vim-projectionist.</p>
+<p>With this plugin, you can create a “map” of your source code, with this map, you can just from for example, .c file to .h file.</p>
+<p>Create a .projections.json under your django file as follows:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;*/urls.py&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;urls&quot;</span><span class="p">,</span> <span class="nt">&quot;alternate&quot;</span><span class="p">:</span> <span class="s2">&quot;{}/views.py&quot;</span> <span class="p">},</span>
+    <span class="nt">&quot;*/models.py&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;models&quot;</span> <span class="p">},</span>
+    <span class="nt">&quot;*/serializers.py&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;serializers&quot;</span> <span class="p">},</span>
+    <span class="nt">&quot;*/admin.py&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span> <span class="p">},</span>
+    <span class="nt">&quot;*/views.py&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;view&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Now I have these command to jump around:</p>
+<ul>
+<li>When I open urls.py, press :A will jump to the alternate file views.py</li>
+<li>:Eurls app_name to open urls.py of an app</li>
+<li>:Emodels app_name to open models.py</li>
+<li>:Eserializers app_name to open serializers.py</li>
+<li>:Eadmin app_name to open admin.py</li>
+<li>:Eviews app_name to open views.py</li>
+</ul>
+<p>The plugin also supports auto complete so you don't need to input too many characters.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://stingh711.github.io/tag/vim.html">vim</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " We need to TALK! ",
+  "url" : "https://stingh711.github.io",
+  "image": "",
+  "description": ""
+}
+</script>
+
+</body>
+</html>
