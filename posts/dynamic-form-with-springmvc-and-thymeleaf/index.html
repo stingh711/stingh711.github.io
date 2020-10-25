@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Dynamic forms with springmvc and thymeleaf - Sting&#39;s Note</title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Dynamic forms with springmvc and thymeleaf | Sting&#39;s Note" />
+	<meta name="twitter:title" content="Dynamic forms with springmvc and thymeleaf | Sting&#39;s Note" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Dynamic forms with springmvc and thymeleaf | Sting&#39;s Note" />
+	<meta name="application-name" content="Dynamic forms with springmvc and thymeleaf | Sting&#39;s Note" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Dynamic forms with springmvc and thymeleaf" />
+<meta property="og:description" content="Requirements SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.
+Things I’ve learned.  When adding an option, don’t need to use javascript to handle the added html snippet. Just submit the add request to controller and handle the adding in the controller (Add a new options into the option list of subject group), then return to the add page. Spring mvc’s data binding and thyme leaf’s for loop will handle the html." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/dynamic-form-with-springmvc-and-thymeleaf/" />
+<meta property="article:published_time" content="2014-08-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-08-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dynamic forms with springmvc and thymeleaf"/>
+<meta name="twitter:description" content="Requirements SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.
+Things I’ve learned.  When adding an option, don’t need to use javascript to handle the added html snippet. Just submit the add request to controller and handle the adding in the controller (Add a new options into the option list of subject group), then return to the add page. Spring mvc’s data binding and thyme leaf’s for loop will handle the html."/>
+
+	<link href="http://localhost:1313/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Sting&#39;s Note</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts/">Archives</a>
+		
+		<a href="/tags/">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Dynamic forms with springmvc and thymeleaf</h1>
+			<div class="meta">Posted on Aug 1, 2014</div>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="requirements">Requirements</h2>
+<p>SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.</p>
+<h2 id="things-i-ve-learned-dot">Things I’ve learned.</h2>
+<ol>
+<li>When adding an option, don’t need to use javascript to handle the added html snippet. Just submit the add request to controller and handle the adding in the controller (Add a new options into the option list of subject group), then return to the add page. Spring mvc’s data binding and thyme leaf’s for loop will handle the html. (In EDC, I use javascript to append option html. It works. But there are some duplicate codes in JSP and javascript)</li>
+<li>Can use the same way to handle subject option removing.</li>
+<li>If there are multiple submit button in one form. We can use button’s name to separate them. In controller, use RequestMapping’s params to make the submit request to the right controller method.</li>
+</ol>
+<h2 id="code">Code</h2>
+<p>SubjectGroupController.java</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">edc.web</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">edc.model.SubjectGroup</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">edc.model.SubjectGroupOption</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">edc.service.SubjectGroupService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Controller</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.ui.Model</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.validation.BindingResult</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMethod</span><span class="o">;</span>
+
+<span class="nd">@Controller</span>
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&#34;/sg&#34;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SubjectGroupController</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">SubjectGroupService</span> <span class="n">subjectGroupService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSubjectGroupService</span><span class="o">(</span><span class="n">SubjectGroupService</span> <span class="n">subjectGroupService</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">this</span><span class="o">.</span><span class="na">subjectGroupService</span> <span class="o">=</span> <span class="n">subjectGroupService</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;add&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">add</span><span class="o">(</span><span class="n">SubjectGroup</span> <span class="n">subjectGroup</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="s">&#34;subjectGroup/add&#34;</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;add&#34;</span><span class="o">,</span> <span class="n">params</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;addOption&#34;</span><span class="o">})</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">addOption</span><span class="o">(</span><span class="n">SubjectGroup</span> <span class="n">subjectGroup</span><span class="o">,</span> <span class="n">BindingResult</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">subjectGroup</span><span class="o">.</span><span class="na">getOptions</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">SubjectGroupOption</span><span class="o">());</span>
+	<span class="k">return</span> <span class="s">&#34;subjectGroup/add&#34;</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;add&#34;</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">save</span><span class="o">(</span><span class="n">SubjectGroup</span> <span class="n">subjectGroup</span><span class="o">,</span> <span class="n">BindingResult</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">this</span><span class="o">.</span><span class="na">subjectGroupService</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">subjectGroup</span><span class="o">);</span>
+	<span class="k">return</span> <span class="s">&#34;redirect:/sg/add&#34;</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>add.html</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">xmlns:th</span><span class="o">=</span><span class="s">&#34;http://www.thymeleaf.org&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Add Subject Group<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">th:action</span><span class="o">=</span><span class="s">&#34;@{/sg/add}&#34;</span> <span class="na">th:object</span><span class="o">=</span><span class="s">&#34;${subjectGroup}&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;POST&#34;</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">th:field</span><span class="o">=</span><span class="s">&#34;*{name}&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Name...&#34;</span><span class="p">/&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Options<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;addOption&#34;</span><span class="p">&gt;</span>Add Option<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">th:each</span><span class="o">=</span><span class="s">&#34;option, rowStat : *{options}&#34;</span><span class="p">&gt;</span>
+	    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">th:field</span><span class="o">=</span><span class="s">&#34;*{options[__${rowStat.index}__].label}&#34;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Option...&#34;</span><span class="p">/&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+	  <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/spring">spring</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr>⚡️
+	2020  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+</div>
+    </body>
+</html>

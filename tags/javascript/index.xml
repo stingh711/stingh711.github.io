@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Sting&#39;s Note</title>
+    <link>http://localhost:1313/tags/javascript/</link>
+    <description>Recent content in javascript on Sting&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 19 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to remove vscode&#39;s decorator warning?</title>
+      <link>http://localhost:1313/posts/how-to-remove-vscode-decorator-warning/</link>
+      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-to-remove-vscode-decorator-warning/</guid>
+      <description> Create a tsconfig.json under root directory. Add following code to tsconfig.json  1 2 3 4 5 6  { &amp;#34;compilerOptions&amp;#34;: { &amp;#34;experimentalDecorators&amp;#34;: true, &amp;#34;allowJs&amp;#34;: true } }    Restart vscode  </description>
+    </item>
+    
+    <item>
+      <title>Javascript Notes</title>
+      <link>http://localhost:1313/posts/javascript_notes/</link>
+      <pubDate>Sat, 16 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/javascript_notes/</guid>
+      <description>Just some notes on some popular javascript libraries.
+bootstrap-daterangepicker How to get startDate and endDate 1 2 3  var range = $(&amp;#34;#range&amp;#34;).daterangepicker(); var start = range.data(&amp;#34;daterangepicker&amp;#34;).startDate; var end = range.data(&amp;#34;daterangepicker&amp;#34;).endDate;   lodash map 1 2 3  var data = [{label: &amp;#39;4/1&amp;#39;, value: 10}, {label: &amp;#39;4/2&amp;#39;, value: 14}]; var labels = _.map(data, function(item) { return item.label; }); var values = _.map(data, function(item) { return item.value; });   It is especially useful when preparing data for some chart libraries.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Javascript Notes - Sting&#39;s Note</title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Javascript Notes | Sting&#39;s Note" />
+	<meta name="twitter:title" content="Javascript Notes | Sting&#39;s Note" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Javascript Notes | Sting&#39;s Note" />
+	<meta name="application-name" content="Javascript Notes | Sting&#39;s Note" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Javascript Notes" />
+<meta property="og:description" content="Just some notes on some popular javascript libraries.
+bootstrap-daterangepicker How to get startDate and endDate 1 2 3  var range = $(&#34;#range&#34;).daterangepicker(); var start = range.data(&#34;daterangepicker&#34;).startDate; var end = range.data(&#34;daterangepicker&#34;).endDate;   lodash map 1 2 3  var data = [{label: &#39;4/1&#39;, value: 10}, {label: &#39;4/2&#39;, value: 14}]; var labels = _.map(data, function(item) { return item.label; }); var values = _.map(data, function(item) { return item.value; });   It is especially useful when preparing data for some chart libraries." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/javascript_notes/" />
+<meta property="article:published_time" content="2018-06-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-06-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Javascript Notes"/>
+<meta name="twitter:description" content="Just some notes on some popular javascript libraries.
+bootstrap-daterangepicker How to get startDate and endDate 1 2 3  var range = $(&#34;#range&#34;).daterangepicker(); var start = range.data(&#34;daterangepicker&#34;).startDate; var end = range.data(&#34;daterangepicker&#34;).endDate;   lodash map 1 2 3  var data = [{label: &#39;4/1&#39;, value: 10}, {label: &#39;4/2&#39;, value: 14}]; var labels = _.map(data, function(item) { return item.label; }); var values = _.map(data, function(item) { return item.value; });   It is especially useful when preparing data for some chart libraries."/>
+
+	<link href="http://localhost:1313/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Sting&#39;s Note</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts/">Archives</a>
+		
+		<a href="/tags/">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Javascript Notes</h1>
+			<div class="meta">Posted on Jun 16, 2018</div>
+		</div>
+		
+
+		<section class="body">
+			<p>Just some notes on some popular javascript libraries.</p>
+<h2 id="bootstrap-daterangepicker">bootstrap-daterangepicker</h2>
+<h3 id="how-to-get-startdate-and-enddate">How to get startDate and endDate</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">     <span class="kd">var</span> <span class="nx">range</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#range&#34;</span><span class="p">).</span><span class="nx">daterangepicker</span><span class="p">();</span>
+     <span class="kd">var</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">range</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s2">&#34;daterangepicker&#34;</span><span class="p">).</span><span class="nx">startDate</span><span class="p">;</span>
+     <span class="kd">var</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">range</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s2">&#34;daterangepicker&#34;</span><span class="p">).</span><span class="nx">endDate</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="lodash">lodash</h2>
+<h3 id="map">map</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">     <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[{</span><span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;4/1&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">10</span><span class="p">},</span> <span class="p">{</span><span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;4/2&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">14</span><span class="p">}];</span>
+     <span class="kd">var</span> <span class="nx">labels</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">item</span><span class="p">.</span><span class="nx">label</span><span class="p">;</span> <span class="p">});</span>
+     <span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span> <span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>It is especially useful when preparing data for some chart libraries.</p>
+<h3 id="convert-array-to-object">convert array to object</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">     <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[{</span><span class="nx">value</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Working&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Idle&#39;</span><span class="p">}];</span>
+     <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">chain</span><span class="p">(</span><span class="nx">data</span><span class="p">).</span><span class="nx">keyBy</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">).</span><span class="nx">mapValues</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">).</span><span class="nx">value</span><span class="p">();</span>
+     <span class="c1">//The result will be {0: &#39;Working&#39;, 1: &#39;Idle&#39;}
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="jquery">jquery</h2>
+<h3 id="how-to-pass-array-when-using-dot-get">How to pass array when using $.get</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">     <span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&#34;/api&#34;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&#34;name[]&#34;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;George&#34;</span><span class="p">,</span> <span class="s2">&#34;Jacky&#34;</span><span class="p">]},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>If you are using Spring MVC for the server side, here is the relative code to receive multiple parameters.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">     <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">&#34;/api&#34;</span><span class="o">)</span>
+     <span class="nd">@ResponseBody</span>
+     <span class="kd">public</span> <span class="n">YourResponseEntity</span> <span class="nf">api</span><span class="o">(</span><span class="nd">@RequestParam</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">)</span> <span class="n">String</span><span class="o">[]</span> <span class="n">names</span><span class="o">)</span> <span class="o">{</span>
+     <span class="c1">//deal with names
+</span><span class="c1"></span>     <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="es6">es6</h2>
+<h3 id="how-to-get-keys-of-an-object-in-javascript">How to get keys of an object in javascript</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">   <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;sting&#34;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">10</span><span class="p">};</span>
+   <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/javascript">javascript</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr>⚡️
+	2020  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+</div>
+    </body>
+</html>

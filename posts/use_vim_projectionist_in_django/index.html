@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Use vim-projectionist to jump around in django projects - Sting&#39;s Note</title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Use vim-projectionist to jump around in django projects | Sting&#39;s Note" />
+	<meta name="twitter:title" content="Use vim-projectionist to jump around in django projects | Sting&#39;s Note" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Use vim-projectionist to jump around in django projects | Sting&#39;s Note" />
+	<meta name="application-name" content="Use vim-projectionist to jump around in django projects | Sting&#39;s Note" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Use vim-projectionist to jump around in django projects" />
+<meta property="og:description" content="When working on django projects, I need to switching among django’s model, view, url, admin and serializers files. I used to use fzf.vim to jump around until I found vim-projectionist.
+With this plugin, you can create a “map” of your source code, with this map, you can just from for example, .c file to .h file.
+Create a .projections.json under your django file as follows:
+1 2 3 4 5 6 7  { &#34;*/urls." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/use_vim_projectionist_in_django/" />
+<meta property="article:published_time" content="2020-04-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Use vim-projectionist to jump around in django projects"/>
+<meta name="twitter:description" content="When working on django projects, I need to switching among django’s model, view, url, admin and serializers files. I used to use fzf.vim to jump around until I found vim-projectionist.
+With this plugin, you can create a “map” of your source code, with this map, you can just from for example, .c file to .h file.
+Create a .projections.json under your django file as follows:
+1 2 3 4 5 6 7  { &#34;*/urls."/>
+
+	<link href="http://localhost:1313/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Sting&#39;s Note</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts/">Archives</a>
+		
+		<a href="/tags/">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Use vim-projectionist to jump around in django projects</h1>
+			<div class="meta">Posted on Apr 16, 2020</div>
+		</div>
+		
+
+		<section class="body">
+			<p>When working on django projects, I need to switching among django’s model, view, url, admin and serializers files. I used to use fzf.vim to jump around until I found vim-projectionist.</p>
+<p>With this plugin, you can create a “map” of your source code, with this map, you can just from for example, .c file to .h file.</p>
+<p>Create a .projections.json under your django file as follows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+	<span class="nt">&#34;*/urls.py&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;urls&#34;</span><span class="p">,</span> <span class="nt">&#34;alternate&#34;</span><span class="p">:</span> <span class="s2">&#34;{}/views.py&#34;</span> <span class="p">},</span>
+	<span class="nt">&#34;*/models.py&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;models&#34;</span> <span class="p">},</span>
+	<span class="nt">&#34;*/serializers.py&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;serializers&#34;</span> <span class="p">},</span>
+	<span class="nt">&#34;*/admin.py&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;admin&#34;</span> <span class="p">},</span>
+	<span class="nt">&#34;*/views.py&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;view&#34;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now I have these command to jump around:</p>
+<ul>
+<li>When I open urls.py, press :A will jump to the alternate file views.py</li>
+<li>:Eurls app_name to open urls.py of an app</li>
+<li>:Emodels app_name to open models.py</li>
+<li>:Eserializers app_name to open serializers.py</li>
+<li>:Eadmin app_name to open admin.py</li>
+<li>:Eviews app_name to open views.py</li>
+</ul>
+<p>The plugin also supports auto complete so you don&rsquo;t need to input too many characters.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/vim">vim</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr>⚡️
+	2020  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+</div>
+    </body>
+</html>

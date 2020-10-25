@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Django-auto-prefetching - Sting&#39;s Note</title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Django-auto-prefetching | Sting&#39;s Note" />
+	<meta name="twitter:title" content="Django-auto-prefetching | Sting&#39;s Note" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Django-auto-prefetching | Sting&#39;s Note" />
+	<meta name="application-name" content="Django-auto-prefetching | Sting&#39;s Note" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Django-auto-prefetching" />
+<meta property="og:description" content="Django-auto-prefetching is a small django package to do the select_related and prefetch_related automatically.
+Usage The usage is very simple, just import the AutoPrefetchViewSetMixin from django_auto_prefetching, and then add the mixin as the base class of a ListAPIView
+If you override the get_queryset of the ListAPIView, need some work to make it work.
+1 2 3 4 5 6 7 8 9 10 11 12  import django_auto_prefetching from rest_framework.viewsets import ModelViewSet class BaseModelViewSet(django_auto_prefetching." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/django_auto_prefetching/" />
+<meta property="article:published_time" content="2020-10-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-10-22T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Django-auto-prefetching"/>
+<meta name="twitter:description" content="Django-auto-prefetching is a small django package to do the select_related and prefetch_related automatically.
+Usage The usage is very simple, just import the AutoPrefetchViewSetMixin from django_auto_prefetching, and then add the mixin as the base class of a ListAPIView
+If you override the get_queryset of the ListAPIView, need some work to make it work.
+1 2 3 4 5 6 7 8 9 10 11 12  import django_auto_prefetching from rest_framework.viewsets import ModelViewSet class BaseModelViewSet(django_auto_prefetching."/>
+
+	<link href="http://localhost:1313/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Sting&#39;s Note</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts/">Archives</a>
+		
+		<a href="/tags/">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Django-auto-prefetching</h1>
+			<div class="meta">Posted on Oct 22, 2020</div>
+		</div>
+		
+
+		<section class="body">
+			<p>Django-auto-prefetching is a small django package to do the select_related and prefetch_related automatically.</p>
+<h2 id="usage">Usage</h2>
+<p>The usage is very simple, just import the AutoPrefetchViewSetMixin from django_auto_prefetching, and then add the mixin as the base class of a ListAPIView</p>
+<p>If you override the get_queryset of the ListAPIView, need some work to make it work.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">django_auto_prefetching</span>
+<span class="kn">from</span> <span class="nn">rest_framework.viewsets</span> <span class="kn">import</span> <span class="n">ModelViewSet</span>
+
+<span class="k">class</span> <span class="nc">BaseModelViewSet</span><span class="p">(</span><span class="n">django_auto_prefetching</span><span class="o">.</span><span class="n">AutoPrefetchViewSetMixin</span><span class="p">,</span> <span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">YourModelSerializer</span>
+    
+    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="c1"># Simply do the extra select_related / prefetch_related here</span>
+            <span class="c1"># and leave the mixin to do the rest of the work</span>
+            <span class="n">queryset</span> <span class="o">=</span> <span class="n">YourModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+            <span class="n">queryset</span> <span class="o">=</span> <span class="n">queryset</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s1">&#39;my_extra_field&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">django_auto_prefetching</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">queryset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">serializer_class</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="the-problem-it-solves">The problem it solves</h2>
+<p>Django rest framework has serious N+1 problem when generating output with Serializer, especially when you have nested serializer and the depth is more than 1.</p>
+<p>This package will do the magic automatically.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://github.com/GeeWee/django-auto-prefetching">https://github.com/GeeWee/django-auto-prefetching</a></li>
+</ul>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/python">python</a></li>
+					
+					<li><a href="/tags/django">django</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr>⚡️
+	2020  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+</div>
+    </body>
+</html>

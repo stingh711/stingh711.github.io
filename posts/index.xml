@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Sting&#39;s Note</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Sting&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django-auto-prefetching</title>
+      <link>http://localhost:1313/posts/django_auto_prefetching/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/django_auto_prefetching/</guid>
+      <description>Django-auto-prefetching is a small django package to do the select_related and prefetch_related automatically.
+Usage The usage is very simple, just import the AutoPrefetchViewSetMixin from django_auto_prefetching, and then add the mixin as the base class of a ListAPIView
+If you override the get_queryset of the ListAPIView, need some work to make it work.
+1 2 3 4 5 6 7 8 9 10 11 12  import django_auto_prefetching from rest_framework.viewsets import ModelViewSet class BaseModelViewSet(django_auto_prefetching.</description>
+    </item>
+    
+    <item>
+      <title>Use vim-projectionist to jump around in django projects</title>
+      <link>http://localhost:1313/posts/use_vim_projectionist_in_django/</link>
+      <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/use_vim_projectionist_in_django/</guid>
+      <description>When working on django projects, I need to switching among django’s model, view, url, admin and serializers files. I used to use fzf.vim to jump around until I found vim-projectionist.
+With this plugin, you can create a “map” of your source code, with this map, you can just from for example, .c file to .h file.
+Create a .projections.json under your django file as follows:
+1 2 3 4 5 6 7  { &amp;#34;*/urls.</description>
+    </item>
+    
+    <item>
+      <title>Give golang a try</title>
+      <link>http://localhost:1313/posts/give-golang-a-try/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/give-golang-a-try/</guid>
+      <description>“Go is such a refreshing language to program in, there is very little clutter just the stuff you need to get the job done” – Matt West
+ Background I&amp;rsquo;ve bean using java and python for years. With spring boot, it is easy to start an application. However, I still don&amp;rsquo;t like the database access part of java.
+Now JPA and mybatis are popular solutions for database access. When I need to write some queries with dynamic conditions, the code is still ugly.</description>
+    </item>
+    
+    <item>
+      <title>Update this blog again</title>
+      <link>http://localhost:1313/posts/update_blog_again/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/update_blog_again/</guid>
+      <description>以前曾经写了很久的博客，后来我的虚拟主机忘记续费了，然后也没有做备份，以前写的博客全部没有了。虽然又搭了一个github的，但是写的欲望基本</description>
+    </item>
+    
+    <item>
+      <title>Vscode&#39;s restclient is great</title>
+      <link>http://localhost:1313/posts/vscode-restclient-is-great/</link>
+      <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/vscode-restclient-is-great/</guid>
+      <description>Postman is an essential tool for the development of both frontend and backend. However, sometimes I hate its save function. I hate to find a right folder to save a request. What I need is just a very simple tool to test some API and it will be just there when I need it. Then I found REST Client extension for Vscode.
+With this extension, you can save your request in plain text.</description>
+    </item>
+    
+    <item>
+      <title>Use django-filter to add filter for REST api</title>
+      <link>http://localhost:1313/posts/use-django-filter-to-add-filter-for-rest-api/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/use-django-filter-to-add-filter-for-rest-api/</guid>
+      <description>For a REST list api, filtering and sorting is the basic requirements. Using django-filter, we can add these functions with only a few lines of codes.
+For example, if we have a model as follows,
+1 2 3  class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField()   We will write relative serializer and view.
+1 2 3 4 5 6 7  class ProductSerializer(serializers.ModelSerializer): class Meta: fields = &amp;#39;__all__&amp;#39; class ProductListView(generics.</description>
+    </item>
+    
+    <item>
+      <title>Use org-journal to keep my daily notes</title>
+      <link>http://localhost:1313/posts/use_org_journal_to_keey_diary_notes/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/use_org_journal_to_keey_diary_notes/</guid>
+      <description>org-journal is small package to write your journal in org mode. Like diary mode, it will generate one file per day, but you can use org-mode instead of plain dairy mode.
+To create a journal, just press C-c c-j, an org-mode item will be created with curren time.
+It is also provided calendar binding, so you can view your journal from calendar view.
+Update: to search your notes, the best way is to add your notes to a git repository, then open one entry and use M-x counsel-rg.</description>
+    </item>
+    
+    <item>
+      <title>Write a CustomPaginator for django rest framework</title>
+      <link>http://localhost:1313/posts/custom-paginator-for-drf/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/custom-paginator-for-drf/</guid>
+      <description>Pagination is essential part for a REST api. Django rest framework provides an easy to way to add pagination to current API and a lot of useful built-in implementations. However, in order to work with a specified frontend component, a customized version is needed.
+Customizing is easy in DRF, just extends a current one and override it get_paginated_response method. For example, the following one uses the page number pagination ,which means you can pass page=n in the URL to get the nth page.</description>
+    </item>
+    
+    <item>
+      <title>How to remove vscode&#39;s decorator warning?</title>
+      <link>http://localhost:1313/posts/how-to-remove-vscode-decorator-warning/</link>
+      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-to-remove-vscode-decorator-warning/</guid>
+      <description> Create a tsconfig.json under root directory. Add following code to tsconfig.json  1 2 3 4 5 6  { &amp;#34;compilerOptions&amp;#34;: { &amp;#34;experimentalDecorators&amp;#34;: true, &amp;#34;allowJs&amp;#34;: true } }    Restart vscode  </description>
+    </item>
+    
+    <item>
+      <title>Pandas in jupyter</title>
+      <link>http://localhost:1313/posts/pandas-in-jupyter/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/pandas-in-jupyter/</guid>
+      <description>Read data from mysql and draw a chart.
+1 2 3 4 5 6 7 8 9 10 11  %matplotlib inline import pymysql import pandas as pd import pandas.io.sql as sql conn = pymysql.connect(host=&amp;#39;192.168.56.1&amp;#39;, user=&amp;#39;root&amp;#39;, passwd=&amp;#39;qwer-1235&amp;#39;, db=&amp;#39;pdss&amp;#39;) s = &amp;#39;select number_value from quality_data_item_record where item_id = 11&amp;#39; df = sql.read_sql_query(s, conn) df.plot()   </description>
+    </item>
+    
+    <item>
+      <title>Javascript Notes</title>
+      <link>http://localhost:1313/posts/javascript_notes/</link>
+      <pubDate>Sat, 16 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/javascript_notes/</guid>
+      <description>Just some notes on some popular javascript libraries.
+bootstrap-daterangepicker How to get startDate and endDate 1 2 3  var range = $(&amp;#34;#range&amp;#34;).daterangepicker(); var start = range.data(&amp;#34;daterangepicker&amp;#34;).startDate; var end = range.data(&amp;#34;daterangepicker&amp;#34;).endDate;   lodash map 1 2 3  var data = [{label: &amp;#39;4/1&amp;#39;, value: 10}, {label: &amp;#39;4/2&amp;#39;, value: 14}]; var labels = _.map(data, function(item) { return item.label; }); var values = _.map(data, function(item) { return item.value; });   It is especially useful when preparing data for some chart libraries.</description>
+    </item>
+    
+    <item>
+      <title>Postgresql Notes</title>
+      <link>http://localhost:1313/posts/postgresql_notes/</link>
+      <pubDate>Tue, 08 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/postgresql_notes/</guid>
+      <description>How to generate and insert test data? For example, my table is like: create table (time timestamp, value double precision, sensor integer). If I want to insert some test data, I can use function generate_series. Following sql will insert 5000 rows:
+1  insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i)   How to view disk usage? View table size 1  select pg_size_pretty(pg_relation_size(&amp;#39;pressure_01&amp;#39;))   View database size 1  select pg_size_pretty(pg_database_size(&amp;#39;pressure_01&amp;#39;))   </description>
+    </item>
+    
+    <item>
+      <title>Dynamic forms with springmvc and thymeleaf</title>
+      <link>http://localhost:1313/posts/dynamic-form-with-springmvc-and-thymeleaf/</link>
+      <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/dynamic-form-with-springmvc-and-thymeleaf/</guid>
+      <description>Requirements SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.
+Things I’ve learned.  When adding an option, don’t need to use javascript to handle the added html snippet. Just submit the add request to controller and handle the adding in the controller (Add a new options into the option list of subject group), then return to the add page. Spring mvc’s data binding and thyme leaf’s for loop will handle the html.</description>
+    </item>
+    
+  </channel>
+</rss>

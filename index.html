@@ -1,399 +1,148 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="" />
+<html>
+	<head>
+	<meta name="generator" content="Hugo 0.75.1" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Sting&#39;s Note | Home </title><meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
 
-    <link rel="stylesheet" type="text/css" href="https://stingh711.github.io/theme/stylesheet/style.min.css">
+	<meta property="og:title" content="Sting&#39;s Note | Sting&#39;s Note" />
+	<meta name="twitter:title" content="Sting&#39;s Note | Sting&#39;s Note" />
 
-  <link rel="stylesheet" type="text/css" href="https://stingh711.github.io/theme/pygments/monokai.min.css">
-  <link rel="stylesheet" type="text/css" href="https://stingh711.github.io/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://stingh711.github.io/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://stingh711.github.io/theme/font-awesome/css/solid.css">
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Sting&#39;s Note | Sting&#39;s Note" />
+	<meta name="application-name" content="Sting&#39;s Note | Sting&#39;s Note" />
+	<meta property="og:site_name" content="" />
+	<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="Sting's Note" />
+	<meta property="og:title" content="Sting&#39;s Note" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/" />
+<meta property="og:updated_time" content="2020-10-22T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sting&#39;s Note"/>
+<meta name="twitter:description" content=""/>
 
-
-
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-10412053-2', 'auto');
-  ga('send', 'pageview');
-</script>
-<!-- End Google Analytics -->
-
-    <meta name="author" content="HuLiHong" />
-    <meta name="description" content="" />
-<meta property="og:site_name" content="We need to TALK!"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="We need to TALK!"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://stingh711.github.io"/>
-
-  <title>We need to TALK!</title>
-
+	<link href="http://localhost:1313/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	
 </head>
-<body>
-  <aside>
-    <div>
-      <a href="https://stingh711.github.io">
-        <img src="https://stingh711.github.io/theme/img/profile.png" alt="HuLiHong" title="HuLiHong">
-      </a>
-      <h1><a href="https://stingh711.github.io">HuLiHong</a></h1>
 
+	<body>
+		<div class="content">
+			<header>
+	<div class="main">
+		<a href="http://localhost:1313/">Sting&#39;s Note</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts/">Archives</a>
+		
+		<a href="/tags/">Tags</a>
+		
+	</nav>
+</header>
+
+			
+			<main class="list">
+				<div class="site-description"></div>
+				
+				
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/django_auto_prefetching/">Django-auto-prefetching</a></h1>
+					<time>Oct 22, 2020</time>
+					<br><div class="description">
+						
+						Django-auto-prefetching is a small django package to do the select_related and prefetch_related automatically.
+Usage The usage is very simple, just import the AutoPrefetchViewSetMixin from django_auto_prefetching, and then add the mixin as the base class of a ListAPIView
+If you override the get_queryset of the ListAPIView, need some work to make it work.
+1 2 3 4 5 6 7 8 9 10 11 12  import django_auto_prefetching from rest_framework.viewsets import ModelViewSet class BaseModelViewSet(django_auto_prefetching.&hellip;
+						
+					</div>
+					<a href="/posts/django_auto_prefetching/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/use_vim_projectionist_in_django/">Use vim-projectionist to jump around in django projects</a></h1>
+					<time>Apr 16, 2020</time>
+					<br><div class="description">
+						
+						When working on django projects, I need to switching among django’s model, view, url, admin and serializers files. I used to use fzf.vim to jump around until I found vim-projectionist.
+With this plugin, you can create a “map” of your source code, with this map, you can just from for example, .c file to .h file.
+Create a .projections.json under your django file as follows:
+1 2 3 4 5 6 7  { &#34;*/urls.&hellip;
+						
+					</div>
+					<a href="/posts/use_vim_projectionist_in_django/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/give-golang-a-try/">Give golang a try</a></h1>
+					<time>Mar 28, 2019</time>
+					<br><div class="description">
+						
+						“Go is such a refreshing language to program in, there is very little clutter just the stuff you need to get the job done” – Matt West
+ Background I&rsquo;ve bean using java and python for years. With spring boot, it is easy to start an application. However, I still don&rsquo;t like the database access part of java.
+Now JPA and mybatis are popular solutions for database access. When I need to write some queries with dynamic conditions, the code is still ugly.&hellip;
+						
+					</div>
+					<a href="/posts/give-golang-a-try/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/update_blog_again/">Update this blog again</a></h1>
+					<time>Mar 18, 2019</time>
+					<br><div class="description">
+						
+						以前曾经写了很久的博客，后来我的虚拟主机忘记续费了，然后也没有做备份，以前写的博客全部没有了。虽然又搭了一个github的，但是写的欲望基本&hellip;
+						
+					</div>
+					<a href="/posts/update_blog_again/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/vscode-restclient-is-great/">Vscode&#39;s restclient is great</a></h1>
+					<time>Jun 26, 2018</time>
+					<br><div class="description">
+						
+						Postman is an essential tool for the development of both frontend and backend. However, sometimes I hate its save function. I hate to find a right folder to save a request. What I need is just a very simple tool to test some API and it will be just there when I need it. Then I found REST Client extension for Vscode.
+With this extension, you can save your request in plain text.&hellip;
+						
+					</div>
+					<a href="/posts/vscode-restclient-is-great/">Read more ⟶</a>
+				</section>
+				
+				
+
+<ul class="pagination">
+	<span class="page-item page-prev">
+	
+	</span>
+	<span class="page-item page-next">
+	
+    <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
+	
+	</span>
+</ul>
+
 
+			</main>
+			<footer>
+<hr>⚡️
+	2020  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
 
-      <ul class="social">
-      </ul>
-    </div>
 
 
-  </aside>
-  <main>
-
-    <nav>
-      <a href="https://stingh711.github.io">    Home
-</a>
-
-      <a href="/archives.html">Archives</a>
-      <a href="/categories.html">Categories</a>
-      <a href="/tags.html">Tags</a>
-
-
-    </nav>
-
-
-
-<article>
-  <header>
-    <h2><a href="https://stingh711.github.io/use-vim-projectionist-to-jump-around-in-django-projects.html#use-vim-projectionist-to-jump-around-in-django-projects">Use vim-projectionist to jump around in django projects</a></h2>
-    <p>
-          Posted on 四 16 四月 2020 in <a href="https://stingh711.github.io/category/programming.html">programming</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="https://stingh711.github.io/tag/vim.html">vim</a>
-    </p>
-  </header>
-  <div>
-      <p>When working on django projects, I need to switching among django’s model, view, url, admin and serializers files. I used to use fzf.vim to jump around until I found vim-projectionist.</p>
-<p>With this plugin, you can create a “map” of your source code, with this map, you can just …</p>
-        <br>
-        <a class="btn" href="https://stingh711.github.io/use-vim-projectionist-to-jump-around-in-django-projects.html#use-vim-projectionist-to-jump-around-in-django-projects">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://stingh711.github.io/give-golang-a-try.html#give-golang-a-try">Give golang a try</a></h2>
-    <p>
-          Posted on 四 28 三月 2019 in <a href="https://stingh711.github.io/category/programming.html">programming</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="https://stingh711.github.io/tag/go.html">go</a>
-    </p>
-  </header>
-  <div>
-      <p>After using java and python for years, I decided to try golang.</p>
-        <br>
-        <a class="btn" href="https://stingh711.github.io/give-golang-a-try.html#give-golang-a-try">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://stingh711.github.io/update-blog-again.html#update-blog-again">Update this blog again</a></h2>
-    <p>
-          Posted on 一 18 三月 2019 in <a href="https://stingh711.github.io/category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="https://stingh711.github.io/tag/misc.html">misc</a>
-    </p>
-  </header>
-  <div>
-      <p>I try to update this blog again.</p>
-        <br>
-        <a class="btn" href="https://stingh711.github.io/update-blog-again.html#update-blog-again">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://stingh711.github.io/vscodes-restclient-is-great.html#vscodes-restclient-is-great">Vscode's restclient is great</a></h2>
-    <p>
-          Posted on 二 26 六月 2018 in <a href="https://stingh711.github.io/category/editor.html">editor</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="https://stingh711.github.io/tag/programming.html">programming</a>,              <a href="https://stingh711.github.io/tag/vscode.html">vscode</a>
-    </p>
-  </header>
-  <div>
-      <p>Postman is an essential tool for the development of both frontend and backend. However, sometimes I hate its save function. I hate to find a right folder to save a request. What I need is just a very simple tool to test some API and it will be just there …</p>
-        <br>
-        <a class="btn" href="https://stingh711.github.io/vscodes-restclient-is-great.html#vscodes-restclient-is-great">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://stingh711.github.io/custom-paginator-for-drf.html#custom-paginator-for-drf">Write a CustomPaginator for django rest framework</a></h2>
-    <p>
-          Posted on 六 23 六月 2018 in <a href="https://stingh711.github.io/category/programming.html">programming</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="https://stingh711.github.io/tag/python.html">python</a>,              <a href="https://stingh711.github.io/tag/django.html">django</a>
-    </p>
-  </header>
-  <div>
-      <p>Pagination is essential part for a REST api. Django rest framework provides an easy to way to add pagination to current API and a lot of useful built-in implementations. However, in order to work with a specified frontend component, a customized version is needed.</p>
-<p>Customizing is easy in DRF, just …</p>
-        <br>
-        <a class="btn" href="https://stingh711.github.io/custom-paginator-for-drf.html#custom-paginator-for-drf">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://stingh711.github.io/use-django-filter-to-add-filter-for-rest-api.html#use-django-filter-to-add-filter-for-rest-api">Use django-filter to add filter for REST api</a></h2>
-    <p>
-          Posted on 六 23 六月 2018 in <a href="https://stingh711.github.io/category/programming.html">programming</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="https://stingh711.github.io/tag/python.html">python</a>,              <a href="https://stingh711.github.io/tag/django.html">django</a>
-    </p>
-  </header>
-  <div>
-      <p>For a REST list api, filtering and sorting is the basic requirements. Using django-filter, we can add these functions with only a few lines of codes.</p>
-<p>For example, if we have a model as follows,</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Product</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DatetimeField</span><span class="p">()</span>
-</pre></div>
-
-
-<p>We will write …</p>
-        <br>
-        <a class="btn" href="https://stingh711.github.io/use-django-filter-to-add-filter-for-rest-api.html#use-django-filter-to-add-filter-for-rest-api">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://stingh711.github.io/use-org-journal-to-keey-diary-notes.html#use-org-journal-to-keey-diary-notes">Use org-journal to keep my daily notes</a></h2>
-    <p>
-          Posted on 六 23 六月 2018 in <a href="https://stingh711.github.io/category/editor.html">editor</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="https://stingh711.github.io/tag/emacs.html">emacs</a>
-    </p>
-  </header>
-  <div>
-      <p><a href="https://github.com/bastibe/org-journal">org-journal</a> is small package to write your journal in org mode.
-Like diary mode, it will generate one file per day, but you can use org-mode instead of plain dairy mode.</p>
-<p>To create a journal, just press <code>C-c c-j</code>, an org-mode item will be created with curren time.</p>
-<p>It is …</p>
-        <br>
-        <a class="btn" href="https://stingh711.github.io/use-org-journal-to-keey-diary-notes.html#use-org-journal-to-keey-diary-notes">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://stingh711.github.io/how-to-remove-vscodes-decorator-warning.html#how-to-remove-vscodes-decorator-warning">How to remove vscode's decorator warning?</a></h2>
-    <p>
-          Posted on 二 19 六月 2018 in <a href="https://stingh711.github.io/category/editor.html">editor</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="https://stingh711.github.io/tag/vscode.html">vscode</a>,              <a href="https://stingh711.github.io/tag/editor.html">editor</a>,              <a href="https://stingh711.github.io/tag/javascript.html">javascript</a>
-    </p>
-  </header>
-  <div>
-      <ol>
-<li>Create a tsconfig.json under root directory.</li>
-<li>Add following code to tsconfig.json</li>
-</ol>
-<div class="highlight"><pre><span></span>   <span class="p">{</span>
-       <span class="nt">&quot;compilerOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
-           <span class="nt">&quot;experimentalDecorators&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-           <span class="nt">&quot;allowJs&quot;</span><span class="p">:</span> <span class="kc">true</span>
-       <span class="p">}</span>
-   <span class="p">}</span>
-</pre></div>
-
-
-<ol>
-<li>Restart vscode</li>
-</ol>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://stingh711.github.io/pandas-in-jupyter.html#pandas-in-jupyter">Pandas in jupyter</a></h2>
-    <p>
-          Posted on 日 17 六月 2018 in <a href="https://stingh711.github.io/category/programming.html">programming</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="https://stingh711.github.io/tag/pandas.html">pandas</a>,              <a href="https://stingh711.github.io/tag/python.html">python</a>
-    </p>
-  </header>
-  <div>
-      <p>Read data from mysql and draw a chart.</p>
-<div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-<span class="kn">import</span> <span class="nn">pymysql</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">pandas.io.sql</span> <span class="kn">as</span> <span class="nn">sql</span>
-
-<span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;192.168.56.1&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> <span class="n">passwd</span><span class="o">=</span><span class="s1">&#39;qwer-1235&#39;</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="s1">&#39;pdss&#39;</span><span class="p">)</span>
-
-<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;select number_value from quality_data_item_record where item_id = 11&#39;</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">sql</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-
-<span class="n">df …</span></pre></div>
-        <br>
-        <a class="btn" href="https://stingh711.github.io/pandas-in-jupyter.html#pandas-in-jupyter">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://stingh711.github.io/javascript-notes.html#javascript-notes">Javascript notes</a></h2>
-    <p>
-          Posted on 六 16 六月 2018 in <a href="https://stingh711.github.io/category/programming.html">programming</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="https://stingh711.github.io/tag/javascript.html">javascript</a>
-    </p>
-  </header>
-  <div>
-      <p>Just some notes on some popular javascript libraries.</p>
-<h2 id="bootstrap-daterangepicker">bootstrap-daterangepicker</h2>
-<h3 id="how-to-get-startdate-and-enddate">How to get startDate and endDate</h3>
-<div class="highlight"><pre><span></span>     <span class="kd">var</span> <span class="nx">range</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#range&quot;</span><span class="p">).</span><span class="nx">daterangepicker</span><span class="p">();</span>
-     <span class="kd">var</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">range</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s2">&quot;daterangepicker&quot;</span><span class="p">).</span><span class="nx">startDate</span><span class="p">;</span>
-     <span class="kd">var</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">range</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s2">&quot;daterangepicker&quot;</span><span class="p">).</span><span class="nx">endDate</span><span class="p">;</span>
-</pre></div>
-
-
-<h2 id="lodash">lodash</h2>
-<h3 id="map">map</h3>
-<div class="highlight"><pre><span></span>     <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[{</span><span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;4/1&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">10</span><span class="p">},</span> <span class="p">{</span><span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;4/2&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">14</span><span class="p">}];</span>
-     <span class="kd">var</span> <span class="nx">labels</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">data …</span></pre></div>
-        <br>
-        <a class="btn" href="https://stingh711.github.io/javascript-notes.html#javascript-notes">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://stingh711.github.io/notes-about-postgresql.html#notes-about-postgresql">Notes about postgresql</a></h2>
-    <p>
-          Posted on 二 08 五月 2018 in <a href="https://stingh711.github.io/category/database.html">database</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="https://stingh711.github.io/tag/database.html">database</a>,              <a href="https://stingh711.github.io/tag/postgresql.html">postgresql</a>
-    </p>
-  </header>
-  <div>
-      <h2 id="how-to-generate-and-insert-test-data">How to generate and insert test data?</h2>
-<p>For example, my table is like: <code>create table (time timestamp, value double precision, sensor integer)</code>. If I want to insert some test data, I can use function <code>generate_series</code>.
-Following sql will insert 5000 rows:</p>
-<div class="highlight"><pre><span></span>    <span class="k">insert</span> <span class="k">into</span> <span class="n">test</span> <span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">sensor</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">select</span> <span class="n">now</span><span class="p">(),</span> <span class="n">i …</span></pre></div>
-        <br>
-        <a class="btn" href="https://stingh711.github.io/notes-about-postgresql.html#notes-about-postgresql">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://stingh711.github.io/dynamic-forms-with-springmvc-and-thymeleaf.html#dynamic-forms-with-springmvc-and-thymeleaf">Dynamic forms with springmvc and thymeleaf</a></h2>
-    <p>
-          Posted on 五 01 八月 2014 in <a href="https://stingh711.github.io/category/programming.html">programming</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="https://stingh711.github.io/tag/spring.html">spring</a>
-    </p>
-  </header>
-  <div>
-      <h2 id="requirements">Requirements</h2>
-<p>SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.</p>
-<h2 id="things-i-ve-learned-dot">Things I’ve learned.</h2>
-<ol>
-<li>When adding an option, don’t need to use javascript to handle the added html snippet. Just submit the add request to controller and handle the adding …</li></ol>
-        <br>
-        <a class="btn" href="https://stingh711.github.io/dynamic-forms-with-springmvc-and-thymeleaf.html#dynamic-forms-with-springmvc-and-thymeleaf">    Continue reading
-</a>
-  </div>
-</article>
-
-
-
-
-
-    <footer>
-<p>&copy;  </p>
-<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
-</p>    </footer>
-  </main>
-
-
-
-
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " We need to TALK! ",
-  "url" : "https://stingh711.github.io",
-  "image": "",
-  "description": ""
-}
-</script>
-
-</body>
+		</div>
+		
+	</body>
 </html>

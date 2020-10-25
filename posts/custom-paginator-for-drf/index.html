@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Write a CustomPaginator for django rest framework - Sting&#39;s Note</title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Write a CustomPaginator for django rest framework | Sting&#39;s Note" />
+	<meta name="twitter:title" content="Write a CustomPaginator for django rest framework | Sting&#39;s Note" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Write a CustomPaginator for django rest framework | Sting&#39;s Note" />
+	<meta name="application-name" content="Write a CustomPaginator for django rest framework | Sting&#39;s Note" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Write a CustomPaginator for django rest framework" />
+<meta property="og:description" content="Pagination is essential part for a REST api. Django rest framework provides an easy to way to add pagination to current API and a lot of useful built-in implementations. However, in order to work with a specified frontend component, a customized version is needed.
+Customizing is easy in DRF, just extends a current one and override it get_paginated_response method. For example, the following one uses the page number pagination ,which means you can pass page=n in the URL to get the nth page." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/custom-paginator-for-drf/" />
+<meta property="article:published_time" content="2018-06-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-06-23T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Write a CustomPaginator for django rest framework"/>
+<meta name="twitter:description" content="Pagination is essential part for a REST api. Django rest framework provides an easy to way to add pagination to current API and a lot of useful built-in implementations. However, in order to work with a specified frontend component, a customized version is needed.
+Customizing is easy in DRF, just extends a current one and override it get_paginated_response method. For example, the following one uses the page number pagination ,which means you can pass page=n in the URL to get the nth page."/>
+
+	<link href="http://localhost:1313/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Sting&#39;s Note</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts/">Archives</a>
+		
+		<a href="/tags/">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Write a CustomPaginator for django rest framework</h1>
+			<div class="meta">Posted on Jun 23, 2018</div>
+		</div>
+		
+
+		<section class="body">
+			<p>Pagination is essential part for a REST api. Django rest framework provides an easy to way to add pagination to current API and a lot of useful built-in implementations. However, in order to work with a specified frontend component, a customized version is needed.</p>
+<p>Customizing is easy in DRF, just extends a current one and override it get_paginated_response method. For example, the following one uses the page number pagination ,which means you can pass page=n in the URL to get the nth page. If pageSize is specified in request url, it will be used or the default page_size will be used</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">CustomPagination</span><span class="p">(</span><span class="n">pagination</span><span class="o">.</span><span class="n">PageNumberPagination</span><span class="p">):</span>
+    <span class="n">page_size</span> <span class="o">=</span> <span class="mi">15</span>
+    <span class="n">page_size_query_param</span> <span class="o">=</span> <span class="s1">&#39;pageSize&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get_paginated_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">({</span>
+            <span class="s1">&#39;pagination&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;total&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">paginator</span><span class="o">.</span><span class="n">count</span><span class="p">,</span>
+                <span class="s1">&#39;pageSize&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">paginator</span><span class="o">.</span><span class="n">per_page</span><span class="p">,</span>
+                <span class="s1">&#39;current&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="s1">&#39;list&#39;</span><span class="p">:</span> <span class="n">data</span>
+            <span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The response format is customized for antd&rsquo;s table component.</p>
+<p>There are two ways to tell your view to use it.</p>
+<ul>
+<li>Specify <code>pagination_class=CustomPagination</code> in your views.</li>
+<li>Configure it in settings. Doc is <a href="http://www.django-rest-framework.org/api-guide/pagination/">here</a>.</li>
+</ul>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/python">python</a></li>
+					
+					<li><a href="/tags/django">django</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr>⚡️
+	2020  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+</div>
+    </body>
+</html>

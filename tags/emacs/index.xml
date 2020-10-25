@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>emacs on Sting&#39;s Note</title>
+    <link>http://localhost:1313/tags/emacs/</link>
+    <description>Recent content in emacs on Sting&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 23 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use org-journal to keep my daily notes</title>
+      <link>http://localhost:1313/posts/use_org_journal_to_keey_diary_notes/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/use_org_journal_to_keey_diary_notes/</guid>
+      <description>org-journal is small package to write your journal in org mode. Like diary mode, it will generate one file per day, but you can use org-mode instead of plain dairy mode.
+To create a journal, just press C-c c-j, an org-mode item will be created with curren time.
+It is also provided calendar binding, so you can view your journal from calendar view.
+Update: to search your notes, the best way is to add your notes to a git repository, then open one entry and use M-x counsel-rg.</description>
+    </item>
+    
+  </channel>
+</rss>

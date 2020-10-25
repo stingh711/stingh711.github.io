@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Use django-filter to add filter for REST api - Sting&#39;s Note</title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Use django-filter to add filter for REST api | Sting&#39;s Note" />
+	<meta name="twitter:title" content="Use django-filter to add filter for REST api | Sting&#39;s Note" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Use django-filter to add filter for REST api | Sting&#39;s Note" />
+	<meta name="application-name" content="Use django-filter to add filter for REST api | Sting&#39;s Note" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Use django-filter to add filter for REST api" />
+<meta property="og:description" content="For a REST list api, filtering and sorting is the basic requirements. Using django-filter, we can add these functions with only a few lines of codes.
+For example, if we have a model as follows,
+1 2 3  class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField()   We will write relative serializer and view.
+1 2 3 4 5 6 7  class ProductSerializer(serializers.ModelSerializer): class Meta: fields = &#39;__all__&#39; class ProductListView(generics." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/use-django-filter-to-add-filter-for-rest-api/" />
+<meta property="article:published_time" content="2018-06-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-06-23T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Use django-filter to add filter for REST api"/>
+<meta name="twitter:description" content="For a REST list api, filtering and sorting is the basic requirements. Using django-filter, we can add these functions with only a few lines of codes.
+For example, if we have a model as follows,
+1 2 3  class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField()   We will write relative serializer and view.
+1 2 3 4 5 6 7  class ProductSerializer(serializers.ModelSerializer): class Meta: fields = &#39;__all__&#39; class ProductListView(generics."/>
+
+	<link href="http://localhost:1313/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">Sting&#39;s Note</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts/">Archives</a>
+		
+		<a href="/tags/">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Use django-filter to add filter for REST api</h1>
+			<div class="meta">Posted on Jun 23, 2018</div>
+		</div>
+		
+
+		<section class="body">
+			<p>For a REST list api, filtering and sorting is the basic requirements. Using django-filter, we can add these functions with only a few lines of codes.</p>
+<p>For example, if we have a model as follows,</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Product</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DatetimeField</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>We will write relative serializer and view.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">ProductSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span>
+
+<span class="k">class</span> <span class="nc">ProductListView</span><span class="p">(</span><span class="n">generics</span><span class="o">.</span><span class="n">ListView</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Product</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">ProductSerializer</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>If we don&rsquo;t use django-filter, we can override ProductListview&rsquo;s get_queryset to implement filter. For example, to filter by name:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Product</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">query_params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">queryset</span> <span class="o">=</span> <span class="n">queryset</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">queryset</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>With django-filter, the code can be even simpler. We can just code like configuration to implement more advanced filters.
+First, we install it with <code>pip install django-filter</code>.
+Then, we add a filter class in our views.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">ProductFilter</span><span class="p">(</span><span class="n">django_filters</span><span class="o">.</span><span class="n">FilterSet</span><span class="p">):</span>
+    <span class="n">sort</span> <span class="o">=</span> <span class="n">django_filters</span><span class="o">.</span><span class="n">OrderingFilter</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;created_at&#39;</span><span class="p">,))</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Product</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Then modify our ProductListView by adding following two lines</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">filter_backends</span> <span class="o">=</span> <span class="p">(</span><span class="n">DjangoFilterBackend</span><span class="p">,)</span>
+<span class="n">filter_class</span> <span class="o">=</span> <span class="n">ProductFilter</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now filter by name and sorting by created_at are both implemented. If the original list url is <code>/products/</code>, to search by name, the url is <code>/products/?name=iPhone</code>; to order by created_at desc, the url is <code>/products/?sort=-created_at</code>.</p>
+<p>Django-filter can implement more advanced features, e.g, filter by range, fuzzy search. Please refer to <a href="https://github.com/carltongibson/django-filter">Official doc</a>.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/python">python</a></li>
+					
+					<li><a href="/tags/django">django</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr>⚡️
+	2020  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+</div>
+    </body>
+</html>
