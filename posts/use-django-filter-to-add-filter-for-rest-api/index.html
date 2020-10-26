@@ -31,15 +31,15 @@ For example, if we have a model as follows,
 class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField() We will write relative serializer and view.
 class ProductSerializer(serializers.ModelSerializer): class Meta: fields = &#39;__all__&#39; class ProductListView(generics.ListView): queryset = Product.objects.all() serializer_class = ProductSerializer If we don&rsquo;t use django-filter, we can override ProductListview&rsquo;s get_queryset to implement filter."/>
 
-	<link href="https://stingh711.github.iocss/fonts.css" rel="stylesheet">
+	<link href="https://stingh711.github.io/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://stingh711.github.iocss/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://stingh711.github.io/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://stingh711.github.io">Sting&#39;s Note</a>
+		<a href="https://stingh711.github.io/">Sting&#39;s Note</a>
 	</div>
 	<nav>
 		
