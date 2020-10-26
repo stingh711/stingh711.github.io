@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vim on Sting&#39;s Note</title>
-    <link>http://localhost:1313/tags/vim/</link>
+    <link>https://stingh711.github.io/tags/vim/</link>
     <description>Recent content in vim on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://stingh711.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Use vim-projectionist to jump around in django projects</title>
-      <link>http://localhost:1313/posts/use_vim_projectionist_in_django/</link>
+      <link>https://stingh711.github.io/posts/use_vim_projectionist_in_django/</link>
       <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/use_vim_projectionist_in_django/</guid>
+      <guid>https://stingh711.github.io/posts/use_vim_projectionist_in_django/</guid>
       <description>When working on django projects, I need to switching among django’s model, view, url, admin and serializers files. I used to use fzf.vim to jump around until I found vim-projectionist.
 With this plugin, you can create a “map” of your source code, with this map, you can just from for example, .c file to .h file.
 Create a .projections.json under your django file as follows:
-1 2 3 4 5 6 7  { &amp;#34;*/urls.</description>
+{ &amp;#34;*/urls.py&amp;#34;: { &amp;#34;type&amp;#34;: &amp;#34;urls&amp;#34;, &amp;#34;alternate&amp;#34;: &amp;#34;{}/views.</description>
     </item>
     
   </channel>

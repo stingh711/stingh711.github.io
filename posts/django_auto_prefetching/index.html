@@ -19,9 +19,9 @@
 <meta property="og:description" content="Django-auto-prefetching is a small django package to do the select_related and prefetch_related automatically.
 Usage The usage is very simple, just import the AutoPrefetchViewSetMixin from django_auto_prefetching, and then add the mixin as the base class of a ListAPIView
 If you override the get_queryset of the ListAPIView, need some work to make it work.
-1 2 3 4 5 6 7 8 9 10 11 12  import django_auto_prefetching from rest_framework.viewsets import ModelViewSet class BaseModelViewSet(django_auto_prefetching." />
+import django_auto_prefetching from rest_framework.viewsets import ModelViewSet class BaseModelViewSet(django_auto_prefetching.AutoPrefetchViewSetMixin, ModelViewSet): serializer_class = YourModelSerializer def get_queryset(self): # Simply do the extra select_related / prefetch_related here # and leave the mixin to do the rest of the work queryset = YourModel." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/posts/django_auto_prefetching/" />
+<meta property="og:url" content="https://stingh711.github.io/posts/django_auto_prefetching/" />
 <meta property="article:published_time" content="2020-10-22T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-10-22T00:00:00+00:00" />
 <meta name="twitter:card" content="summary"/>
@@ -29,17 +29,17 @@ If you override the get_queryset of the ListAPIView, need some work to make it w
 <meta name="twitter:description" content="Django-auto-prefetching is a small django package to do the select_related and prefetch_related automatically.
 Usage The usage is very simple, just import the AutoPrefetchViewSetMixin from django_auto_prefetching, and then add the mixin as the base class of a ListAPIView
 If you override the get_queryset of the ListAPIView, need some work to make it work.
-1 2 3 4 5 6 7 8 9 10 11 12  import django_auto_prefetching from rest_framework.viewsets import ModelViewSet class BaseModelViewSet(django_auto_prefetching."/>
+import django_auto_prefetching from rest_framework.viewsets import ModelViewSet class BaseModelViewSet(django_auto_prefetching.AutoPrefetchViewSetMixin, ModelViewSet): serializer_class = YourModelSerializer def get_queryset(self): # Simply do the extra select_related / prefetch_related here # and leave the mixin to do the rest of the work queryset = YourModel."/>
 
-	<link href="http://localhost:1313/css/fonts.css" rel="stylesheet">
+	<link href="https://stingh711.github.iocss/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://stingh711.github.iocss/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://localhost:1313/">Sting&#39;s Note</a>
+		<a href="https://stingh711.github.io">Sting&#39;s Note</a>
 	</div>
 	<nav>
 		
@@ -65,37 +65,19 @@ If you override the get_queryset of the ListAPIView, need some work to make it w
 <h2 id="usage">Usage</h2>
 <p>The usage is very simple, just import the AutoPrefetchViewSetMixin from django_auto_prefetching, and then add the mixin as the base class of a ListAPIView</p>
 <p>If you override the get_queryset of the ListAPIView, need some work to make it work.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">django_auto_prefetching</span>
-<span class="kn">from</span> <span class="nn">rest_framework.viewsets</span> <span class="kn">import</span> <span class="n">ModelViewSet</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> django_auto_prefetching
+<span style="color:#f92672">from</span> rest_framework.viewsets <span style="color:#f92672">import</span> ModelViewSet
 
-<span class="k">class</span> <span class="nc">BaseModelViewSet</span><span class="p">(</span><span class="n">django_auto_prefetching</span><span class="o">.</span><span class="n">AutoPrefetchViewSetMixin</span><span class="p">,</span> <span class="n">ModelViewSet</span><span class="p">):</span>
-    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">YourModelSerializer</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BaseModelViewSet</span>(django_auto_prefetching<span style="color:#f92672">.</span>AutoPrefetchViewSetMixin, ModelViewSet):
+    serializer_class <span style="color:#f92672">=</span> YourModelSerializer
     
-    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="c1"># Simply do the extra select_related / prefetch_related here</span>
-            <span class="c1"># and leave the mixin to do the rest of the work</span>
-            <span class="n">queryset</span> <span class="o">=</span> <span class="n">YourModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-            <span class="n">queryset</span> <span class="o">=</span> <span class="n">queryset</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s1">&#39;my_extra_field&#39;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">django_auto_prefetching</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">queryset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">serializer_class</span><span class="p">)</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="the-problem-it-solves">The problem it solves</h2>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_queryset</span>(self):
+            <span style="color:#75715e"># Simply do the extra select_related / prefetch_related here</span>
+            <span style="color:#75715e"># and leave the mixin to do the rest of the work</span>
+            queryset <span style="color:#f92672">=</span> YourModel<span style="color:#f92672">.</span>objects<span style="color:#f92672">.</span>all()
+            queryset <span style="color:#f92672">=</span> queryset<span style="color:#f92672">.</span>select_related(<span style="color:#e6db74">&#39;my_extra_field&#39;</span>)
+            <span style="color:#66d9ef">return</span> django_auto_prefetching<span style="color:#f92672">.</span>prefetch(queryset, self<span style="color:#f92672">.</span>serializer_class)
+</code></pre></div><h2 id="the-problem-it-solves">The problem it solves</h2>
 <p>Django rest framework has serious N+1 problem when generating output with Serializer, especially when you have nested serializer and the depth is more than 1.</p>
 <p>This package will do the magic automatically.</p>
 <h2 id="references">References</h2>
@@ -127,6 +109,17 @@ If you override the get_queryset of the ListAPIView, need some work to make it w
 	2020  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
 </footer>
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-10412053-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 </div>
     </body>

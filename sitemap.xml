@@ -3,203 +3,203 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://localhost:1313/tags/django/</loc>
+    <loc>https://stingh711.github.io/tags/django/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/django_auto_prefetching/</loc>
+    <loc>https://stingh711.github.io/posts/django_auto_prefetching/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://stingh711.github.io/posts/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/python/</loc>
+    <loc>https://stingh711.github.io/tags/python/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://stingh711.github.io/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://stingh711.github.io/tags/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/use_vim_projectionist_in_django/</loc>
+    <loc>https://stingh711.github.io/posts/use_vim_projectionist_in_django/</loc>
     <lastmod>2020-04-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/vim/</loc>
+    <loc>https://stingh711.github.io/tags/vim/</loc>
     <lastmod>2020-04-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/give-golang-a-try/</loc>
+    <loc>https://stingh711.github.io/posts/give-golang-a-try/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/go/</loc>
+    <loc>https://stingh711.github.io/tags/go/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/update_blog_again/</loc>
+    <loc>https://stingh711.github.io/posts/update_blog_again/</loc>
     <lastmod>2019-03-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/editor/</loc>
+    <loc>https://stingh711.github.io/tags/editor/</loc>
     <lastmod>2018-06-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/vscode/</loc>
+    <loc>https://stingh711.github.io/tags/vscode/</loc>
     <lastmod>2018-06-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/vscode-restclient-is-great/</loc>
+    <loc>https://stingh711.github.io/posts/vscode-restclient-is-great/</loc>
     <lastmod>2018-06-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/emacs/</loc>
+    <loc>https://stingh711.github.io/tags/emacs/</loc>
     <lastmod>2018-06-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/use-django-filter-to-add-filter-for-rest-api/</loc>
+    <loc>https://stingh711.github.io/posts/use-django-filter-to-add-filter-for-rest-api/</loc>
     <lastmod>2018-06-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/use_org_journal_to_keey_diary_notes/</loc>
+    <loc>https://stingh711.github.io/posts/use_org_journal_to_keey_diary_notes/</loc>
     <lastmod>2018-06-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/custom-paginator-for-drf/</loc>
+    <loc>https://stingh711.github.io/posts/custom-paginator-for-drf/</loc>
     <lastmod>2018-06-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/how-to-remove-vscode-decorator-warning/</loc>
+    <loc>https://stingh711.github.io/posts/how-to-remove-vscode-decorator-warning/</loc>
     <lastmod>2018-06-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
+    <loc>https://stingh711.github.io/tags/javascript/</loc>
     <lastmod>2018-06-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/pandas/</loc>
+    <loc>https://stingh711.github.io/tags/pandas/</loc>
     <lastmod>2018-06-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/pandas-in-jupyter/</loc>
+    <loc>https://stingh711.github.io/posts/pandas-in-jupyter/</loc>
     <lastmod>2018-06-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/javascript_notes/</loc>
+    <loc>https://stingh711.github.io/posts/javascript_notes/</loc>
     <lastmod>2018-06-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/database/</loc>
+    <loc>https://stingh711.github.io/tags/database/</loc>
     <lastmod>2018-05-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/postgresql/</loc>
+    <loc>https://stingh711.github.io/tags/postgresql/</loc>
     <lastmod>2018-05-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/postgresql_notes/</loc>
+    <loc>https://stingh711.github.io/posts/postgresql_notes/</loc>
     <lastmod>2018-05-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/posts/dynamic-form-with-springmvc-and-thymeleaf/</loc>
+    <loc>https://stingh711.github.io/posts/dynamic-form-with-springmvc-and-thymeleaf/</loc>
     <lastmod>2014-08-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/spring/</loc>
+    <loc>https://stingh711.github.io/tags/spring/</loc>
     <lastmod>2014-08-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://stingh711.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>go on Sting&#39;s Note</title>
-    <link>http://localhost:1313/tags/go/</link>
+    <link>https://stingh711.github.io/tags/go/</link>
     <description>Recent content in go on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://stingh711.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Give golang a try</title>
-      <link>http://localhost:1313/posts/give-golang-a-try/</link>
+      <link>https://stingh711.github.io/posts/give-golang-a-try/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/give-golang-a-try/</guid>
+      <guid>https://stingh711.github.io/posts/give-golang-a-try/</guid>
       <description>“Go is such a refreshing language to program in, there is very little clutter just the stuff you need to get the job done” – Matt West
  Background I&amp;rsquo;ve bean using java and python for years. With spring boot, it is easy to start an application. However, I still don&amp;rsquo;t like the database access part of java.
 Now JPA and mybatis are popular solutions for database access. When I need to write some queries with dynamic conditions, the code is still ugly.</description>

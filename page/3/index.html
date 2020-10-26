@@ -17,19 +17,19 @@
 	<meta itemprop="name" content="Sting&#39;s Note | Sting&#39;s Note" />
 	<meta name="application-name" content="Sting&#39;s Note | Sting&#39;s Note" />
 	<meta property="og:site_name" content="" />
-	<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="Sting's Note" />
+	<link rel="alternate" type="application/rss+xml" href="https://stingh711.github.io/index.xml" title="Sting's Note" />
 	<meta property="og:title" content="Sting&#39;s Note" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/" />
+<meta property="og:url" content="https://stingh711.github.io/" />
 <meta property="og:updated_time" content="2020-10-22T00:00:00+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sting&#39;s Note"/>
 <meta name="twitter:description" content=""/>
 
-	<link href="http://localhost:1313/css/fonts.css" rel="stylesheet">
+	<link href="https://stingh711.github.iocss/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://stingh711.github.iocss/main.css" />
 	
 </head>
 
@@ -37,7 +37,7 @@
 		<div class="content">
 			<header>
 	<div class="main">
-		<a href="http://localhost:1313/">Sting&#39;s Note</a>
+		<a href="https://stingh711.github.io">Sting&#39;s Note</a>
 	</div>
 	<nav>
 		
@@ -62,7 +62,8 @@
 					<br><div class="description">
 						
 						Just some notes on some popular javascript libraries.
-bootstrap-daterangepicker How to get startDate and endDate 1 2 3  var range = $(&#34;#range&#34;).daterangepicker(); var start = range.data(&#34;daterangepicker&#34;).startDate; var end = range.data(&#34;daterangepicker&#34;).endDate;   lodash map 1 2 3  var data = [{label: &#39;4/1&#39;, value: 10}, {label: &#39;4/2&#39;, value: 14}]; var labels = _.map(data, function(item) { return item.label; }); var values = _.map(data, function(item) { return item.value; });   It is especially useful when preparing data for some chart libraries.&hellip;
+bootstrap-daterangepicker How to get startDate and endDate var range = $(&#34;#range&#34;).daterangepicker(); var start = range.data(&#34;daterangepicker&#34;).startDate; var end = range.data(&#34;daterangepicker&#34;).endDate; lodash map var data = [{label: &#39;4/1&#39;, value: 10}, {label: &#39;4/2&#39;, value: 14}]; var labels = _.map(data, function(item) { return item.label; }); var values = _.map(data, function(item) { return item.value; }); It is especially useful when preparing data for some chart libraries.
+convert array to object var data = [{value: 0, name: &#39;Working&#39;}, {value: 1, name: &#39;Idle&#39;}]; var result = _.&hellip;
 						
 					</div>
 					<a href="/posts/javascript_notes/">Read more ⟶</a>
@@ -74,7 +75,7 @@ bootstrap-daterangepicker How to get startDate and endDate 1 2 3  var range = $(
 					<br><div class="description">
 						
 						How to generate and insert test data? For example, my table is like: create table (time timestamp, value double precision, sensor integer). If I want to insert some test data, I can use function generate_series. Following sql will insert 5000 rows:
-1  insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i)   How to view disk usage? View table size 1  select pg_size_pretty(pg_relation_size(&#39;pressure_01&#39;))   View database size 1  select pg_size_pretty(pg_database_size(&#39;pressure_01&#39;))   &hellip;
+insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i) How to view disk usage? View table size select pg_size_pretty(pg_relation_size(&#39;pressure_01&#39;)) View database size select pg_size_pretty(pg_database_size(&#39;pressure_01&#39;)) &hellip;
 						
 					</div>
 					<a href="/posts/postgresql_notes/">Read more ⟶</a>
@@ -112,6 +113,17 @@ Things I’ve learned.  When adding an option, don’t need to use javascript to
 	2020  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
 </footer>
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-10412053-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 		</div>
