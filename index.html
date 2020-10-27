@@ -73,9 +73,6 @@
 					<br><div class="description">
 						
 						Django-auto-prefetching is a small django package to do the select_related and prefetch_related automatically.
-Usage The usage is very simple, just import the AutoPrefetchViewSetMixin from django_auto_prefetching, and then add the mixin as the base class of a ListAPIView
-If you override the get_queryset of the ListAPIView, need some work to make it work.
-import django_auto_prefetching from rest_framework.viewsets import ModelViewSet class BaseModelViewSet(django_auto_prefetching.AutoPrefetchViewSetMixin, ModelViewSet): serializer_class = YourModelSerializer def get_queryset(self): # Simply do the extra select_related / prefetch_related here # and leave the mixin to do the rest of the work queryset = YourModel.&hellip;
 						
 					</div>
 					<a href="/posts/django_auto_prefetching/">Read more ⟶</a>

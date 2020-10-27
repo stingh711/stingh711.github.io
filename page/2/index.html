@@ -69,14 +69,11 @@ With this extension, you can save your request in plain text.&hellip;
 				</section>
 				
 				<section class="list-item">
-					<h1 class="title"><a href="/posts/use-django-filter-to-add-filter-for-rest-api/">Use django-filter to add filter for REST api</a></h1>
+					<h1 class="title"><a href="/posts/use-django-filter-to-add-filter-for-rest-api/">Use django-filter in Django Rest Framework</a></h1>
 					<time>Jun 23, 2018</time>
 					<br><div class="description">
 						
-						For a REST list api, filtering and sorting is the basic requirements. Using django-filter, we can add these functions with only a few lines of codes.
-For example, if we have a model as follows,
-class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField() We will write relative serializer and view.
-class ProductSerializer(serializers.ModelSerializer): class Meta: fields = &#39;__all__&#39; class ProductListView(generics.ListView): queryset = Product.objects.all() serializer_class = ProductSerializer If we don&rsquo;t use django-filter, we can override ProductListview&rsquo;s get_queryset to implement filter.&hellip;
+						Use django-filter in Django Rest Framework
 						
 					</div>
 					<a href="/posts/use-django-filter-to-add-filter-for-rest-api/">Read more ⟶</a>
@@ -108,14 +105,14 @@ Update: to search your notes, the best way is to add your notes to a git reposit
 				</section>
 				
 				<section class="list-item">
-					<h1 class="title"><a href="/posts/how-to-remove-vscode-decorator-warning/">How to remove vscode&#39;s decorator warning?</a></h1>
+					<h1 class="title"><a href="/posts/how_to_remove_vscode_decorator_warning/">How to remove vscode&#39;s decorator warning?</a></h1>
 					<time>Jun 19, 2018</time>
 					<br><div class="description">
 						
-						 Create a tsconfig.json under root directory. Add following code to tsconfig.json  { &#34;compilerOptions&#34;: { &#34;experimentalDecorators&#34;: true, &#34;allowJs&#34;: true } }  Restart vscode  &hellip;
+						How to remove vscode&#39;s decorator warning?
 						
 					</div>
-					<a href="/posts/how-to-remove-vscode-decorator-warning/">Read more ⟶</a>
+					<a href="/posts/how_to_remove_vscode_decorator_warning/">Read more ⟶</a>
 				</section>
 				
 				

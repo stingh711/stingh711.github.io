@@ -72,7 +72,7 @@ With this extension, you can save your request in plain text.</description>
     </item>
     
     <item>
-      <title>Use django-filter to add filter for REST api</title>
+      <title>Use django-filter in Django Rest Framework</title>
       <link>https://stingh711.github.io/posts/use-django-filter-to-add-filter-for-rest-api/</link>
       <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
       
@@ -107,10 +107,10 @@ Customizing is easy in DRF, just extends a current one and override it get_pagin
     
     <item>
       <title>How to remove vscode&#39;s decorator warning?</title>
-      <link>https://stingh711.github.io/posts/how-to-remove-vscode-decorator-warning/</link>
+      <link>https://stingh711.github.io/posts/how_to_remove_vscode_decorator_warning/</link>
       <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://stingh711.github.io/posts/how-to-remove-vscode-decorator-warning/</guid>
+      <guid>https://stingh711.github.io/posts/how_to_remove_vscode_decorator_warning/</guid>
       <description> Create a tsconfig.json under root directory. Add following code to tsconfig.json  { &amp;#34;compilerOptions&amp;#34;: { &amp;#34;experimentalDecorators&amp;#34;: true, &amp;#34;allowJs&amp;#34;: true } }  Restart vscode  </description>
     </item>
     
