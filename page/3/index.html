@@ -22,7 +22,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://stingh711.github.io/" />
-<meta property="og:updated_time" content="2020-10-22T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-10-27T00:00:00+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sting&#39;s Note"/>
 <meta name="twitter:description" content=""/>
@@ -55,6 +55,18 @@
 				<div class="site-description"></div>
 				
 				
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/pandas-in-jupyter/">Pandas in jupyter</a></h1>
+					<time>Jun 17, 2018</time>
+					<br><div class="description">
+						
+						Read data from mysql and draw a chart.
+%matplotlib inline import pymysql import pandas as pd import pandas.io.sql as sql conn = pymysql.connect(host=&#39;192.168.56.1&#39;, user=&#39;root&#39;, passwd=&#39;qwer-1235&#39;, db=&#39;pdss&#39;) s = &#39;select number_value from quality_data_item_record where item_id = 11&#39; df = sql.read_sql_query(s, conn) df.plot() &hellip;
+						
+					</div>
+					<a href="/posts/pandas-in-jupyter/">Read more ⟶</a>
+				</section>
 				
 				<section class="list-item">
 					<h1 class="title"><a href="/posts/javascript_notes/">Javascript Notes</a></h1>

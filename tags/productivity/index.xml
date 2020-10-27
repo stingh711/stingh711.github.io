@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>productivity on Sting&#39;s Note</title>
+    <link>https://stingh711.github.io/tags/productivity/</link>
+    <description>Recent content in productivity on Sting&#39;s Note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://stingh711.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Switch to obsidian</title>
+      <link>https://stingh711.github.io/posts/switch_to_obsidian/</link>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://stingh711.github.io/posts/switch_to_obsidian/</guid>
+      <description>I used to use bear as my note taking app. However, as the roam reseach began to get popular, I switched to org-roam, a great emacs extension. It is base on org mode, so the edit feature is really powerful.
+However, it is still an editor, not an delicated note app. Some features are not easy to use. For example, seaching or just skiming some notes. The graphing feature of roam research is also needing improving.</description>
+    </item>
+    
+  </channel>
+</rss>
