@@ -84,6 +84,18 @@ One way to do it is writing a custom type and providing a custom MarshalJSON fun
 				</section>
 				
 				<section class="list-item">
+					<h1 class="title"><a href="/posts/20210326105359-using_python_in_ultisnips/">Using python in ultisnips</a></h1>
+					<time>Mar 31, 2021</time>
+					<br><div class="description">
+						
+						This snipt uses python to convert Camal case to underline. It is an example to use python in ultisnips. t[1] gets content of $1. After the convertion, assign the result to snip.rv
+snippet gfk &#34;gorm foreign key&#34; $1ID uint \`gorm:&#34;column:`!p name=re.sub(r&#34;(\w)([A-Z])&#34;, r&#34;\1_\2&#34;, t[1]).lower(); snip.rv = name`_id&#34; json:&#34;-&#34;\` ${1:Model} $1 \`gorm:&#34;foreignKey:$1ID&#34; json:&#34;`!p name=re.sub(r&#34;(\w)([A-Z])&#34;, r&#34;\1_\2&#34;, t[1]).lower(); snip.rv = name`&#34;\` endsnippet &hellip;
+						
+					</div>
+					<a href="/posts/20210326105359-using_python_in_ultisnips/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
 					<h1 class="title"><a href="/posts/switch_to_obsidian/">Switch to obsidian</a></h1>
 					<time>Oct 27, 2020</time>
 					<br><div class="description">
@@ -103,20 +115,6 @@ One way to do it is writing a custom type and providing a custom MarshalJSON fun
 						
 					</div>
 					<a href="/posts/django_auto_prefetching/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/use_vim_projectionist_in_django/">Use vim-projectionist to jump around in django projects</a></h1>
-					<time>Apr 16, 2020</time>
-					<br><div class="description">
-						
-						When working on django projects, I need to switching among django’s model, view, url, admin and serializers files. I used to use fzf.vim to jump around until I found vim-projectionist.
-With this plugin, you can create a “map” of your source code, with this map, you can just from for example, .c file to .h file.
-Create a .projections.json under your django file as follows:
-{ &#34;*/urls.py&#34;: { &#34;type&#34;: &#34;urls&#34;, &#34;alternate&#34;: &#34;{}/views.&hellip;
-						
-					</div>
-					<a href="/posts/use_vim_projectionist_in_django/">Read more ⟶</a>
 				</section>
 				
 				

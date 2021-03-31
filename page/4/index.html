@@ -57,6 +57,18 @@
 				
 				
 				<section class="list-item">
+					<h1 class="title"><a href="/posts/postgresql_notes/">Postgresql Notes</a></h1>
+					<time>May 8, 2018</time>
+					<br><div class="description">
+						
+						How to generate and insert test data? For example, my table is like: create table (time timestamp, value double precision, sensor integer). If I want to insert some test data, I can use function generate_series. Following sql will insert 5000 rows:
+insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i) How to view disk usage? View table size select pg_size_pretty(pg_relation_size(&#39;pressure_01&#39;)) View database size select pg_size_pretty(pg_database_size(&#39;pressure_01&#39;)) &hellip;
+						
+					</div>
+					<a href="/posts/postgresql_notes/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
 					<h1 class="title"><a href="/posts/dynamic-form-with-springmvc-and-thymeleaf/">Dynamic forms with springmvc and thymeleaf</a></h1>
 					<time>Aug 1, 2014</time>
 					<br><div class="description">

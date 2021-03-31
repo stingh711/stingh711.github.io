@@ -31,6 +31,16 @@ One way to do it is writing a custom type and providing a custom MarshalJSON fun
     </item>
     
     <item>
+      <title>Using python in ultisnips</title>
+      <link>https://stingh711.github.io/posts/20210326105359-using_python_in_ultisnips/</link>
+      <pubDate>Wed, 31 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://stingh711.github.io/posts/20210326105359-using_python_in_ultisnips/</guid>
+      <description>This snipt uses python to convert Camal case to underline. It is an example to use python in ultisnips. t[1] gets content of $1. After the convertion, assign the result to snip.rv
+snippet gfk &amp;#34;gorm foreign key&amp;#34; $1ID uint \`gorm:&amp;#34;column:`!p name=re.sub(r&amp;#34;(\w)([A-Z])&amp;#34;, r&amp;#34;\1_\2&amp;#34;, t[1]).lower(); snip.rv = name`_id&amp;#34; json:&amp;#34;-&amp;#34;\` ${1:Model} $1 \`gorm:&amp;#34;foreignKey:$1ID&amp;#34; json:&amp;#34;`!p name=re.sub(r&amp;#34;(\w)([A-Z])&amp;#34;, r&amp;#34;\1_\2&amp;#34;, t[1]).lower(); snip.rv = name`&amp;#34;\` endsnippet </description>
+    </item>
+    
+    <item>
       <title>Switch to obsidian</title>
       <link>https://stingh711.github.io/posts/switch_to_obsidian/</link>
       <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>

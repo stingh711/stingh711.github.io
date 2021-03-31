@@ -57,6 +57,20 @@
 				
 				
 				<section class="list-item">
+					<h1 class="title"><a href="/posts/use_org_journal_to_keey_diary_notes/">Use org-journal to keep my daily notes</a></h1>
+					<time>Jun 23, 2018</time>
+					<br><div class="description">
+						
+						org-journal is small package to write your journal in org mode. Like diary mode, it will generate one file per day, but you can use org-mode instead of plain dairy mode.
+To create a journal, just press C-c c-j, an org-mode item will be created with curren time.
+It is also provided calendar binding, so you can view your journal from calendar view.
+Update: to search your notes, the best way is to add your notes to a git repository, then open one entry and use M-x counsel-rg.&hellip;
+						
+					</div>
+					<a href="/posts/use_org_journal_to_keey_diary_notes/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
 					<h1 class="title"><a href="/posts/custom-paginator-for-drf/">Write a CustomPaginator for django rest framework</a></h1>
 					<time>Jun 23, 2018</time>
 					<br><div class="description">
@@ -99,18 +113,6 @@
 						
 					</div>
 					<a href="/posts/javascript_notes/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/postgresql_notes/">Postgresql Notes</a></h1>
-					<time>May 8, 2018</time>
-					<br><div class="description">
-						
-						How to generate and insert test data? For example, my table is like: create table (time timestamp, value double precision, sensor integer). If I want to insert some test data, I can use function generate_series. Following sql will insert 5000 rows:
-insert into test (time, sensor, value) select now(), i, random() from generate_series(1, 5000) s(i) How to view disk usage? View table size select pg_size_pretty(pg_relation_size(&#39;pressure_01&#39;)) View database size select pg_size_pretty(pg_database_size(&#39;pressure_01&#39;)) &hellip;
-						
-					</div>
-					<a href="/posts/postgresql_notes/">Read more ⟶</a>
 				</section>
 				
 				
