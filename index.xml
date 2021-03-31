@@ -6,7 +6,18 @@
     <description>Recent content on Sting&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://stingh711.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://stingh711.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First post from ox-hugo</title>
+      <link>https://stingh711.github.io/posts/20210331155431-first_post_from_ox_hugo/</link>
+      <pubDate>Wed, 31 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://stingh711.github.io/posts/20210331155431-first_post_from_ox_hugo/</guid>
+      <description>This is the first blog post from ox-hugo.
+I&amp;rsquo;m using org-roam now. I&amp;rsquo;m trying to keep my note in org-roam and use these notes to compose my blog posts. I try to use ox-hugo so that I can keep the source files in org format and keep them in my database.
+Moreover, I can copy the content from my roam notes.</description>
+    </item>
+    
     <item>
       <title>Switch to obsidian</title>
       <link>https://stingh711.github.io/posts/switch_to_obsidian/</link>
