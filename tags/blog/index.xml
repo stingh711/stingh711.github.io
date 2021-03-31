@@ -15,7 +15,8 @@
       <guid>https://stingh711.github.io/posts/20210331155431-first_post_from_ox_hugo/</guid>
       <description>This is the first blog post from ox-hugo.
 I&amp;rsquo;m using org-roam now. I&amp;rsquo;m trying to keep my note in org-roam and use these notes to compose my blog posts. I try to use ox-hugo so that I can keep the source files in org format and keep them in my database.
-Moreover, I can copy the content from my roam notes.</description>
+Moreover, I can copy the content from my roam notes.
+What will happen if I link another note?</description>
     </item>
     
     <item>

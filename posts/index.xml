@@ -15,7 +15,19 @@
       <guid>https://stingh711.github.io/posts/20210331155431-first_post_from_ox_hugo/</guid>
       <description>This is the first blog post from ox-hugo.
 I&amp;rsquo;m using org-roam now. I&amp;rsquo;m trying to keep my note in org-roam and use these notes to compose my blog posts. I try to use ox-hugo so that I can keep the source files in org format and keep them in my database.
-Moreover, I can copy the content from my roam notes.</description>
+Moreover, I can copy the content from my roam notes.
+What will happen if I link another note?</description>
+    </item>
+    
+    <item>
+      <title>Golang how to format Date to JSON</title>
+      <link>https://stingh711.github.io/posts/20210331090602-golang_how_to_format_date_to_json/</link>
+      <pubDate>Wed, 31 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://stingh711.github.io/posts/20210331090602-golang_how_to_format_date_to_json/</guid>
+      <description>I have a gorm model and it has a Date field. But golang doesn&amp;rsquo;t have a &amp;ldquo;pure&amp;rdquo; date struct.
+type OperationPlanningResult struct { ID uint PlannedStartedAt time.Time `json:&amp;#34;planned_started_at&amp;#34;` } When I marshal it to JSON, this field is like &amp;ldquo;2006-01-02T00:00:00Z08&amp;rdquo; and I need to parse it again in frontend.
+One way to do it is writing a custom type and providing a custom MarshalJSON function. But I need to write the relative method for gorm because I&amp;rsquo;m using gorm.</description>
     </item>
     
     <item>

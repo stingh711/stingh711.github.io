@@ -63,10 +63,24 @@
 						
 						This is the first blog post from ox-hugo.
 I&rsquo;m using org-roam now. I&rsquo;m trying to keep my note in org-roam and use these notes to compose my blog posts. I try to use ox-hugo so that I can keep the source files in org format and keep them in my database.
-Moreover, I can copy the content from my roam notes.&hellip;
+Moreover, I can copy the content from my roam notes.
+What will happen if I link another note?&hellip;
 						
 					</div>
 					<a href="/posts/20210331155431-first_post_from_ox_hugo/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/20210331090602-golang_how_to_format_date_to_json/">Golang how to format Date to JSON</a></h1>
+					<time>Mar 31, 2021</time>
+					<br><div class="description">
+						
+						I have a gorm model and it has a Date field. But golang doesn&rsquo;t have a &ldquo;pure&rdquo; date struct.
+type OperationPlanningResult struct { ID uint PlannedStartedAt time.Time `json:&#34;planned_started_at&#34;` } When I marshal it to JSON, this field is like &ldquo;2006-01-02T00:00:00Z08&rdquo; and I need to parse it again in frontend.
+One way to do it is writing a custom type and providing a custom MarshalJSON function. But I need to write the relative method for gorm because I&rsquo;m using gorm.&hellip;
+						
+					</div>
+					<a href="/posts/20210331090602-golang_how_to_format_date_to_json/">Read more ⟶</a>
 				</section>
 				
 				<section class="list-item">
@@ -103,19 +117,6 @@ Create a .projections.json under your django file as follows:
 						
 					</div>
 					<a href="/posts/use_vim_projectionist_in_django/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/give-golang-a-try/">Give golang a try</a></h1>
-					<time>Mar 28, 2019</time>
-					<br><div class="description">
-						
-						“Go is such a refreshing language to program in, there is very little clutter just the stuff you need to get the job done” – Matt West
- Background I&rsquo;ve bean using java and python for years. With spring boot, it is easy to start an application. However, I still don&rsquo;t like the database access part of java.
-Now JPA and mybatis are popular solutions for database access. When I need to write some queries with dynamic conditions, the code is still ugly.&hellip;
-						
-					</div>
-					<a href="/posts/give-golang-a-try/">Read more ⟶</a>
 				</section>
 				
 				
