@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="https://stingh711.github.io/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="https://stingh711.github.io/posts/dynamic-form-with-springmvc-and-thymeleaf/" />
+    <title>Dynamic forms with springmvc and thymeleaf</title>
+</head>
+<body><header id="banner">
+    <h2><a href="https://stingh711.github.io/">LiHong&#39;s Note</a></h2>
+    <nav>
+        <ul>
+            
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Dynamic forms with springmvc and thymeleaf</h1>
+        <div>
+                <time>August 1, 2014</time>
+            </div>
+    </header><h2 id="requirements">Requirements</h2>
+<p>SubjectGroup and SubjectGroupOption has one-to-many relationship. When adding a subject group, subject group options can be added inline.</p>
+<h2 id="things-i-ve-learned-dot">Things I’ve learned.</h2>
+<ol>
+<li>When adding an option, don’t need to use javascript to handle the added html snippet. Just submit the add request to controller and handle the adding in the controller (Add a new options into the option list of subject group), then return to the add page. Spring mvc’s data binding and thyme leaf’s for loop will handle the html. (In EDC, I use javascript to append option html. It works. But there are some duplicate codes in JSP and javascript)</li>
+<li>Can use the same way to handle subject option removing.</li>
+<li>If there are multiple submit button in one form. We can use button’s name to separate them. In controller, use RequestMapping’s params to make the submit request to the right controller method.</li>
+</ol>
+<h2 id="code">Code</h2>
+<p>SubjectGroupController.java</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> edc.web<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> edc.model.SubjectGroup<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> edc.model.SubjectGroupOption<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> edc.service.SubjectGroupService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Controller<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.ui.Model<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.validation.BindingResult<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMapping<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMethod<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Controller</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/sg&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SubjectGroupController</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> SubjectGroupService subjectGroupService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setSubjectGroupService</span><span style="color:#f92672">(</span>SubjectGroupService subjectGroupService<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">subjectGroupService</span> <span style="color:#f92672">=</span> subjectGroupService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;add&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>SubjectGroup subjectGroup<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;subjectGroup/add&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;add&#34;</span><span style="color:#f92672">,</span> params <span style="color:#f92672">=</span> <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;addOption&#34;</span><span style="color:#f92672">})</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">addOption</span><span style="color:#f92672">(</span>SubjectGroup subjectGroup<span style="color:#f92672">,</span> BindingResult result<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	subjectGroup<span style="color:#f92672">.</span><span style="color:#a6e22e">getOptions</span><span style="color:#f92672">().</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> SubjectGroupOption<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;subjectGroup/add&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;add&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">POST</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>SubjectGroup subjectGroup<span style="color:#f92672">,</span> BindingResult result<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">subjectGroupService</span><span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>subjectGroup<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;redirect:/sg/add&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>add.html</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">xmlns:th</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.thymeleaf.org&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">section</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">h2</span>&gt;Add Subject Group&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">th:action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@{/sg/add}&#34;</span> <span style="color:#a6e22e">th:object</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;${subjectGroup}&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">th:field</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*{name}&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name...&#34;</span>/&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">h3</span>&gt;Options&lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;addOption&#34;</span>&gt;Add Option&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>	  &lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">th:each</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;option, rowStat : *{options}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	    &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">th:field</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*{options[__${rowStat.index}__].label}&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Option...&#34;</span>/&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>	  &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;Add&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">form</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">section</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div></article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>

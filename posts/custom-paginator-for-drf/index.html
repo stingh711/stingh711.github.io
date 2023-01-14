@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="https://stingh711.github.io/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="https://stingh711.github.io/posts/custom-paginator-for-drf/" />
+    <title>Write a CustomPaginator for django rest framework</title>
+</head>
+<body><header id="banner">
+    <h2><a href="https://stingh711.github.io/">LiHong&#39;s Note</a></h2>
+    <nav>
+        <ul>
+            
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Write a CustomPaginator for django rest framework</h1>
+        <div>
+                <time>June 23, 2018</time>
+            </div>
+    </header><p>Pagination is essential part for a REST api. Django rest framework provides an easy to way to add pagination to current API and a lot of useful built-in implementations. However, in order to work with a specified frontend component, a customized version is needed.</p>
+<p>Customizing is easy in DRF, just extends a current one and override it get_paginated_response method. For example, the following one uses the page number pagination ,which means you can pass page=n in the URL to get the nth page. If pageSize is specified in request url, it will be used or the default page_size will be used</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomPagination</span>(pagination<span style="color:#f92672">.</span>PageNumberPagination):
+</span></span><span style="display:flex;"><span>    page_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>    page_size_query_param <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;pageSize&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_paginated_response</span>(self, data):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Response({
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;pagination&#39;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;total&#39;</span>: self<span style="color:#f92672">.</span>page<span style="color:#f92672">.</span>paginator<span style="color:#f92672">.</span>count,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;pageSize&#39;</span>: self<span style="color:#f92672">.</span>page<span style="color:#f92672">.</span>paginator<span style="color:#f92672">.</span>per_page,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;current&#39;</span>: self<span style="color:#f92672">.</span>page<span style="color:#f92672">.</span>number,
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;list&#39;</span>: data
+</span></span><span style="display:flex;"><span>            })
+</span></span></code></pre></div><p>The response format is customized for antd&rsquo;s table component.</p>
+<p>There are two ways to tell your view to use it.</p>
+<ul>
+<li>Specify <code>pagination_class=CustomPagination</code> in your views.</li>
+<li>Configure it in settings. Doc is <a href="http://www.django-rest-framework.org/api-guide/pagination/">here</a>.</li>
+</ul>
+</article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>

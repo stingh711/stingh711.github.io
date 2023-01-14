@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="https://stingh711.github.io/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="https://stingh711.github.io/posts/notes-about-postgresql/" />
+    <title>Notes about postgresql</title>
+</head>
+<body><header id="banner">
+    <h2><a href="https://stingh711.github.io/">LiHong&#39;s Note</a></h2>
+    <nav>
+        <ul>
+            
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Notes about postgresql</h1>
+        <div>
+                <time>May 8, 2018</time>
+            </div>
+    </header><h2 id="how-to-generate-and-insert-test-data">How to generate and insert test data?</h2>
+<p>For example, my table is like: <code>create table (time timestamp, value double precision, sensor integer)</code>. If I want to insert some test data, I can use function <code>generate_series</code>.
+Following sql will insert 5000 rows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>    <span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> test (time, sensor, value) <span style="color:#66d9ef">select</span> now(), i, random() <span style="color:#66d9ef">from</span> generate_series(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5000</span>) s(i)
+</span></span></code></pre></div><h2 id="how-to-view-disk-usage">How to view disk usage?</h2>
+<h3 id="view-table-size">View table size</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>     <span style="color:#66d9ef">select</span> pg_size_pretty(pg_relation_size(<span style="color:#e6db74">&#39;pressure_01&#39;</span>))
+</span></span></code></pre></div><h3 id="view-database-size">View database size</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>     <span style="color:#66d9ef">select</span> pg_size_pretty(pg_database_size(<span style="color:#e6db74">&#39;pressure_01&#39;</span>))
+</span></span></code></pre></div></article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>
