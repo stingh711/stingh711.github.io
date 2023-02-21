@@ -13,6 +13,34 @@
     
     
     <item>
+      <title>Silverbullet.md</title>
+      <link>https://stingh711.github.io/posts/silver_bullet_md/</link>
+      <pubDate>Tue, 21 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://stingh711.github.io/posts/silver_bullet_md/</guid>
+      <description>&lt;p&gt;Today I found another note-taking application named &lt;a href=&#34;https://silverbullet.md/&#34;&gt;silverbullet&lt;/a&gt;.
+It is a simple tool but with essential features.&lt;/p&gt;
+&lt;p&gt;It has only one panel, the note edit panel. (After install back link plugin, you will get a left panel to display back links)
+Just like a wiki, you can add new pages with &lt;code&gt;[[]]&lt;/code&gt;.
+Or you can use command &lt;code&gt;cmd+k&lt;/code&gt; to find pages by name or create a new page if the page does&amp;rsquo;t exist.&lt;/p&gt;
+&lt;p&gt;It is just like notational velocity without the note list. The interface is so simple that you can focus on your note.
+&lt;img src=&#34;https://stingh711.github.io/img/ss.jpg&#34; alt=&#34;Silverbullet&#34;&gt;&lt;/p&gt;
+&lt;p&gt;However, it supports many advanced features I like.
+First, it has daily and weekly notes.
+Second, it has vim key mapping support.
+Third, it has a built-in database like query.
+For example, you can list all blocks with a tag with following &lt;code&gt;directory&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!-- #query item where tags = “link” --&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!-- /query --&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I like this feature because I like to use #link to collect the links I&amp;rsquo;m interested in my daily notes.
+With this query, I can display all the blocks with #link in a single place.
+Last, it has plugin support. So technically, you can get what you want through a plugin.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
       <title>Obsidian is the best note app</title>
       <link>https://stingh711.github.io/posts/obsidian/</link>
       <pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate>
