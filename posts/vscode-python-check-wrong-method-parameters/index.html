@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description" content="Recently I switched from pycharm to cursor which is vscode based. However, I found it cannot find errors if I pass wrong parameters to a method.
+For example, I have a method like this:
+def add(a, b): return a &#43; b And then I call this method like this:
+add(1) In pycharm, it will warn me that there is an unexpected argument. However, in cursor, it won&rsquo;t. After some research, I found the setting python.">  
+
+  <title>
+    
+      Vscode python check wrong method parameters
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.c5af9bae99b4a3d315b9f39305ffff27e9c3383fbbfd8b5fcaf2237667021a333a982fb958d1813a720b0a660b14022337553ae1ca93ef2ee17c4ae628ac19cb.css" integrity="sha512-xa&#43;brpm0o9MVufOTBf//J&#43;nDOD&#43;7/YtfyvIjdmcCGjM6mC&#43;5WNGBOnILCmYLFAIjN1U64cqT7y7hfErmKKwZyw==" />
+  
+</head>
+<body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+<a href="/">..</a>
+
+
+<article>
+    <p class="post-meta">
+        <time datetime="2024-10-11 15:14:10 &#43;0800 CST">
+            2024-10-11
+        </time>
+    </p>
+
+    <h1>Vscode python check wrong method parameters</h1>
+
+    
+
+    <p>Recently I switched from pycharm to cursor which is vscode based. However, I found it cannot find errors if I pass wrong parameters to a method.</p>
+<p>For example, I have a method like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add</span>(a, b):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> b
+</span></span></code></pre></div><p>And then I call this method like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>add(<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p>In pycharm, it will warn me that there is an unexpected argument. However, in cursor, it won&rsquo;t.
+After some research, I found the setting <code>python.analysis.typeCheckingMode</code> in vscode. The default value in cursor is <code>none</code>, if it is set to <code>basic</code>, it will check wrong parameters and wrong method syntax.</p>
+<p>By the way, I&rsquo;m surprised that ruff check cannot find this error or I missed something?</p>
+
+</article>
+
+            </div>
+        </main>
+    </body></html>

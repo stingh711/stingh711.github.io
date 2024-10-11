@@ -1,36 +1,45 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is my blog">
-    
-    <link rel="shortcut icon" href="https://stingh711.github.io/favicon.ico">
-    
-    <link rel="stylesheet" href="/css/style.min.css">
+<html lang="en-US"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description" content="For a REST list api, filtering and sorting is the basic requirements. Using django-filter, we can add these functions with only a few lines of codes.
+For example, if we have a model as follows,
+class Product(models.Model): name = models.CharField(max_length=100) created_at = models.DatetimeField() We will write relative serializer and view.
+class ProductSerializer(serializers.ModelSerializer): class Meta: fields = &#39;__all__&#39; class ProductListView(generics.ListView): queryset = Product.objects.all() serializer_class = ProductSerializer If we don&rsquo;t use django-filter, we can override ProductListview&rsquo;s get_queryset to implement filter.">  
 
-    <link rel="canonical" href="https://stingh711.github.io/posts/use-django-filter-to-add-filter-for-rest-api/" />
-    <title>Use django-filter to add filter for REST api</title>
+  <title>
+    
+      Use django-filter to add filter for REST api
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.c5af9bae99b4a3d315b9f39305ffff27e9c3383fbbfd8b5fcaf2237667021a333a982fb958d1813a720b0a660b14022337553ae1ca93ef2ee17c4ae628ac19cb.css" integrity="sha512-xa&#43;brpm0o9MVufOTBf//J&#43;nDOD&#43;7/YtfyvIjdmcCGjM6mC&#43;5WNGBOnILCmYLFAIjN1U64cqT7y7hfErmKKwZyw==" />
+  
 </head>
-<body><header id="banner">
-    <h2><a href="https://stingh711.github.io/">LiHong&#39;s Note</a></h2>
-    <nav>
-        <ul>
-            <li>
-                <a href="/" title="posts">posts</a>
-            </li><li>
-                <a href="/tags" title="tags">tags</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main id="content">
+<body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+<a href="/">..</a>
+
+
 <article>
-    <header id="post-header">
-        <h1>Use django-filter to add filter for REST api</h1>
-        <div>
-                <time>June 23, 2018</time>
-            </div>
-    </header><p>For a REST list api, filtering and sorting is the basic requirements. Using django-filter, we can add these functions with only a few lines of codes.</p>
+    <p class="post-meta">
+        <time datetime="2018-06-23 00:00:00 &#43;0000 UTC">
+            2018-06-23
+        </time>
+    </p>
+
+    <h1>Use django-filter to add filter for REST api</h1>
+
+    
+
+    <p>For a REST list api, filtering and sorting is the basic requirements. Using django-filter, we can add these functions with only a few lines of codes.</p>
 <p>For example, if we have a model as follows,</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Product</span>(models<span style="color:#f92672">.</span>Model):
 </span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
@@ -64,10 +73,9 @@ Then, we add a filter class in our views.</p>
 </span></span><span style="display:flex;"><span>filter_class <span style="color:#f92672">=</span> ProductFilter
 </span></span></code></pre></div><p>Now filter by name and sorting by created_at are both implemented. If the original list url is <code>/products/</code>, to search by name, the url is <code>/products/?name=iPhone</code>; to order by created_at desc, the url is <code>/products/?sort=-created_at</code>.</p>
 <p>Django-filter can implement more advanced features, e.g, filter by range, fuzzy search. Please refer to <a href="https://github.com/carltongibson/django-filter">Official doc</a>.</p>
+
 </article>
 
-        </main><footer id="footer">
-    Copyright © 2023 LiHong
-</footer>
-</body>
-</html>
+            </div>
+        </main>
+    </body></html>

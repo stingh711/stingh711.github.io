@@ -1,36 +1,43 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is my blog">
-    
-    <link rel="shortcut icon" href="https://stingh711.github.io/favicon.ico">
-    
-    <link rel="stylesheet" href="/css/style.min.css">
+<html lang="en-US"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description" content="Read data from mysql and draw a chart.
+%matplotlib inline import pymysql import pandas as pd import pandas.io.sql as sql conn = pymysql.connect(host=&#39;192.168.56.1&#39;, user=&#39;root&#39;, passwd=&#39;qwer-1235&#39;, db=&#39;pdss&#39;) s = &#39;select number_value from quality_data_item_record where item_id = 11&#39; df = sql.read_sql_query(s, conn) df.plot() ">  
 
-    <link rel="canonical" href="https://stingh711.github.io/posts/pandas-in-jupyter/" />
-    <title>Pandas in jupyter</title>
+  <title>
+    
+      Pandas in jupyter
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.c5af9bae99b4a3d315b9f39305ffff27e9c3383fbbfd8b5fcaf2237667021a333a982fb958d1813a720b0a660b14022337553ae1ca93ef2ee17c4ae628ac19cb.css" integrity="sha512-xa&#43;brpm0o9MVufOTBf//J&#43;nDOD&#43;7/YtfyvIjdmcCGjM6mC&#43;5WNGBOnILCmYLFAIjN1U64cqT7y7hfErmKKwZyw==" />
+  
 </head>
-<body><header id="banner">
-    <h2><a href="https://stingh711.github.io/">LiHong&#39;s Note</a></h2>
-    <nav>
-        <ul>
-            <li>
-                <a href="/" title="posts">posts</a>
-            </li><li>
-                <a href="/tags" title="tags">tags</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main id="content">
+<body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+<a href="/">..</a>
+
+
 <article>
-    <header id="post-header">
-        <h1>Pandas in jupyter</h1>
-        <div>
-                <time>June 17, 2018</time>
-            </div>
-    </header><p>Read data from mysql and draw a chart.</p>
+    <p class="post-meta">
+        <time datetime="2018-06-17 00:00:00 &#43;0000 UTC">
+            2018-06-17
+        </time>
+    </p>
+
+    <h1>Pandas in jupyter</h1>
+
+    
+
+    <p>Read data from mysql and draw a chart.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">%</span>matplotlib inline
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pymysql
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
@@ -42,10 +49,9 @@
 </span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> sql<span style="color:#f92672">.</span>read_sql_query(s, conn)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>plot()
-</span></span></code></pre></div></article>
+</span></span></code></pre></div>
+</article>
 
-        </main><footer id="footer">
-    Copyright © 2023 LiHong
-</footer>
-</body>
-</html>
+            </div>
+        </main>
+    </body></html>
