@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Emacs on LiHong&#39;s Note</title>
-    <link>https://stingh711.github.io/tags/emacs/</link>
-    <description>Recent content in Emacs on LiHong&#39;s Note</description>
+    <title>Evil on LiHong&#39;s Note</title>
+    <link>https://stingh711.github.io/tags/evil/</link>
+    <description>Recent content in Evil on LiHong&#39;s Note</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 04 Dec 2024 10:25:00 +0800</lastBuildDate>
-    <atom:link href="https://stingh711.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://stingh711.github.io/tags/evil/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Switching From Evil to Meow</title>
       <link>https://stingh711.github.io/posts/switching-from-evil-to-meow/</link>
       <pubDate>Wed, 04 Dec 2024 10:25:00 +0800</pubDate>
       <guid>https://stingh711.github.io/posts/switching-from-evil-to-meow/</guid>
       <description>Recently I switched from evil model to meow.&#xA;Evil mode is powerful but slow. It conflits with the keybindings of some customized modes, like howm or zk&amp;rsquo;s index mode.&#xA;Second, it is difficult to customize for my poor knowledge of elisp.&#xA;Last, I only use emacs for note taking, and I don&amp;rsquo;t need the power of evil mode. I don&amp;rsquo;t do complex editing, so meow is a good choice.&#xA;After read meow-tutor several times and do some customization of key mappings, I am quite happy with meow.</description>
-    </item>
-    <item>
-      <title>Use org-journal to keep my daily notes</title>
-      <link>https://stingh711.github.io/posts/use-org-journal/</link>
-      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>https://stingh711.github.io/posts/use-org-journal/</guid>
-      <description>org-journal is small package to write your journal in org mode. Like diary mode, it will generate one file per day, but you can use org-mode instead of plain dairy mode.&#xA;To create a journal, just press C-c c-j, an org-mode item will be created with curren time.&#xA;It is also provided calendar binding, so you can view your journal from calendar view.</description>
     </item>
   </channel>
 </rss>

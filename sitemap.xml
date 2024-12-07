@@ -2,13 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://stingh711.github.io/posts/</loc>
-    <lastmod>2024-10-11T15:14:10+08:00</lastmod>
+    <loc>https://stingh711.github.io/tags/emacs/</loc>
+    <lastmod>2024-12-04T10:25:00+08:00</lastmod>
   </url><url>
-    <loc>https://stingh711.github.io/tags/python/</loc>
-    <lastmod>2024-10-11T15:14:10+08:00</lastmod>
+    <loc>https://stingh711.github.io/tags/evil/</loc>
+    <lastmod>2024-12-04T10:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://stingh711.github.io/tags/meow/</loc>
+    <lastmod>2024-12-04T10:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://stingh711.github.io/tags/modal/</loc>
+    <lastmod>2024-12-04T10:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://stingh711.github.io/posts/</loc>
+    <lastmod>2024-12-04T10:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://stingh711.github.io/posts/switching-from-evil-to-meow/</loc>
+    <lastmod>2024-12-04T10:25:00+08:00</lastmod>
   </url><url>
     <loc>https://stingh711.github.io/tags/</loc>
+    <lastmod>2024-12-04T10:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://stingh711.github.io/tags/python/</loc>
     <lastmod>2024-10-11T15:14:10+08:00</lastmod>
   </url><url>
     <loc>https://stingh711.github.io/tags/vscode/</loc>
@@ -58,9 +73,6 @@
   </url><url>
     <loc>https://stingh711.github.io/posts/vscode-restclient-is-great/</loc>
     <lastmod>2018-06-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://stingh711.github.io/tags/emacs/</loc>
-    <lastmod>2018-06-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://stingh711.github.io/posts/use-django-filter-to-add-filter-for-rest-api/</loc>
     <lastmod>2018-06-23T00:00:00+00:00</lastmod>

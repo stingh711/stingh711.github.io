@@ -6,8 +6,15 @@
     <description>Recent content on LiHong&#39;s Note</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 11 Oct 2024 15:14:10 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 04 Dec 2024 10:25:00 +0800</lastBuildDate>
     <atom:link href="https://stingh711.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Switching From Evil to Meow</title>
+      <link>https://stingh711.github.io/posts/switching-from-evil-to-meow/</link>
+      <pubDate>Wed, 04 Dec 2024 10:25:00 +0800</pubDate>
+      <guid>https://stingh711.github.io/posts/switching-from-evil-to-meow/</guid>
+      <description>Recently I switched from evil model to meow.&#xA;Evil mode is powerful but slow. It conflits with the keybindings of some customized modes, like howm or zk&amp;rsquo;s index mode.&#xA;Second, it is difficult to customize for my poor knowledge of elisp.&#xA;Last, I only use emacs for note taking, and I don&amp;rsquo;t need the power of evil mode. I don&amp;rsquo;t do complex editing, so meow is a good choice.&#xA;After read meow-tutor several times and do some customization of key mappings, I am quite happy with meow.</description>
+    </item>
     <item>
       <title>Vscode python check wrong method parameters</title>
       <link>https://stingh711.github.io/posts/vscode-python-check-wrong-method-parameters/</link>
